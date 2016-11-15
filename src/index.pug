@@ -8,6 +8,8 @@
 - var datalink = "http://data.baltimoresun.com/PROJECTLINK/"
 - var datalink = ""
 
+include includes/data.pug
+
 doctype html
 //if lt IE 7
 	<html class="no-js lt-ie9 lt-ie8 lt-ie7">
@@ -24,8 +26,6 @@ html(class="no-js", lang="en")
 		meta(name="author", content="") 
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Old+Standard+TT|Lato|Montserrat")
-		//- Bootstrap, js below
-		//- link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
 		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
 
 		//Facebook Stuff
@@ -53,18 +53,51 @@ html(class="no-js", lang="en")
 		include includes/omniture.html
 		
 		.container
-			h1 H1 / MONTSERRAT
-			p P / LATO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eros ac risus condimentum pretium. In faucibus quis risus sit amet ornare.
-			a(href="" target="_blank") A / LATO / GOLDENROD
+			//- h1 H1 / MONTSERRAT
+			//- p P / LATO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eros ac risus condimentum pretium. In faucibus quis risus sit amet ornare.
+			//- a(href="" target="_blank") A / LATO / GOLDENROD
+			.listWrapper
+				ul.list.list--landlords
+					each landlord, index in landlords
+						li.list__item(data-landlord=index, class="list__item--" + index)
+							h3 #{landlord.name}
+							.stat.stat--properties
+								p Properties
+									br
+									span #{landlord.numProperties}
+							.stat.stat--units
+								p Units
+									br
+									span #{landlord.numUnits}
+							.stat.stat--violations
+								p Violations
+									br
+									span #{landlord.numViolations}
+				- var i = 0;
+				while i < 10
+					ul.list.list--properties(data-landlord=i, class="list--properties--" + i)
+						.landlordName
+							h3 #{landlords[i].name} Properties
+						each property, index in properties
+							if property.landlord_num === i
+								li.list__item
+									p #{property.address}
+									.stat ECB
+										p #{property.ecb}
+									.stat Prosecutions
+										p #{property.pros}
+									.stat Lead
+										p #{property.lpv}
+					- i++
+			.mapWrapper test
+		
+
 		//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-header above.
 		//- #leaderboard			
 			include includes/ad-for-body.html
 		
 		//Javascript
-		//- MAKE SURE TO CHECK OUT package.json and look at the uglify script. 
-		script(src=datalink + "js/min/jquery-3.0.0.min.js")
-		//- Bootstrap, css above
-		//- script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
 		script(src=datalink + "js/app.js")
 		//- script(src=datalink + "js/app.min.js")
 		
