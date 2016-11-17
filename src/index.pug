@@ -60,7 +60,9 @@ html(class="no-js", lang="en")
 				ul.list.list--landlords
 					each landlord, index in landlords
 						li.list__item(data-landlord=index, class="list__item--" + index)
-							h3 #{landlord.name}
+							.landlordName
+								h3 #{landlord.name}
+								i.icon-right-big
 							.stat.stat--properties
 								p Properties
 									br
@@ -73,22 +75,22 @@ html(class="no-js", lang="en")
 								p Violations
 									br
 									span #{landlord.numViolations}
-				- var i = 0;
-				while i < 10
-					ul.list.list--properties(data-landlord=i, class="list--properties--" + i)
+				each landlord, lIndex in landlords
+					ul.list.list--properties(data-landlord=lIndex, class="list--properties--" + lIndex)
 						.landlordName
-							h3 #{landlords[i].name} Properties
+							.backButton
+								i.icon-left-big
+							h3 #{landlord.name} Properties
 						each property, index in properties
-							if property.landlord_num === i
+							if property.landlord_num === lIndex
 								li.list__item
 									p #{property.address}
-									.stat ECB
+									.stat.stat--violations ECB
 										p #{property.ecb}
-									.stat Prosecutions
+									.stat.stat--violations HABC
 										p #{property.pros}
-									.stat Lead
+									.stat.stat--violations Lead
 										p #{property.lpv}
-					- i++
 			.mapWrapper test
 		
 

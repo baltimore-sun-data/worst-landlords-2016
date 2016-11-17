@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -371,96 +372,77 @@ th {
   padding: 0; }
 
 @font-face {
-  font-family: 'icons';
-  src: url("fonts/icons/icons.eot?-3sh89t");
-  src: url("fonts/icons/icons.eot?#iefix-3sh89t") format("embedded-opentype"), url("fonts/icons/icons.woff?-3sh89t") format("woff"), url("fonts/icons/icons.ttf?-3sh89t") format("truetype"), url("fonts/icons/icons.svg?-3sh89t#icons") format("svg");
+  font-family: 'fontello';
+  src: url("font/fontello.eot?98970896");
+  src: url("font/fontello.eot?98970896#iefix") format("embedded-opentype"), url("font/fontello.woff2?98970896") format("woff2"), url("font/fontello.woff?98970896") format("woff"), url("font/fontello.ttf?98970896") format("truetype"), url("font/fontello.svg?98970896#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icons';
-  speak: none;
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('font/fontello.svg?98970896#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
   font-style: normal;
   font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
 
-.icon-play:before {
-  content: "\e052"; }
+.icon-location:before {
+  content: '\e800'; }
 
-.icon-arrow-left4:before {
-  content: "\e094"; }
+/* '' */
+.icon-left-big:before {
+  content: '\e801'; }
 
-.icon-arrow-right4:before {
-  content: "\e095"; }
+/* '' */
+.icon-right-big:before {
+  content: '\e802'; }
 
-.icon-arrow-up4:before {
-  content: "\e096"; }
-
-.icon-arrow-down4:before {
-  content: "\e097"; }
-
-.icon-plus:before {
-  content: "\e114"; }
-
-.icon-minus:before {
-  content: "\e115"; }
-
-.icon-close:before {
-  content: "\e117"; }
-
-.icon-menu:before {
-  content: "\e120"; }
-
-.icon-list:before {
-  content: "\e603"; }
-
-.icon-arrow-left:before {
-  content: "\e60a"; }
-
-.icon-arrow-down:before {
-  content: "\e60b"; }
-
-.icon-arrow-up:before {
-  content: "\e60c"; }
-
-.icon-arrow-right:before {
-  content: "\e60d"; }
-
-.icon-arrow-left2:before {
-  content: "\e60e"; }
-
-.icon-arrow-down2:before {
-  content: "\e60f"; }
-
-.icon-arrow-up2:before {
-  content: "\e610"; }
-
-.icon-arrow-right2:before {
-  content: "\e600"; }
-
-.icon-arrow-left3:before {
-  content: "\e611"; }
-
-.icon-arrow-down3:before {
-  content: "\e612"; }
-
-.icon-arrow-up3:before {
-  content: "\e613"; }
-
-.icon-arrow-right3:before {
-  content: "\e601"; }
-
+/* '' */
 .icon-twitter:before {
-  content: "\e614"; }
+  content: '\f099'; }
 
+/* '' */
 .icon-facebook:before {
-  content: "\e615"; }
+  content: '\f09a'; }
 
+/* '' */
+.icon-left-circled:before {
+  content: '\f0a8'; }
+
+/* '' */
+.icon-right-circled:before {
+  content: '\f0a9'; }
+
+/* '' */
 html, body {
   overflow: hidden; }
 
@@ -503,8 +485,7 @@ a {
   @media (max-width: 768px) {
     .listWrapper {
       width: 100%;
-      bottom: 0;
-      margin-bottom: 50px; } }
+      bottom: 0; } }
 
 .list {
   position: absolute;
@@ -537,33 +518,37 @@ a {
         left: 100%; } }
   .list.center {
     left: 0; }
-  .list--landlords {
-    left: 0; }
   .list__item {
     padding: 1em .5em;
     list-style: none;
     width: 100%;
     background-color: white;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease; }
     .list__item:nth-child(odd) {
       background-color: #f1f1f1; }
     .list__item.active {
-      background-color: #ebc975; }
+      background-color: #e4b849; }
     .list__item:hover {
       background-color: #e4b849; }
+  .list--landlords {
+    left: 0; }
+    .list--landlords h3 {
+      display: inline-block;
+      width: 80%; }
   .list--properties {
     width: 320px;
     left: 320px;
     background-color: #e4b849; }
-    .list--properties .landlordName {
-      padding: 1em; }
     .list--properties p {
       font-weight: 700; }
     @media (max-width: 768px) {
       .list--properties {
         left: 100%; } }
     .list--properties .list__item {
-      background-color: inherit; }
+      background-color: #f1dba2; }
       .list--properties .list__item:nth-child(even) {
         background-color: #ebc975; }
   @media (max-width: 768px) {
