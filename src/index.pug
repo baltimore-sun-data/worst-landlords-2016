@@ -25,7 +25,7 @@ html(class="no-js", lang="en")
 		meta(name="description", content="")
 		meta(name="author", content="") 
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Old+Standard+TT|Lato|Montserrat")
+		//link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Old+Standard+TT|Lato|Montserrat")
 		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
 
 		//Facebook Stuff
@@ -53,6 +53,9 @@ html(class="no-js", lang="en")
 		include includes/omniture.html
 		
 		.container
+			.titlebox 
+				h1 Baltimore’s worst landlords
+				a(href="#") ABOUT THIS PROJECT
 			//- h1 H1 / MONTSERRAT
 			//- p P / LATO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec eros ac risus condimentum pretium. In faucibus quis risus sit amet ornare.
 			//- a(href="" target="_blank") A / LATO / GOLDENROD
@@ -101,5 +104,8 @@ html(class="no-js", lang="en")
 		//Javascript
 		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
 		script(src=datalink + "js/app.js")
+		script(src="https://use.typekit.net/nta3eyd.js")
+		script.
+			try{Typekit.load({ async: true });}catch(e){}	
 		//- script(src=datalink + "js/app.min.js")
 		

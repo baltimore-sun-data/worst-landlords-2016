@@ -451,19 +451,41 @@ body {
   font-size: 14px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "franklin-gothic-urw", sans-serif; }
 
 p, a {
-  font-family: "Lato", sans-serif; }
+  font-family: "franklin-gothic-urw", sans-serif; }
 
 a {
-  color: #daa520;
+  color: #155757;
   text-decoration: none; }
 
 .container {
   position: relative;
   width: 100%;
   margin-top: 50px; }
+
+.titlebox {
+  width: 100%;
+  background-color: #155757;
+  border-top: 1px solid #fff;
+  padding-bottom: 5px; }
+  .titlebox h1 {
+    font-family: "franklin-gothic-urw", sans-serif;
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 0;
+    margin-top: 2px;
+    margin-left: 25px; }
+    @media (max-width: 650px) {
+      .titlebox h1 {
+        font-size: 2em; } }
+  .titlebox a:link, .titlebox a:visited {
+    margin-left: 25px;
+    color: #27a3a3;
+    font-size: 1.5em; }
+  .titlebox a:hover {
+    color: #31cccc; }
 
 .mapWrapper {
   position: relative;
@@ -530,9 +552,9 @@ a {
     .list__item:nth-child(odd) {
       background-color: #f1f1f1; }
     .list__item.active {
-      background-color: #e4b849; }
+      background-color: #31cccc; }
     .list__item:hover {
-      background-color: #e4b849; }
+      background-color: #31cccc; }
   .list--landlords {
     left: 0; }
     .list--landlords h3 {
@@ -541,16 +563,20 @@ a {
   .list--properties {
     width: 320px;
     left: 320px;
-    background-color: #e4b849; }
+    background-color: #31cccc; }
+    .list--properties .landlordName {
+      background-color: #155757;
+      color: #fff;
+      border-top: 1px solid #fff; }
     .list--properties p {
       font-weight: 700; }
     @media (max-width: 768px) {
       .list--properties {
         left: 100%; } }
     .list--properties .list__item {
-      background-color: #f1dba2; }
+      background-color: #36cfcf; }
       .list--properties .list__item:nth-child(even) {
-        background-color: #ebc975; }
+        background-color: #29a9a9; }
   @media (max-width: 768px) {
     .list {
       width: 100%;
