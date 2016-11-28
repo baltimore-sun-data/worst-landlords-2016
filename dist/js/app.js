@@ -21,6 +21,9 @@ var worstLandlords = {
         });
     },
     onClick: function() {
+        $(".buttonIcon--splash").on("click", function() {
+            $(".splashWrapper").css("top", "-100%");
+        });
         $(".list--landlords li").on("click", function() {
             $(".active").removeClass("active");
             $(this).addClass("active");

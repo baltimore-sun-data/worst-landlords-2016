@@ -13,14 +13,15 @@ html, body {
 	overflow: hidden;
 }
 body {
-	color: $offblack;
+	color: white;
 	font-size: 14px; // body-level font size for "em"-scaled designs
 }
 h1,h2,h3,h4,h5,h6 {
-	font-family: $montserrat;
+	font-family: $franklin;
 }
 p,a {
-	font-family: $lato;
+	font-family: $franklin;
+	// font-family: $lato;
 }
 a {
 	color: $goldenrod;
@@ -31,12 +32,46 @@ a {
 	width: 100%;
 	margin-top: 50px; // Pushes below topnav
 }
+.splashWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $offblack;
+	z-index: 2;
+	@include transition(all 1s ease)
+	.content {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	h1 {
+		font-size: 6.5em;
+		line-height: 1em;
+		color: white;
+		margin-bottom: .2em;
+		text-align: left;
+	}
+	p {
+		width: 90%;
+		margin: 0 auto;
+		font-size: 1.4em;
+		border-top: 1px solid $teal;
+		border-bottom: 1px solid $teal;
+		padding: .5em 0;
+		text-align: left;
+	}
+	span {
+		font-weight: bold;
+	}
+}
 .mapWrapper {
 	position: relative;
 	width: 100%;
 	height: 100vh;
 	margin-left: 320px;
-	background-color: $gray-9;
+	background-color: $darkgray-0;
 	z-index: 1;
 	@media(max-width: 768px) {
 		margin: 0;
@@ -74,16 +109,10 @@ a {
 		}
 	}
 	&.left {
-		left: -320px;
-		@media(max-width: 768px) {
-			left: -100%;
-		}
+		left: -100%;
 	}
 	&.right {
-		left: 320px;
-		@media(max-width: 768px) {
-			left: 100%;
-		}
+		left: 100%;
 	}
 	&.center {
 		left: 0;
@@ -96,7 +125,7 @@ a {
 		cursor: pointer;
 		@include transition(background-color .5s ease);
 		&:nth-child(odd) {
-			background-color: $gray-1;	
+			background-color: $lightgray-0;	
 		}
 		&.active {	
 			background-color: lighten($goldenrod, 10);
@@ -114,16 +143,13 @@ a {
 	}
 	&--properties {
 		width: 320px;
-		left: 320px;
+		left: 100%;
 		background-color: lighten($goldenrod, 10);
 		.landlordName {
 			// padding: 1em;
 		}
 		p {
 			font-weight: 700;
-		}
-		@media(max-width: 768px) {
-			left: 100%;
 		}
 		.list__item {
 			background-color: lighten($goldenrod, 30);	
@@ -154,6 +180,27 @@ a {
 	&--violations {
 		background: rgba(black, .5);
 		color: white;
+	}
+}
+.buttonDiv {
+	display: inline-block;
+	border-radius: 10px;
+	background-color: $teal;
+	text-transform: uppercase;
+	text-align: center;
+	p {
+		font-size: 1.7em;
+		white-space: nowrap;
+	}
+	&--splash {
+		width: 18em;
+		margin: 4em auto 2em auto;
+	}
+}
+.buttonIcon {
+	color: $teal;
+	&--splash {
+		font-size: 8em;
 	}
 }
 

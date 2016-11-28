@@ -373,8 +373,8 @@ th {
 
 @font-face {
   font-family: 'fontello';
-  src: url("font/fontello.eot?98970896");
-  src: url("font/fontello.eot?98970896#iefix") format("embedded-opentype"), url("font/fontello.woff2?98970896") format("woff2"), url("font/fontello.woff?98970896") format("woff"), url("font/fontello.ttf?98970896") format("truetype"), url("font/fontello.svg?98970896#fontello") format("svg");
+  src: url("font/fontello.eot?87083720");
+  src: url("font/fontello.eot?87083720#iefix") format("embedded-opentype"), url("font/fontello.woff2?87083720") format("woff2"), url("font/fontello.woff?87083720") format("woff"), url("font/fontello.ttf?87083720") format("truetype"), url("font/fontello.svg?87083720#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -384,7 +384,7 @@ th {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('font/fontello.svg?98970896#fontello') format('svg');
+    src: url('font/fontello.svg?87083720#fontello') format('svg');
   }
 }
 */
@@ -427,6 +427,30 @@ th {
   content: '\e802'; }
 
 /* '' */
+.icon-down-big:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-up-big:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-down-open:before {
+  content: '\e805'; }
+
+/* '' */
+.icon-up-open:before {
+  content: '\e806'; }
+
+/* '' */
+.icon-right-open:before {
+  content: '\e807'; }
+
+/* '' */
+.icon-left-open:before {
+  content: '\e808'; }
+
+/* '' */
 .icon-twitter:before {
   content: '\f099'; }
 
@@ -443,18 +467,26 @@ th {
   content: '\f0a9'; }
 
 /* '' */
+.icon-up-circled:before {
+  content: '\f0aa'; }
+
+/* '' */
+.icon-down-circled:before {
+  content: '\f0ab'; }
+
+/* '' */
 html, body {
   overflow: hidden; }
 
 body {
-  color: #1e1e1e;
+  color: white;
   font-size: 14px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "franklin-gothic-urw", sans-serif; }
 
 p, a {
-  font-family: "Lato", sans-serif; }
+  font-family: "franklin-gothic-urw", sans-serif; }
 
 a {
   color: #daa520;
@@ -464,6 +496,38 @@ a {
   position: relative;
   width: 100%;
   margin-top: 50px; }
+
+.splashWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  z-index: 2;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease; }
+  .splashWrapper .content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center; }
+  .splashWrapper h1 {
+    font-size: 6.5em;
+    line-height: 1em;
+    color: white;
+    margin-bottom: .2em;
+    text-align: left; }
+  .splashWrapper p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.4em;
+    border-top: 1px solid #27a3a3;
+    border-bottom: 1px solid #27a3a3;
+    padding: .5em 0;
+    text-align: left; }
+  .splashWrapper span {
+    font-weight: bold; }
 
 .mapWrapper {
   position: relative;
@@ -507,15 +571,9 @@ a {
     .list p span {
       font-weight: 700; }
   .list.left {
-    left: -320px; }
-    @media (max-width: 768px) {
-      .list.left {
-        left: -100%; } }
+    left: -100%; }
   .list.right {
-    left: 320px; }
-    @media (max-width: 768px) {
-      .list.right {
-        left: 100%; } }
+    left: 100%; }
   .list.center {
     left: 0; }
   .list__item {
@@ -540,13 +598,10 @@ a {
       width: 80%; }
   .list--properties {
     width: 320px;
-    left: 320px;
+    left: 100%;
     background-color: #e4b849; }
     .list--properties p {
       font-weight: 700; }
-    @media (max-width: 768px) {
-      .list--properties {
-        left: 100%; } }
     .list--properties .list__item {
       background-color: #f1dba2; }
       .list--properties .list__item:nth-child(even) {
@@ -567,5 +622,23 @@ a {
   .stat--violations {
     background: rgba(0, 0, 0, 0.5);
     color: white; }
+
+.buttonDiv {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #27a3a3;
+  text-transform: uppercase;
+  text-align: center; }
+  .buttonDiv p {
+    font-size: 1.7em;
+    white-space: nowrap; }
+  .buttonDiv--splash {
+    width: 18em;
+    margin: 4em auto 2em auto; }
+
+.buttonIcon {
+  color: #27a3a3; }
+  .buttonIcon--splash {
+    font-size: 8em; }
 
 /* Leaderboard */
