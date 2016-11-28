@@ -21,10 +21,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 p,a {
 	font-family: $franklin;
-	// font-family: $lato;
 }
 a {
-	color: $goldenrod;
+	color: $teal;
 	text-decoration: none;
 }
 .container {
@@ -56,14 +55,31 @@ a {
 	p {
 		width: 90%;
 		margin: 0 auto;
-		font-size: 1.4em;
-		border-top: 1px solid $teal;
-		border-bottom: 1px solid $teal;
+		font-size: 1.3em;
+		border-top: 1px solid $lightteal;
+		border-bottom: 1px solid $lightteal;
 		padding: .5em 0;
 		text-align: left;
 	}
 	span {
 		font-weight: bold;
+	}
+}
+.titlebox {
+	width:100%;
+	background-color: $teal;
+	border-top: 1px solid #fff;
+	padding-bottom: 5px;
+	h1 {
+		font-family: $franklin;
+		font-size: 3em;
+		color: #fff;
+		margin-bottom: 0;
+		margin-top: 2px;
+		margin-left: 25px;
+		@media(max-width: 650px) {
+		font-size: 2em;
+		}
 	}
 }
 .mapWrapper {
@@ -128,10 +144,10 @@ a {
 			background-color: $lightgray-0;	
 		}
 		&.active {	
-			background-color: lighten($goldenrod, 10);
+			background-color: lighten($lightteal, 10);
 		}
 		&:hover {
-			background-color: lighten($goldenrod, 10);
+			background-color: lighten($lightteal, 10);
 		}	
 	}
 	&--landlords {
@@ -144,17 +160,20 @@ a {
 	&--properties {
 		width: 320px;
 		left: 100%;
-		background-color: lighten($goldenrod, 10);
+		background-color: lighten($lightteal, 10);
 		.landlordName {
+			background-color: $teal;
+			color: #fff;
+			border-top: 1px solid #fff;
 			// padding: 1em;
 		}
 		p {
 			font-weight: 700;
 		}
 		.list__item {
-			background-color: lighten($goldenrod, 30);	
+			background-color: lighten($teal, 30);	
 			&:nth-child(even) {
-				background-color: lighten($goldenrod, 20);	
+				background-color: lighten($teal, 20);	
 			}
 		}
 	}
@@ -185,20 +204,30 @@ a {
 .buttonDiv {
 	display: inline-block;
 	border-radius: 10px;
-	background-color: $teal;
+	background-color: $lightteal;
 	text-transform: uppercase;
 	text-align: center;
-	p {
+	p,a {
+		color: white;
 		font-size: 1.7em;
 		white-space: nowrap;
 	}
 	&--splash {
 		width: 18em;
 		margin: 4em auto 2em auto;
+		padding: .7em 0;
+		a:link, a:visited {
+			// margin-left: 25px;
+			// color: $lightteal;
+			// font-size: 1.5em;
+		}
+		a:hover {
+			// color: lighten($lightteal, 10);
+		}
 	}
 }
 .buttonIcon {
-	color: $teal;
+	color: $lightteal;
 	&--splash {
 		font-size: 8em;
 	}
