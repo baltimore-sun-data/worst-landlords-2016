@@ -27,12 +27,13 @@ var worstLandlords = {
 			$('.active').removeClass('active');
 			$(this).addClass('active');
 			var landlord = $(this).data('landlord');
-			$('.list--landlords').toggleClass('left');
+			// $('.list--landlords').toggleClass('left');
+			$('.list--properties--' + landlord).scrollTop(0);
 			$('.list--properties--' + landlord).toggleClass('center');
 		});
-		$('.list--properties').on('click', function() {
+		$('.backButton').on('click', function() {
 			var landlord = $(this).data('landlord');
-			$('.list--landlords').toggleClass('left');
+			// $('.list--landlords').toggleClass('left');
 			$('.list--properties--' + landlord).toggleClass('center');
 		});
 	},

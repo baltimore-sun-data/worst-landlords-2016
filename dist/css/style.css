@@ -519,8 +519,8 @@ a {
     margin-bottom: .2em;
     text-align: left; }
   .splashWrapper p {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 2em;
     font-size: 1.3em;
     border-top: 1px solid #27a3a3;
     border-bottom: 1px solid #27a3a3;
@@ -573,6 +573,7 @@ a {
   height: calc(100vh - 50px);
   margin: 0;
   padding: 0;
+  border-top: 1px solid white;
   overflow-y: scroll;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -586,44 +587,52 @@ a {
     font-weight: 400; }
     .list p span {
       font-weight: 700; }
-  .list.left {
-    left: -100%; }
   .list.right {
     left: 100%; }
   .list.center {
     left: 0; }
   .list__item {
-    padding: 1em .5em;
-    list-style: none;
     width: 100%;
-    background-color: white;
+    padding: 1em .5em;
+    background-color: #bdbdbd;
+    list-style: none;
     cursor: pointer;
     -webkit-transition: background-color 0.5s ease;
     -moz-transition: background-color 0.5s ease;
     transition: background-color 0.5s ease; }
     .list__item:nth-child(odd) {
-      background-color: #f1f1f1; }
+      background-color: #a4a4a4; }
     .list__item.active {
-      background-color: #31cccc; }
+      background-color: #27a3a3; }
     .list__item:hover {
-      background-color: #31cccc; }
+      background-color: #27a3a3; }
   .list--landlords {
     left: 0; }
     .list--landlords h3 {
       display: inline-block;
       width: 80%; }
+    .list--landlords i {
+      font-size: 1.4em;
+      line-height: 0;
+      float: right; }
   .list--properties {
     width: 320px;
     left: 100%;
-    background-color: #31cccc; }
+    background-color: #27a3a3; }
     .list--properties .landlordName {
       background-color: #155757;
-      color: #fff;
-      border-top: 1px solid #fff; }
+      color: white;
+      padding: 1em .5em; }
+      .list--properties .landlordName h3 {
+        margin-left: 2.5em; }
+      .list--properties .landlordName i {
+        font-size: 1.4em;
+        line-height: 0;
+        float: left; }
     .list--properties p {
       font-weight: 700; }
     .list--properties .list__item {
-      background-color: #36cfcf; }
+      background-color: #1f8080; }
       .list--properties .list__item:nth-child(even) {
         background-color: #29a9a9; }
   @media (max-width: 768px) {
