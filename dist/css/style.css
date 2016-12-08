@@ -557,6 +557,10 @@ a {
       margin: 0;
       z-index: -1; } }
 
+#map {
+  height: 100vh;
+  width: 100%; }
+
 .listWrapper {
   position: absolute;
   width: 320px;
@@ -635,6 +639,8 @@ a {
       background-color: #1f8080; }
       .list--properties .list__item:nth-child(even) {
         background-color: #29a9a9; }
+      .list--properties .list__item-selected {
+        background-color: #f1f1f1 !important; }
   @media (max-width: 768px) {
     .list {
       width: 100%;

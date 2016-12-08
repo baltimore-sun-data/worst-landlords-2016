@@ -94,6 +94,11 @@ a {
 		z-index: -1;
 	}
 }
+
+#map {
+	height: 100vh;
+	width: 100%;
+}
 .listWrapper {
 	position: absolute;
 	width: 320px;
@@ -187,6 +192,9 @@ a {
 			background-color: lighten($teal, 10);
 			&:nth-child(even) {
 				background-color: lighten($teal, 20);
+			}
+			&-selected {
+				background-color: $lightgray !important;
 			}
 		}
 	}

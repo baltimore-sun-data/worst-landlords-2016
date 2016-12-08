@@ -14,6 +14,7 @@
     <meta name="author" content="The Baltimore Sun">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Serif|Lato">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--Facebook Stuff-->
     <meta property="og:title" content="">
@@ -209,34 +210,34 @@
             <div class="backButton" data-landlord="0"><i class="icon-left-big"></i></div>
             <h3>Name 0 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="1" onClick="map.panTo(new L.LatLng(39.28342,-76.63936));markers[1].openPopup();$('.property').removeClass('list__item-selected');$('#1').addClass('list__item-selected');">
             <p>1400 RAMSAY ST</p>
-            <div class="stat stat--violations">ECB
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>100 N MONROE ST</p>
             <div class="stat stat--violations">ECB
               <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="2" onClick="map.panTo(new L.LatLng(39.28983,-76.64707));markers[2].openPopup();$('.property').removeClass('list__item-selected');$('#2').addClass('list__item-selected');">
+            <p>100 N MONROE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="3" onClick="map.panTo(new L.LatLng(39.3378,-76.66512));markers[3].openPopup();$('.property').removeClass('list__item-selected');$('#3').addClass('list__item-selected');">
             <p>4300 PARK HEIGHTS AV</p>
             <div class="stat stat--violations">ECB
-              <p>10</p>
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
@@ -245,8 +246,44 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="4" onClick="map.panTo(new L.LatLng(39.32634,-76.55582));markers[4].openPopup();$('.property').removeClass('list__item-selected');$('#4').addClass('list__item-selected');">
             <p>4400 PLAINFIELD AV</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="5" onClick="map.panTo(new L.LatLng(39.33829,-76.67149));markers[5].openPopup();$('.property').removeClass('list__item-selected');$('#5').addClass('list__item-selected');">
+            <p>4400 DAYTONA AV</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="6" onClick="map.panTo(new L.LatLng(39.29908,-76.63878));markers[6].openPopup();$('.property').removeClass('list__item-selected');$('#6').addClass('list__item-selected');">
+            <p>1300 W LAFAYETTE AV</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="7" onClick="map.panTo(new L.LatLng(39.26839,-76.65058));markers[7].openPopup();$('.property').removeClass('list__item-selected');$('#7').addClass('list__item-selected');">
+            <p>2400 WASHINGTON BLVD</p>
             <div class="stat stat--violations">ECB
               <p>9</p>
             </div>
@@ -257,58 +294,22 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>4400 DAYTONA AV</p>
-            <div class="stat stat--violations">ECB
-              <p>6</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1300 W LAFAYETTE AV</p>
-            <div class="stat stat--violations">ECB
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2400 WASHINGTON BLVD</p>
-            <div class="stat stat--violations">ECB
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="8" onClick="map.panTo(new L.LatLng(39.3126,-76.66958));markers[8].openPopup();$('.property').removeClass('list__item-selected');$('#8').addClass('list__item-selected');">
             <p>2200 N ROSEDALE ST</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="9" onClick="map.panTo(new L.LatLng(39.30116,-76.5781));markers[9].openPopup();$('.property').removeClass('list__item-selected');$('#9').addClass('list__item-selected');">
             <p>2800 ASHLAND AV</p>
             <div class="stat stat--violations">ECB
-              <p>8</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
@@ -317,46 +318,46 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="10" onClick="map.panTo(new L.LatLng(39.344,-76.69377));markers[10].openPopup();$('.property').removeClass('list__item-selected');$('#10').addClass('list__item-selected');">
             <p>4500 N ROGERS AV</p>
             <div class="stat stat--violations">ECB
-              <p>0</p>
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="11" onClick="map.panTo(new L.LatLng(39.3525,-76.59615));markers[11].openPopup();$('.property').removeClass('list__item-selected');$('#11').addClass('list__item-selected');">
             <p>1300 GLENWOOD AV</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="12" onClick="map.panTo(new L.LatLng(39.33769,-76.69188));markers[12].openPopup();$('.property').removeClass('list__item-selected');$('#12').addClass('list__item-selected');">
+            <p>4300 FERNHILL AV</p>
             <div class="stat stat--violations">ECB
               <p>10</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>4300 FERNHILL AV</p>
-            <div class="stat stat--violations">ECB
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="13" onClick="map.panTo(new L.LatLng(39.32156,-76.59128));markers[13].openPopup();$('.property').removeClass('list__item-selected');$('#13').addClass('list__item-selected');">
             <p>2700 THE ALAMEDA</p>
             <div class="stat stat--violations">ECB
-              <p>2</p>
+              <p>5</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>1</p>
@@ -365,25 +366,25 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="14" onClick="map.panTo(new L.LatLng(39.32861,-76.56462));markers[14].openPopup();$('.property').removeClass('list__item-selected');$('#14').addClass('list__item-selected');">
             <p>4200 SHELDON AV</p>
             <div class="stat stat--violations">ECB
-              <p>0</p>
+              <p>5</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="15" onClick="map.panTo(new L.LatLng(39.33134,-76.69574));markers[15].openPopup();$('.property').removeClass('list__item-selected');$('#15').addClass('list__item-selected');">
             <p>4700 GWYNN OAK AV</p>
             <div class="stat stat--violations">ECB
-              <p>3</p>
+              <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
@@ -395,152 +396,56 @@
             <div class="backButton" data-landlord="1"><i class="icon-left-big"></i></div>
             <h3>Name 1 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="16" onClick="map.panTo(new L.LatLng(39.33262,-76.66319));markers[16].openPopup();$('.property').removeClass('list__item-selected');$('#16').addClass('list__item-selected');">
             <p>2800 KEYWORTH AV</p>
             <div class="stat stat--violations">ECB
-              <p>10</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="17" onClick="map.panTo(new L.LatLng(39.31313,-76.60529));markers[17].openPopup();$('.property').removeClass('list__item-selected');$('#17').addClass('list__item-selected');">
             <p>2000 CECIL AV</p>
             <div class="stat stat--violations">ECB
-              <p>0</p>
+              <p>5</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="18" onClick="map.panTo(new L.LatLng(39.30766,-76.65406));markers[18].openPopup();$('.property').removeClass('list__item-selected');$('#18').addClass('list__item-selected');">
             <p>2300 PRESBURY ST</p>
             <div class="stat stat--violations">ECB
-              <p>9</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="19" onClick="map.panTo(new L.LatLng(39.2885,-76.63818));markers[19].openPopup();$('.property').removeClass('list__item-selected');$('#19').addClass('list__item-selected');">
             <p>0 S CAREY ST</p>
             <div class="stat stat--violations">ECB
-              <p>2</p>
+              <p>6</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="20" onClick="map.panTo(new L.LatLng(39.34446,-76.60966));markers[20].openPopup();$('.property').removeClass('list__item-selected');$('#20').addClass('list__item-selected');">
             <p>4600 YORK RD</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>600 HILLVIEW RD</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2400 FREDERICK AV</p>
-            <div class="stat stat--violations">ECB
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2100 GARRISON BLVD</p>
-            <div class="stat stat--violations">ECB
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3400 OLD YORK RD</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>500 DOLPHIN ST</p>
-            <div class="stat stat--violations">ECB
-              <p>4</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1800 EDMONDSON AV</p>
-            <div class="stat stat--violations">ECB
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1500 GORSUCH AV</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1500 SPRUCE ST</p>
             <div class="stat stat--violations">ECB
               <p>7</p>
             </div>
@@ -551,28 +456,124 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1600 E OLIVER ST</p>
+          <li class="list__item property" id="21" onClick="map.panTo(new L.LatLng(39.25127,-76.62291));markers[21].openPopup();$('.property').removeClass('list__item-selected');$('#21').addClass('list__item-selected');">
+            <p>600 HILLVIEW RD</p>
             <div class="stat stat--violations">ECB
-              <p>5</p>
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="22" onClick="map.panTo(new L.LatLng(39.284,-76.65492));markers[22].openPopup();$('.property').removeClass('list__item-selected');$('#22').addClass('list__item-selected');">
+            <p>2400 FREDERICK AV</p>
+            <div class="stat stat--violations">ECB
+              <p>4</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1700 MANOR AV</p>
+          <li class="list__item property" id="23" onClick="map.panTo(new L.LatLng(39.311,-76.67501));markers[23].openPopup();$('.property').removeClass('list__item-selected');$('#23').addClass('list__item-selected');">
+            <p>2100 GARRISON BLVD</p>
             <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
               <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="24" onClick="map.panTo(new L.LatLng(39.32994,-76.60831));markers[24].openPopup();$('.property').removeClass('list__item-selected');$('#24').addClass('list__item-selected');">
+            <p>3400 OLD YORK RD</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="25" onClick="map.panTo(new L.LatLng(39.30093,-76.62791));markers[25].openPopup();$('.property').removeClass('list__item-selected');$('#25').addClass('list__item-selected');">
+            <p>500 DOLPHIN ST</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="26" onClick="map.panTo(new L.LatLng(39.29521,-76.64648));markers[26].openPopup();$('.property').removeClass('list__item-selected');$('#26').addClass('list__item-selected');">
+            <p>1800 EDMONDSON AV</p>
+            <div class="stat stat--violations">ECB
+              <p>4</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="27" onClick="map.panTo(new L.LatLng(39.32279,-76.5971));markers[27].openPopup();$('.property').removeClass('list__item-selected');$('#27').addClass('list__item-selected');">
+            <p>1500 GORSUCH AV</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
               <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="28" onClick="map.panTo(new L.LatLng(39.22985,-76.58989));markers[28].openPopup();$('.property').removeClass('list__item-selected');$('#28').addClass('list__item-selected');">
+            <p>1500 SPRUCE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>9</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="29" onClick="map.panTo(new L.LatLng(39.30744,-76.59632));markers[29].openPopup();$('.property').removeClass('list__item-selected');$('#29').addClass('list__item-selected');">
+            <p>1600 E OLIVER ST</p>
+            <div class="stat stat--violations">ECB
+              <p>8</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="30" onClick="map.panTo(new L.LatLng(39.27381,-76.53302));markers[30].openPopup();$('.property').removeClass('list__item-selected');$('#30').addClass('list__item-selected');">
+            <p>1700 MANOR AV</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
             </div>
           </li>
         </ul>
@@ -581,128 +582,8 @@
             <div class="backButton" data-landlord="2"><i class="icon-left-big"></i></div>
             <h3>Name 2 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="31" onClick="map.panTo(new L.LatLng(39.28659,-76.64878));markers[31].openPopup();$('.property').removeClass('list__item-selected');$('#31').addClass('list__item-selected');">
             <p>2000 BOYD ST</p>
-            <div class="stat stat--violations">ECB
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1800 MC KEAN AV</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1100 MC CULLOH ST</p>
-            <div class="stat stat--violations">ECB
-              <p>10</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>100 E TRENTON ST</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1900 CLIFTON AV</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2800 MAYFIELD AV</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>900 WHITELOCK ST</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>300 N CARROLLTON AV</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>4800 MIDLINE RD</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3800 BOARMAN AV</p>
-            <div class="stat stat--violations">ECB
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>600 N ELLWOOD AV</p>
             <div class="stat stat--violations">ECB
               <p>4</p>
             </div>
@@ -710,52 +591,172 @@
               <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3600 BREHMS LA</p>
-            <div class="stat stat--violations">ECB
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1500 SPRUCE ST</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1200 N CAREY ST</p>
+          <li class="list__item property" id="32" onClick="map.panTo(new L.LatLng(39.30887,-76.64726));markers[32].openPopup();$('.property').removeClass('list__item-selected');$('#32').addClass('list__item-selected');">
+            <p>1800 MC KEAN AV</p>
             <div class="stat stat--violations">ECB
               <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="33" onClick="map.panTo(new L.LatLng(39.30096,-76.62584));markers[33].openPopup();$('.property').removeClass('list__item-selected');$('#33').addClass('list__item-selected');">
+            <p>1100 MC CULLOH ST</p>
+            <div class="stat stat--violations">ECB
+              <p>9</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="34" onClick="map.panTo(new L.LatLng(39.31047,-76.61483));markers[34].openPopup();$('.property').removeClass('list__item-selected');$('#34').addClass('list__item-selected');">
+            <p>100 E TRENTON ST</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
               <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="35" onClick="map.panTo(new L.LatLng(39.31189,-76.64878));markers[35].openPopup();$('.property').removeClass('list__item-selected');$('#35').addClass('list__item-selected');">
+            <p>1900 CLIFTON AV</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="36" onClick="map.panTo(new L.LatLng(39.32332,-76.57443));markers[36].openPopup();$('.property').removeClass('list__item-selected');$('#36').addClass('list__item-selected');">
+            <p>2800 MAYFIELD AV</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="37" onClick="map.panTo(new L.LatLng(39.31445,-76.63269));markers[37].openPopup();$('.property').removeClass('list__item-selected');$('#37').addClass('list__item-selected');">
+            <p>900 WHITELOCK ST</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1500 N SMALLWOOD ST</p>
+          <li class="list__item property" id="38" onClick="map.panTo(new L.LatLng(39.2929,-76.63697));markers[38].openPopup();$('.property').removeClass('list__item-selected');$('#38').addClass('list__item-selected');">
+            <p>300 N CARROLLTON AV</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
+              <p>5</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="39" onClick="map.panTo(new L.LatLng(39.32224,-76.53717));markers[39].openPopup();$('.property').removeClass('list__item-selected');$('#39').addClass('list__item-selected');">
+            <p>4800 MIDLINE RD</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="40" onClick="map.panTo(new L.LatLng(39.33451,-76.67895));markers[40].openPopup();$('.property').removeClass('list__item-selected');$('#40').addClass('list__item-selected');">
+            <p>3800 BOARMAN AV</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="41" onClick="map.panTo(new L.LatLng(39.29844,-76.5738));markers[41].openPopup();$('.property').removeClass('list__item-selected');$('#41').addClass('list__item-selected');">
+            <p>600 N ELLWOOD AV</p>
+            <div class="stat stat--violations">ECB
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="42" onClick="map.panTo(new L.LatLng(39.3211,-76.56525));markers[42].openPopup();$('.property').removeClass('list__item-selected');$('#42').addClass('list__item-selected');">
+            <p>3600 BREHMS LA</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="43" onClick="map.panTo(new L.LatLng(39.22985,-76.58989));markers[43].openPopup();$('.property').removeClass('list__item-selected');$('#43').addClass('list__item-selected');">
+            <p>1500 SPRUCE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="44" onClick="map.panTo(new L.LatLng(39.30264,-76.63895));markers[44].openPopup();$('.property').removeClass('list__item-selected');$('#44').addClass('list__item-selected');">
+            <p>1200 N CAREY ST</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="45" onClick="map.panTo(new L.LatLng(39.3055,-76.65249));markers[45].openPopup();$('.property').removeClass('list__item-selected');$('#45').addClass('list__item-selected');">
+            <p>1500 N SMALLWOOD ST</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
@@ -767,22 +768,34 @@
             <div class="backButton" data-landlord="3"><i class="icon-left-big"></i></div>
             <h3>Name 3 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="46" onClick="map.panTo(new L.LatLng(39.33859,-76.65857));markers[46].openPopup();$('.property').removeClass('list__item-selected');$('#46').addClass('list__item-selected');">
             <p>2400 LOYOLA NORTHWAY</p>
             <div class="stat stat--violations">ECB
-              <p>5</p>
+              <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="47" onClick="map.panTo(new L.LatLng(39.28111,-76.68357));markers[47].openPopup();$('.property').removeClass('list__item-selected');$('#47').addClass('list__item-selected');">
             <p>300 COLLINS AV</p>
             <div class="stat stat--violations">ECB
-              <p>4</p>
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="48" onClick="map.panTo(new L.LatLng(39.31828,-76.57124));markers[48].openPopup();$('.property').removeClass('list__item-selected');$('#48').addClass('list__item-selected');">
+            <p>3300 CLIFTMONT AV</p>
+            <div class="stat stat--violations">ECB
+              <p>1</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
@@ -791,32 +804,56 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>3300 CLIFTMONT AV</p>
-            <div class="stat stat--violations">ECB
-              <p>6</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="49" onClick="map.panTo(new L.LatLng(39.28568,-76.69405));markers[49].openPopup();$('.property').removeClass('list__item-selected');$('#49').addClass('list__item-selected');">
             <p>4600 PEN LUCY RD</p>
             <div class="stat stat--violations">ECB
-              <p>8</p>
+              <p>5</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="50" onClick="map.panTo(new L.LatLng(39.30781,-76.5871));markers[50].openPopup();$('.property').removeClass('list__item-selected');$('#50').addClass('list__item-selected');">
             <p>2200 E OLIVER ST</p>
+            <div class="stat stat--violations">ECB
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="51" onClick="map.panTo(new L.LatLng(39.3233,-76.54267));markers[51].openPopup();$('.property').removeClass('list__item-selected');$('#51').addClass('list__item-selected');">
+            <p>5300 SINCLAIR LA</p>
+            <div class="stat stat--violations">ECB
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="52" onClick="map.panTo(new L.LatLng(39.26229,-76.63174));markers[52].openPopup();$('.property').removeClass('list__item-selected');$('#52').addClass('list__item-selected');">
+            <p>2200 KLOMAN ST</p>
+            <div class="stat stat--violations">ECB
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="53" onClick="map.panTo(new L.LatLng(39.2929,-76.63697));markers[53].openPopup();$('.property').removeClass('list__item-selected');$('#53').addClass('list__item-selected');">
+            <p>300 N CARROLLTON AV</p>
             <div class="stat stat--violations">ECB
               <p>5</p>
             </div>
@@ -827,34 +864,22 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>5300 SINCLAIR LA</p>
+          <li class="list__item property" id="54" onClick="map.panTo(new L.LatLng(39.3133,-76.64122));markers[54].openPopup();$('.property').removeClass('list__item-selected');$('#54').addClass('list__item-selected');">
+            <p>1400 RETREAT ST</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="55" onClick="map.panTo(new L.LatLng(39.30991,-76.64662));markers[55].openPopup();$('.property').removeClass('list__item-selected');$('#55').addClass('list__item-selected');">
+            <p>1800 W NORTH AV</p>
             <div class="stat stat--violations">ECB
               <p>4</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2200 KLOMAN ST</p>
-            <div class="stat stat--violations">ECB
-              <p>10</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>300 N CARROLLTON AV</p>
-            <div class="stat stat--violations">ECB
-              <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
@@ -863,8 +888,32 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1400 RETREAT ST</p>
+          <li class="list__item property" id="56" onClick="map.panTo(new L.LatLng(39.31594,-76.5756));markers[56].openPopup();$('.property').removeClass('list__item-selected');$('#56').addClass('list__item-selected');">
+            <p>3400 ELMORA AV</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="57" onClick="map.panTo(new L.LatLng(39.29692,-76.62653));markers[57].openPopup();$('.property').removeClass('list__item-selected');$('#57').addClass('list__item-selected');">
+            <p>900 PENNSYLVANIA AV</p>
+            <div class="stat stat--violations">ECB
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="58" onClick="map.panTo(new L.LatLng(39.29132,-76.63022));markers[58].openPopup();$('.property').removeClass('list__item-selected');$('#58').addClass('list__item-selected');">
+            <p>200 N FREMONT AV</p>
             <div class="stat stat--violations">ECB
               <p>4</p>
             </div>
@@ -872,11 +921,11 @@
               <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1800 W NORTH AV</p>
+          <li class="list__item property" id="59" onClick="map.panTo(new L.LatLng(39.28913,-76.64246));markers[59].openPopup();$('.property').removeClass('list__item-selected');$('#59').addClass('list__item-selected');">
+            <p>0 N GILMOR ST</p>
             <div class="stat stat--violations">ECB
               <p>8</p>
             </div>
@@ -884,67 +933,19 @@
               <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3400 ELMORA AV</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>900 PENNSYLVANIA AV</p>
-            <div class="stat stat--violations">ECB
-              <p>10</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>200 N FREMONT AV</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>0 N GILMOR ST</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="60" onClick="map.panTo(new L.LatLng(39.29841,-76.5745));markers[60].openPopup();$('.property').removeClass('list__item-selected');$('#60').addClass('list__item-selected');">
             <p>600 N DECKER AV</p>
             <div class="stat stat--violations">ECB
-              <p>10</p>
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
         </ul>
@@ -953,92 +954,44 @@
             <div class="backButton" data-landlord="4"><i class="icon-left-big"></i></div>
             <h3>Name 4 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="61" onClick="map.panTo(new L.LatLng(39.3272,-76.66049));markers[61].openPopup();$('.property').removeClass('list__item-selected');$('#61').addClass('list__item-selected');">
             <p>3500 TOWANDA AV</p>
             <div class="stat stat--violations">ECB
-              <p>3</p>
+              <p>10</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="62" onClick="map.panTo(new L.LatLng(39.28939,-76.67467));markers[62].openPopup();$('.property').removeClass('list__item-selected');$('#62').addClass('list__item-selected');">
             <p>200 N MONASTERY AV</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="63" onClick="map.panTo(new L.LatLng(39.2957,-76.58144));markers[63].openPopup();$('.property').removeClass('list__item-selected');$('#63').addClass('list__item-selected');">
+            <p>400 N ROSE ST</p>
             <div class="stat stat--violations">ECB
               <p>2</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>400 N ROSE ST</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="64" onClick="map.panTo(new L.LatLng(39.31329,-76.60717));markers[64].openPopup();$('.property').removeClass('list__item-selected');$('#64').addClass('list__item-selected');">
             <p>2100 KIRK AV</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1100 N STRICKER ST</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>200 BRIDGEVIEW RD</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2700 ASHLAND AV</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1000 E PATAPSCO AV</p>
             <div class="stat stat--violations">ECB
               <p>10</p>
             </div>
@@ -1046,59 +999,95 @@
               <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="65" onClick="map.panTo(new L.LatLng(39.30129,-76.64172));markers[65].openPopup();$('.property').removeClass('list__item-selected');$('#65').addClass('list__item-selected');">
+            <p>1100 N STRICKER ST</p>
+            <div class="stat stat--violations">ECB
+              <p>5</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>600 MAUDE AV</p>
+          <li class="list__item property" id="66" onClick="map.panTo(new L.LatLng(39.25119,-76.6182));markers[66].openPopup();$('.property').removeClass('list__item-selected');$('#66').addClass('list__item-selected');">
+            <p>200 BRIDGEVIEW RD</p>
             <div class="stat stat--violations">ECB
-              <p>9</p>
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="67" onClick="map.panTo(new L.LatLng(39.3011,-76.5795));markers[67].openPopup();$('.property').removeClass('list__item-selected');$('#67').addClass('list__item-selected');">
+            <p>2700 ASHLAND AV</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="68" onClick="map.panTo(new L.LatLng(39.23428,-76.59563));markers[68].openPopup();$('.property').removeClass('list__item-selected');$('#68').addClass('list__item-selected');">
+            <p>1000 E PATAPSCO AV</p>
+            <div class="stat stat--violations">ECB
+              <p>4</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="69" onClick="map.panTo(new L.LatLng(39.23813,-76.60034));markers[69].openPopup();$('.property').removeClass('list__item-selected');$('#69').addClass('list__item-selected');">
+            <p>600 MAUDE AV</p>
+            <div class="stat stat--violations">ECB
+              <p>5</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="70" onClick="map.panTo(new L.LatLng(39.3215,-76.65571));markers[70].openPopup();$('.property').removeClass('list__item-selected');$('#70').addClass('list__item-selected');">
             <p>2300 ANOKA AV</p>
             <div class="stat stat--violations">ECB
               <p>9</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="71" onClick="map.panTo(new L.LatLng(39.31531,-76.57545));markers[71].openPopup();$('.property').removeClass('list__item-selected');$('#71').addClass('list__item-selected');">
             <p>3400 RAVENWOOD AV</p>
             <div class="stat stat--violations">ECB
               <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="72" onClick="map.panTo(new L.LatLng(39.2877,-76.65818));markers[72].openPopup();$('.property').removeClass('list__item-selected');$('#72').addClass('list__item-selected');">
             <p>0 SHIPLEY ST</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>700 N MONROE ST</p>
             <div class="stat stat--violations">ECB
               <p>9</p>
             </div>
@@ -1109,25 +1098,37 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>400 FORREST ST</p>
+          <li class="list__item property" id="73" onClick="map.panTo(new L.LatLng(39.29675,-76.64744));markers[73].openPopup();$('.property').removeClass('list__item-selected');$('#73').addClass('list__item-selected');">
+            <p>700 N MONROE ST</p>
             <div class="stat stat--violations">ECB
-              <p>5</p>
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>3400 ROUND RD</p>
+          <li class="list__item property" id="74" onClick="map.panTo(new L.LatLng(39.29506,-76.60346));markers[74].openPopup();$('.property').removeClass('list__item-selected');$('#74').addClass('list__item-selected');">
+            <p>400 FORREST ST</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
+              <p>9</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="75" onClick="map.panTo(new L.LatLng(39.24394,-76.6247));markers[75].openPopup();$('.property').removeClass('list__item-selected');$('#75').addClass('list__item-selected');">
+            <p>3400 ROUND RD</p>
+            <div class="stat stat--violations">ECB
+              <p>8</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
@@ -1139,22 +1140,22 @@
             <div class="backButton" data-landlord="5"><i class="icon-left-big"></i></div>
             <h3>Name 5 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="76" onClick="map.panTo(new L.LatLng(39.30263,-76.63348));markers[76].openPopup();$('.property').removeClass('list__item-selected');$('#76').addClass('list__item-selected');">
             <p>1500 PENNSYLVANIA AV</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
+              <p>6</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="77" onClick="map.panTo(new L.LatLng(39.28121,-76.6494));markers[77].openPopup();$('.property').removeClass('list__item-selected');$('#77').addClass('list__item-selected');">
             <p>2100 WILKENS AV</p>
             <div class="stat stat--violations">ECB
-              <p>4</p>
+              <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>1</p>
@@ -1163,142 +1164,118 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="78" onClick="map.panTo(new L.LatLng(39.25289,-76.6522));markers[78].openPopup();$('.property').removeClass('list__item-selected');$('#78').addClass('list__item-selected');">
             <p>2600 W PATAPSCO AV</p>
             <div class="stat stat--violations">ECB
               <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="79" onClick="map.panTo(new L.LatLng(39.32297,-76.67824));markers[79].openPopup();$('.property').removeClass('list__item-selected');$('#79').addClass('list__item-selected');">
             <p>3600 FAIRVIEW AV</p>
             <div class="stat stat--violations">ECB
               <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="80" onClick="map.panTo(new L.LatLng(39.29893,-76.58078));markers[80].openPopup();$('.property').removeClass('list__item-selected');$('#80').addClass('list__item-selected');">
             <p>2600 E MONUMENT ST</p>
             <div class="stat stat--violations">ECB
-              <p>8</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="81" onClick="map.panTo(new L.LatLng(39.2864,-76.67827));markers[81].openPopup();$('.property').removeClass('list__item-selected');$('#81').addClass('list__item-selected');">
             <p>0 S MONASTERY AV</p>
             <div class="stat stat--violations">ECB
               <p>1</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="82" onClick="map.panTo(new L.LatLng(39.29995,-76.58194));markers[82].openPopup();$('.property').removeClass('list__item-selected');$('#82').addClass('list__item-selected');">
             <p>2500 E MADISON ST</p>
             <div class="stat stat--violations">ECB
-              <p>0</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="83" onClick="map.panTo(new L.LatLng(39.30592,-76.64259));markers[83].openPopup();$('.property').removeClass('list__item-selected');$('#83').addClass('list__item-selected');">
             <p>1500 LESLIE ST</p>
             <div class="stat stat--violations">ECB
               <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3700 ST MARGARET ST</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>100 N PAYSON ST</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2700 E COLD SPRING LA</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2500 KEYWORTH AV</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>900 ALLENDALE ST</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
               <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>2400 FREDERICK AV</p>
+          <li class="list__item property" id="84" onClick="map.panTo(new L.LatLng(39.23269,-76.59561));markers[84].openPopup();$('.property').removeClass('list__item-selected');$('#84').addClass('list__item-selected');">
+            <p>3700 ST MARGARET ST</p>
+            <div class="stat stat--violations">ECB
+              <p>9</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="85" onClick="map.panTo(new L.LatLng(39.28978,-76.6488));markers[85].openPopup();$('.property').removeClass('list__item-selected');$('#85').addClass('list__item-selected');">
+            <p>100 N PAYSON ST</p>
             <div class="stat stat--violations">ECB
               <p>1</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="86" onClick="map.panTo(new L.LatLng(39.34517,-76.57282));markers[86].openPopup();$('.property').removeClass('list__item-selected');$('#86').addClass('list__item-selected');">
+            <p>2700 E COLD SPRING LA</p>
+            <div class="stat stat--violations">ECB
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="87" onClick="map.panTo(new L.LatLng(39.33467,-76.6594));markers[87].openPopup();$('.property').removeClass('list__item-selected');$('#87').addClass('list__item-selected');">
+            <p>2500 KEYWORTH AV</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
@@ -1307,10 +1284,34 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="88" onClick="map.panTo(new L.LatLng(39.29817,-76.67857));markers[88].openPopup();$('.property').removeClass('list__item-selected');$('#88').addClass('list__item-selected');">
+            <p>900 ALLENDALE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="89" onClick="map.panTo(new L.LatLng(39.28422,-76.65457));markers[89].openPopup();$('.property').removeClass('list__item-selected');$('#89').addClass('list__item-selected');">
+            <p>2400 FREDERICK AV</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="90" onClick="map.panTo(new L.LatLng(39.35185,-76.68843));markers[90].openPopup();$('.property').removeClass('list__item-selected');$('#90').addClass('list__item-selected');">
             <p>5700 JONQUIL AV</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
+              <p>6</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>1</p>
@@ -1325,178 +1326,178 @@
             <div class="backButton" data-landlord="6"><i class="icon-left-big"></i></div>
             <h3>Name 6 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="91" onClick="map.panTo(new L.LatLng(39.313,-76.66605));markers[91].openPopup();$('.property').removeClass('list__item-selected');$('#91').addClass('list__item-selected');">
             <p>2200 POPLAR GROVE ST</p>
             <div class="stat stat--violations">ECB
-              <p>2</p>
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="92" onClick="map.panTo(new L.LatLng(39.26407,-76.64401));markers[92].openPopup();$('.property').removeClass('list__item-selected');$('#92').addClass('list__item-selected');">
             <p>2400 S PACA ST</p>
             <div class="stat stat--violations">ECB
-              <p>9</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="93" onClick="map.panTo(new L.LatLng(39.3197,-76.59682));markers[93].openPopup();$('.property').removeClass('list__item-selected');$('#93').addClass('list__item-selected');">
             <p>2600 ROBB ST</p>
             <div class="stat stat--violations">ECB
               <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="94" onClick="map.panTo(new L.LatLng(39.29857,-76.5982));markers[94].openPopup();$('.property').removeClass('list__item-selected');$('#94').addClass('list__item-selected');">
             <p>700 MELLO CT</p>
             <div class="stat stat--violations">ECB
               <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2300 WILKENS AV</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
               <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>200 S CALHOUN ST</p>
+          <li class="list__item property" id="95" onClick="map.panTo(new L.LatLng(39.28031,-76.65213));markers[95].openPopup();$('.property').removeClass('list__item-selected');$('#95').addClass('list__item-selected');">
+            <p>2300 WILKENS AV</p>
             <div class="stat stat--violations">ECB
               <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>500 E 26TH ST</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
-          </li>
-          <li class="list__item">
-            <p>600 N PULASKI ST</p>
-            <div class="stat stat--violations">ECB
-              <p>6</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>3100 FERNDALE AV</p>
+          <li class="list__item property" id="96" onClick="map.panTo(new L.LatLng(39.28544,-76.63941));markers[96].openPopup();$('.property').removeClass('list__item-selected');$('#96').addClass('list__item-selected');">
+            <p>200 S CALHOUN ST</p>
             <div class="stat stat--violations">ECB
               <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="97" onClick="map.panTo(new L.LatLng(39.31906,-76.60929));markers[97].openPopup();$('.property').removeClass('list__item-selected');$('#97').addClass('list__item-selected');">
+            <p>500 E 26TH ST</p>
+            <div class="stat stat--violations">ECB
+              <p>9</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="98" onClick="map.panTo(new L.LatLng(39.2955,-76.65051));markers[98].openPopup();$('.property').removeClass('list__item-selected');$('#98').addClass('list__item-selected');">
+            <p>600 N PULASKI ST</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="99" onClick="map.panTo(new L.LatLng(39.32694,-76.70263));markers[99].openPopup();$('.property').removeClass('list__item-selected');$('#99').addClass('list__item-selected');">
+            <p>3100 FERNDALE AV</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="100" onClick="map.panTo(new L.LatLng(39.28779,-76.59505));markers[100].openPopup();$('.property').removeClass('list__item-selected');$('#100').addClass('list__item-selected');">
+            <p>300 HERRING CT</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="101" onClick="map.panTo(new L.LatLng(39.28587,-76.67318));markers[101].openPopup();$('.property').removeClass('list__item-selected');$('#101').addClass('list__item-selected');">
+            <p>3300 W CATON AV</p>
+            <div class="stat stat--violations">ECB
+              <p>5</p>
+            </div>
+            <div class="stat stat--violations">HABC
               <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>300 HERRING CT</p>
-            <div class="stat stat--violations">ECB
-              <p>7</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3300 W CATON AV</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="102" onClick="map.panTo(new L.LatLng(39.31451,-76.61047));markers[102].openPopup();$('.property').removeClass('list__item-selected');$('#102').addClass('list__item-selected');">
             <p>400 E 22ND ST</p>
             <div class="stat stat--violations">ECB
-              <p>6</p>
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="103" onClick="map.panTo(new L.LatLng(39.3145,-76.61117));markers[103].openPopup();$('.property').removeClass('list__item-selected');$('#103').addClass('list__item-selected');">
             <p>2200 BARCLAY ST</p>
             <div class="stat stat--violations">ECB
               <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="104" onClick="map.panTo(new L.LatLng(39.3484,-76.68577));markers[104].openPopup();$('.property').removeClass('list__item-selected');$('#104').addClass('list__item-selected');">
             <p>5400 NELSON AV</p>
             <div class="stat stat--violations">ECB
-              <p>9</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="105" onClick="map.panTo(new L.LatLng(39.35756,-76.70439));markers[105].openPopup();$('.property').removeClass('list__item-selected');$('#105').addClass('list__item-selected');">
             <p>6600 REISTERSTOWN RD</p>
             <div class="stat stat--violations">ECB
-              <p>6</p>
+              <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
@@ -1511,70 +1512,58 @@
             <div class="backButton" data-landlord="7"><i class="icon-left-big"></i></div>
             <h3>Name 7 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="106" onClick="map.panTo(new L.LatLng(39.313,-76.66605));markers[106].openPopup();$('.property').removeClass('list__item-selected');$('#106').addClass('list__item-selected');">
             <p>2200 POPLAR GROVE ST</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
+              <p>6</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="107" onClick="map.panTo(new L.LatLng(39.2982,-76.58016));markers[107].openPopup();$('.property').removeClass('list__item-selected');$('#107').addClass('list__item-selected');">
             <p>600 N GLOVER ST</p>
             <div class="stat stat--violations">ECB
-              <p>3</p>
+              <p>9</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="108" onClick="map.panTo(new L.LatLng(39.31648,-76.57829));markers[108].openPopup();$('.property').removeClass('list__item-selected');$('#108').addClass('list__item-selected');">
             <p>3200 LYNDALE AV</p>
             <div class="stat stat--violations">ECB
-              <p>7</p>
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="109" onClick="map.panTo(new L.LatLng(39.3175,-76.65162));markers[109].openPopup();$('.property').removeClass('list__item-selected');$('#109').addClass('list__item-selected');">
             <p>2600 REISTERSTOWN RD</p>
             <div class="stat stat--violations">ECB
-              <p>0</p>
+              <p>6</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="110" onClick="map.panTo(new L.LatLng(39.27659,-76.54254));markers[110].openPopup();$('.property').removeClass('list__item-selected');$('#110').addClass('list__item-selected');">
             <p>6100 SHIPVIEW WY</p>
             <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1700 MALVERN ST</p>
-            <div class="stat stat--violations">ECB
-              <p>3</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
@@ -1583,34 +1572,106 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1600 Mc Culloh St</p>
+          <li class="list__item property" id="111" onClick="map.panTo(new L.LatLng(39.27346,-76.53402));markers[111].openPopup();$('.property').removeClass('list__item-selected');$('#111').addClass('list__item-selected');">
+            <p>1700 MALVERN ST</p>
             <div class="stat stat--violations">ECB
-              <p>4</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="112" onClick="map.panTo(new L.LatLng(39.30494,-76.63079));markers[112].openPopup();$('.property').removeClass('list__item-selected');$('#112').addClass('list__item-selected');">
+            <p>1600 Mc Culloh St</p>
+            <div class="stat stat--violations">ECB
+              <p>9</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="113" onClick="map.panTo(new L.LatLng(39.3005,-76.59778));markers[113].openPopup();$('.property').removeClass('list__item-selected');$('#113').addClass('list__item-selected');">
             <p>900 N CAROLINE ST</p>
             <div class="stat stat--violations">ECB
               <p>3</p>
             </div>
             <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
               <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="114" onClick="map.panTo(new L.LatLng(39.30828,-76.59014));markers[114].openPopup();$('.property').removeClass('list__item-selected');$('#114').addClass('list__item-selected');">
+            <p>1500 N WASHINGTON ST</p>
+            <div class="stat stat--violations">ECB
+              <p>10</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="115" onClick="map.panTo(new L.LatLng(39.30428,-76.63568));markers[115].openPopup();$('.property').removeClass('list__item-selected');$('#115').addClass('list__item-selected');">
+            <p>600 LAURENS ST</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="116" onClick="map.panTo(new L.LatLng(39.35115,-76.54066));markers[116].openPopup();$('.property').removeClass('list__item-selected');$('#116').addClass('list__item-selected');">
+            <p>6200 FAIRDEL AV</p>
+            <div class="stat stat--violations">ECB
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1500 N WASHINGTON ST</p>
+          <li class="list__item property" id="117" onClick="map.panTo(new L.LatLng(39.2951,-76.64801));markers[117].openPopup();$('.property').removeClass('list__item-selected');$('#117').addClass('list__item-selected');">
+            <p>1900 EDMONDSON AV</p>
             <div class="stat stat--violations">ECB
+              <p>7</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
               <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="118" onClick="map.panTo(new L.LatLng(39.28542,-76.59344));markers[118].openPopup();$('.property').removeClass('list__item-selected');$('#118').addClass('list__item-selected');">
+            <p>500 S BROADWAY</p>
+            <div class="stat stat--violations">ECB
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="119" onClick="map.panTo(new L.LatLng(39.34921,-76.68));markers[119].openPopup();$('.property').removeClass('list__item-selected');$('#119').addClass('list__item-selected');">
+            <p>3500 HAYWARD AV</p>
+            <div class="stat stat--violations">ECB
+              <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
@@ -1619,76 +1680,16 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>600 LAURENS ST</p>
-            <div class="stat stat--violations">ECB
-              <p>7</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>6200 FAIRDEL AV</p>
-            <div class="stat stat--violations">ECB
-              <p>6</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1900 EDMONDSON AV</p>
-            <div class="stat stat--violations">ECB
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>500 S BROADWAY</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3500 HAYWARD AV</p>
-            <div class="stat stat--violations">ECB
-              <p>9</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
+          <li class="list__item property" id="120" onClick="map.panTo(new L.LatLng(39.23413,-76.59682));markers[120].openPopup();$('.property').removeClass('list__item-selected');$('#120').addClass('list__item-selected');">
             <p>3600 ST VICTOR ST</p>
             <div class="stat stat--violations">ECB
               <p>9</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
         </ul>
@@ -1697,34 +1698,46 @@
             <div class="backButton" data-landlord="8"><i class="icon-left-big"></i></div>
             <h3>Name 8 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="121" onClick="map.panTo(new L.LatLng(39.28583,-76.67245));markers[121].openPopup();$('.property').removeClass('list__item-selected');$('#121').addClass('list__item-selected');">
             <p>3300 W BALTIMORE ST</p>
             <div class="stat stat--violations">ECB
-              <p>9</p>
+              <p>5</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="122" onClick="map.panTo(new L.LatLng(39.29089,-76.64256));markers[122].openPopup();$('.property').removeClass('list__item-selected');$('#122').addClass('list__item-selected');">
             <p>200 N GILMOR ST</p>
             <div class="stat stat--violations">ECB
               <p>10</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="123" onClick="map.panTo(new L.LatLng(39.27573,-76.68782));markers[123].openPopup();$('.property').removeClass('list__item-selected');$('#123').addClass('list__item-selected');">
+            <p>600 YALE AV</p>
+            <div class="stat stat--violations">ECB
+              <p>4</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>600 YALE AV</p>
+          <li class="list__item property" id="124" onClick="map.panTo(new L.LatLng(39.30895,-76.61162));markers[124].openPopup();$('.property').removeClass('list__item-selected');$('#124').addClass('list__item-selected');">
+            <p>300 E LANVALE ST</p>
             <div class="stat stat--violations">ECB
-              <p>0</p>
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
@@ -1733,10 +1746,94 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>300 E LANVALE ST</p>
+          <li class="list__item property" id="125" onClick="map.panTo(new L.LatLng(39.31618,-76.59698));markers[125].openPopup();$('.property').removeClass('list__item-selected');$('#125').addClass('list__item-selected');">
+            <p>1300 CLIFTVIEW AV</p>
             <div class="stat stat--violations">ECB
-              <p>10</p>
+              <p>9</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="126" onClick="map.panTo(new L.LatLng(39.28441,-76.6596));markers[126].openPopup();$('.property').removeClass('list__item-selected');$('#126').addClass('list__item-selected');">
+            <p>200 S ELLICOTT DRWY</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="127" onClick="map.panTo(new L.LatLng(39.28895,-76.65692));markers[127].openPopup();$('.property').removeClass('list__item-selected');$('#127').addClass('list__item-selected');">
+            <p>2500 W FAYETTE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="128" onClick="map.panTo(new L.LatLng(39.32965,-76.68245));markers[128].openPopup();$('.property').removeClass('list__item-selected');$('#128').addClass('list__item-selected');">
+            <p>3600 GARRISON BLVD</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="129" onClick="map.panTo(new L.LatLng(39.29949,-76.64012));markers[129].openPopup();$('.property').removeClass('list__item-selected');$('#129').addClass('list__item-selected');">
+            <p>900 N CALHOUN ST</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="130" onClick="map.panTo(new L.LatLng(39.313,-76.66605));markers[130].openPopup();$('.property').removeClass('list__item-selected');$('#130').addClass('list__item-selected');">
+            <p>2200 POPLAR GROVE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="131" onClick="map.panTo(new L.LatLng(39.30536,-76.64481));markers[131].openPopup();$('.property').removeClass('list__item-selected');$('#131').addClass('list__item-selected');">
+            <p>1700 PRESSTMAN ST</p>
+            <div class="stat stat--violations">ECB
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>2</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="132" onClick="map.panTo(new L.LatLng(39.28966,-76.65159));markers[132].openPopup();$('.property').removeClass('list__item-selected');$('#132').addClass('list__item-selected');">
+            <p>100 N SMALLWOOD ST</p>
+            <div class="stat stat--violations">ECB
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>1</p>
@@ -1745,8 +1842,20 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>1300 CLIFTVIEW AV</p>
+          <li class="list__item property" id="133" onClick="map.panTo(new L.LatLng(39.34592,-76.66374));markers[133].openPopup();$('.property').removeClass('list__item-selected');$('#133').addClass('list__item-selected');">
+            <p>2900 ROSALIND AV</p>
+            <div class="stat stat--violations">ECB
+              <p>8</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="134" onClick="map.panTo(new L.LatLng(39.29081,-76.64114));markers[134].openPopup();$('.property').removeClass('list__item-selected');$('#134').addClass('list__item-selected');">
+            <p>200 N STRICKER ST</p>
             <div class="stat stat--violations">ECB
               <p>9</p>
             </div>
@@ -1754,83 +1863,11 @@
               <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>200 S ELLICOTT DRWY</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>2500 W FAYETTE ST</p>
-            <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>3600 GARRISON BLVD</p>
-            <div class="stat stat--violations">ECB
-              <p>4</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>900 N CALHOUN ST</p>
-            <div class="stat stat--violations">ECB
-              <p>7</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2200 POPLAR GROVE ST</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1700 PRESSTMAN ST</p>
-            <div class="stat stat--violations">ECB
-              <p>7</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>100 N SMALLWOOD ST</p>
+          <li class="list__item property" id="135" onClick="map.panTo(new L.LatLng(39.3111,-76.58436));markers[135].openPopup();$('.property').removeClass('list__item-selected');$('#135').addClass('list__item-selected');">
+            <p>2400 E LAFAYETTE AV</p>
             <div class="stat stat--violations">ECB
               <p>10</p>
             </div>
@@ -1839,42 +1876,6 @@
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2900 ROSALIND AV</p>
-            <div class="stat stat--violations">ECB
-              <p>4</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>200 N STRICKER ST</p>
-            <div class="stat stat--violations">ECB
-              <p>6</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2400 E LAFAYETTE AV</p>
-            <div class="stat stat--violations">ECB
-              <p>6</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>1</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
             </div>
           </li>
         </ul>
@@ -1883,23 +1884,23 @@
             <div class="backButton" data-landlord="9"><i class="icon-left-big"></i></div>
             <h3>Name 9 Properties</h3>
           </div>
-          <li class="list__item">
+          <li class="list__item property" id="136" onClick="map.panTo(new L.LatLng(39.31794,-76.56913));markers[136].openPopup();$('.property').removeClass('list__item-selected');$('#136').addClass('list__item-selected');">
             <p>3400 JUNEWAY</p>
             <div class="stat stat--violations">ECB
-              <p>10</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>3</p>
-            </div>
-            <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
-          </li>
-          <li class="list__item">
-            <p>3700 BEEHLER AV</p>
-            <div class="stat stat--violations">ECB
+            <div class="stat stat--violations">HABC
               <p>2</p>
             </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="137" onClick="map.panTo(new L.LatLng(39.34259,-76.6752));markers[137].openPopup();$('.property').removeClass('list__item-selected');$('#137').addClass('list__item-selected');">
+            <p>3700 BEEHLER AV</p>
+            <div class="stat stat--violations">ECB
+              <p>6</p>
+            </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
             </div>
@@ -1907,34 +1908,46 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="138" onClick="map.panTo(new L.LatLng(39.28966,-76.65159));markers[138].openPopup();$('.property').removeClass('list__item-selected');$('#138').addClass('list__item-selected');">
             <p>100 N SMALLWOOD ST</p>
             <div class="stat stat--violations">ECB
-              <p>5</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>1</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="139" onClick="map.panTo(new L.LatLng(39.30433,-76.60756));markers[139].openPopup();$('.property').removeClass('list__item-selected');$('#139').addClass('list__item-selected');">
             <p>700 MURA ST</p>
             <div class="stat stat--violations">ECB
               <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>3</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="140" onClick="map.panTo(new L.LatLng(39.28327,-76.68474));markers[140].openPopup();$('.property').removeClass('list__item-selected');$('#140').addClass('list__item-selected');">
             <p>200 S AUGUSTA AV</p>
             <div class="stat stat--violations">ECB
-              <p>9</p>
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="141" onClick="map.panTo(new L.LatLng(39.29912,-76.64757));markers[141].openPopup();$('.property').removeClass('list__item-selected');$('#141').addClass('list__item-selected');">
+            <p>900 N MONROE ST</p>
+            <div class="stat stat--violations">ECB
+              <p>0</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>0</p>
@@ -1943,20 +1956,32 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>900 N MONROE ST</p>
+          <li class="list__item property" id="142" onClick="map.panTo(new L.LatLng(39.32539,-76.59197));markers[142].openPopup();$('.property').removeClass('list__item-selected');$('#142').addClass('list__item-selected');">
+            <p>3000 TIVOLY AV</p>
+            <div class="stat stat--violations">ECB
+              <p>8</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>3</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>0</p>
+            </div>
+          </li>
+          <li class="list__item property" id="143" onClick="map.panTo(new L.LatLng(39.29857,-76.5982));markers[143].openPopup();$('.property').removeClass('list__item-selected');$('#143').addClass('list__item-selected');">
+            <p>700 MELLO CT</p>
             <div class="stat stat--violations">ECB
               <p>7</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>1</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>3000 TIVOLY AV</p>
+          <li class="list__item property" id="144" onClick="map.panTo(new L.LatLng(39.23614,-76.60165));markers[144].openPopup();$('.property').removeClass('list__item-selected');$('#144').addClass('list__item-selected');">
+            <p>600 E PATAPSCO AV</p>
             <div class="stat stat--violations">ECB
               <p>6</p>
             </div>
@@ -1967,34 +1992,34 @@
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>700 MELLO CT</p>
+          <li class="list__item property" id="145" onClick="map.panTo(new L.LatLng(39.2965,-76.68728));markers[145].openPopup();$('.property').removeClass('list__item-selected');$('#145').addClass('list__item-selected');">
+            <p>800 KEVIN RD</p>
             <div class="stat stat--violations">ECB
-              <p>10</p>
+              <p>0</p>
+            </div>
+            <div class="stat stat--violations">HABC
+              <p>1</p>
+            </div>
+            <div class="stat stat--violations">Lead
+              <p>1</p>
+            </div>
+          </li>
+          <li class="list__item property" id="146" onClick="map.panTo(new L.LatLng(39.33828,-76.60457));markers[146].openPopup();$('.property').removeClass('list__item-selected');$('#146').addClass('list__item-selected');">
+            <p>4000 WILSBY AV</p>
+            <div class="stat stat--violations">ECB
+              <p>1</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>0</p>
+              <p>1</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>600 E PATAPSCO AV</p>
+          <li class="list__item property" id="147" onClick="map.panTo(new L.LatLng(39.28138,-76.63642));markers[147].openPopup();$('.property').removeClass('list__item-selected');$('#147').addClass('list__item-selected');">
+            <p>1300 JAMES ST</p>
             <div class="stat stat--violations">ECB
-              <p>5</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>800 KEVIN RD</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">HABC
               <p>3</p>
@@ -2003,74 +2028,57 @@
               <p>0</p>
             </div>
           </li>
-          <li class="list__item">
-            <p>4000 WILSBY AV</p>
-            <div class="stat stat--violations">ECB
-              <p>8</p>
-            </div>
-            <div class="stat stat--violations">HABC
-              <p>2</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>0</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>1300 JAMES ST</p>
+          <li class="list__item property" id="148" onClick="map.panTo(new L.LatLng(39.32156,-76.59128));markers[148].openPopup();$('.property').removeClass('list__item-selected');$('#148').addClass('list__item-selected');">
+            <p>2700 THE ALAMEDA</p>
             <div class="stat stat--violations">ECB
               <p>4</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>0</p>
+              <p>2</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
-          </li>
-          <li class="list__item">
-            <p>2700 THE ALAMEDA</p>
-            <div class="stat stat--violations">ECB
               <p>0</p>
             </div>
-            <div class="stat stat--violations">HABC
-              <p>0</p>
-            </div>
-            <div class="stat stat--violations">Lead
-              <p>1</p>
-            </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="149" onClick="map.panTo(new L.LatLng(39.29285,-76.62124));markers[149].openPopup();$('.property').removeClass('list__item-selected');$('#149').addClass('list__item-selected');">
             <p>400 W SARATOGA ST</p>
             <div class="stat stat--violations">ECB
-              <p>2</p>
+              <p>8</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>3</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
               <p>1</p>
             </div>
           </li>
-          <li class="list__item">
+          <li class="list__item property" id="150" onClick="map.panTo(new L.LatLng(39.33317,-76.69504));markers[150].openPopup();$('.property').removeClass('list__item-selected');$('#150').addClass('list__item-selected');">
             <p>4700 HADDON AV</p>
             <div class="stat stat--violations">ECB
-              <p>3</p>
+              <p>10</p>
             </div>
             <div class="stat stat--violations">HABC
-              <p>2</p>
+              <p>0</p>
             </div>
             <div class="stat stat--violations">Lead
-              <p>1</p>
+              <p>0</p>
             </div>
           </li>
         </ul>
       </div>
-      <div class="mapWrapper">test</div>
+      <div class="mapWrapper">
+        <div id="map"></div>
+      </div>
     </div>
     <!--Javascript-->
     <script src="https://use.typekit.net/nta3eyd.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      try{Typekit.load({ async: true });}catch(e){}
+      var map;
+      var markers;
+    </script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

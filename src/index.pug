@@ -26,6 +26,7 @@ html(class="no-js", lang="en")
 		meta(name="author", content="The Baltimore Sun") 
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=PT+Serif|Lato")
+		link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css")
 		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
 
 		//Facebook Stuff
@@ -89,7 +90,7 @@ html(class="no-js", lang="en")
 							h3 #{landlord.name} Properties
 						each property, index in properties
 							if property.landlord_num === lIndex
-								li.list__item
+								li.list__item.property(id=property.id onClick="map.panTo(new L.LatLng("+property.lat+","+property.lon+"));markers["+property.id+"].openPopup();$('.property').removeClass('list__item-selected');$('#"+property.id+"').addClass('list__item-selected');")
 									p #{property.address}
 									.stat.stat--violations ECB
 										p #{property.ecb}
@@ -97,7 +98,8 @@ html(class="no-js", lang="en")
 										p #{property.pros}
 									.stat.stat--violations Lead
 										p #{property.lpv}
-			.mapWrapper test
+			.mapWrapper
+				#map
 		
 
 		//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-header above.
@@ -108,7 +110,10 @@ html(class="no-js", lang="en")
 		script(src="https://use.typekit.net/nta3eyd.js")
 		script.
 			try{Typekit.load({ async: true });}catch(e){}
+			var map;
+			var markers;
 		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+		script(src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js")
 		script(src=datalink + "js/app.js")
 		//- script(src=datalink + "js/app.min.js")
 		
