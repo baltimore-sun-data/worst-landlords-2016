@@ -640,7 +640,7 @@ a {
       .list--properties .list__item:nth-child(even) {
         background-color: #29a9a9; }
       .list--properties .list__item-selected {
-        background-color: #f1f1f1 !important; }
+        background-color: #bdbdbd !important; }
   @media (max-width: 768px) {
     .list {
       width: 100%;

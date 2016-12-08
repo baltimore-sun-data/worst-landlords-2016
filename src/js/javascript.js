@@ -21,8 +21,8 @@ var worstLandlords = {
 		});
 	},
 	mapInit: function(){
-		var tileUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-		tileAttribution = '© OpenStreetMap Contributors',
+		var tileUrl = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+		tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 		layer = new L.TileLayer(tileUrl, {maxZoom: 18, attribution: tileAttribution});
 	          
 		map = new L.Map('map').setView([39.282004, -76.607500], 12);
