@@ -28,6 +28,17 @@ var worstLandlords = {
 		map = new L.Map('map').setView([39.282004, -76.607500], 12);
 		map.addLayer(layer);
 
+		var houseIcon = L.icon({
+			iconUrl: 'images/icon3.png',
+			shadowUrl: "images/shadow3.png",
+
+			iconSize: [64, 73], // size of the icon
+			shadowSize: [64, 73], 
+			iconAnchor: [35, 45], // point of the icon which will correspond to marker's location
+			shadowAnchor: [25, 45],  
+			popupAnchor: [-6, -35] // point from which the popup should open relative to the iconAnchor
+		});
+
 		markers = [];
 		
 		for (var num = 0; num < worstLandlords.properties.length; num ++) {
@@ -38,10 +49,117 @@ var worstLandlords = {
 			var prop_id = worstLandlords.properties[num].id;
 
 		      // Add marker & give it an id
-			markers[prop_id] = L.marker([latitude, longitude]).addTo(map);
+			markers[prop_id] = L.marker([latitude, longitude], {icon: houseIcon}).addTo(map);
 			markers[prop_id].bindPopup("<div id=" + prop_id + " class='popup_box_header'><div style='color:black;'>"+address+"</div></div>");
 			markers[prop_id]._icon.id = prop_id;
 		};
+
+
+		$('.leaflet-marker-icon').on('click', function(e) {
+	      // Use the event to find the clicked element
+			var el = $(e.srcElement || e.target),
+				id = el.attr('id');
+				if (id < 16) {
+					$('.list--properties--0').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--0').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 31) {
+					$('.list--properties--1').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--1').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 46) {
+					$('.list--properties--2').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--2').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 61) {
+					$('.list--properties--3').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--3').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 76) {
+					$('.list--properties--4').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--4').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 91) {
+					$('.list--properties--5').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--5').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 106) {
+					$('.list--properties--6').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--6').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 121) {
+					$('.list--properties--7').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--7').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else if (id < 136) {
+					$('.list--properties--8').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--8').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+				else {
+					$('.list--properties--9').scrollTop(0);
+					$('.list--properties').removeClass('center');
+					$('.list--properties--9').addClass('center');
+					$(".property").removeClass("list__item-selected");
+					$("#"+id).addClass("list__item-selected");
+					$('.list').animate({
+						scrollTop: $("#"+id).offset().top - 50
+					}, 1000);
+				}
+		});
 	},
 	landlords: [
 		{"name":"Name 0","numProperties":11,"numUnits":11,"numViolations":1},

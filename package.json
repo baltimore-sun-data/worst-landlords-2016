@@ -21,7 +21,7 @@
     "watch:server": "onchange 'dist/**' -- npm run reload",
     "watch:all": "parallelshell 'npm run serve' 'npm run watch:html' 'npm run watch:css' 'npm run watch:js' 'npm run watch:server'",
     "pugmin": "pug -p src/index.pug < src/index.pug > dist/index.html",
-    "scssmin": "node-sass --output-style compressed -o dist/css src/scss", 
+    "scssmin": "node-sass --output-style compressed -o dist/css src/scss",
     "jsmin": "uglifyjs dist/js/app.js -m -c -o dist/js/app.min.js",
     "build:min": "npm run pugmin && npm run scssmin && npm run jsmin"
   },
@@ -29,7 +29,9 @@
     "type": "git",
     "url": "git+https://github.com/jinkimdata/worst-landlords.git"
   },
-  "keywords": ["baltimore sun"],
+  "keywords": [
+    "baltimore sun"
+  ],
   "author": "",
   "license": "",
   "bugs": {
@@ -37,6 +39,9 @@
   },
   "homepage": "https://github.com/jinkimdata/worst-landlords#readme",
   "devDependencies": {
+    "imagemin-cli": "^3.0.0"
+  },
+  "dependencies": {
+    "imagemin": "^5.2.2"
   }
 }
-
