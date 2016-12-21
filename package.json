@@ -4,7 +4,7 @@
   "description": "worst-landlords",
   "main": "index.js",
   "scripts": {
-    "pug": "pug  -P -p src/index.pug < src/index.pug > dist/index.html",
+    "pug": "pug  -P -p src/index.pug < src/index.pug > index.html",
     "scss": "node-sass -o dist/css src/scss",
     "uglify": "mkdir -p dist/js && uglifyjs src/js/javascript.js -b -o dist/js/app.js",
     "imagemin": "imagemin src/images/* --out-dir=dist/images/",

@@ -22,23 +22,16 @@ var worstLandlords = {
         });
     },
     mapInit: function() {
-        var tileUrl = "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png";
-        tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', 
-        layer = new L.TileLayer(tileUrl, {
-            maxZoom: 18,
-            attribution: tileAttribution
-        });
-        map = new L.Map("map").setView([ 39.282004, -76.6075 ], 12);
-        map.addLayer(layer);
-        var houseIcon = L.icon({
-            iconUrl: "images/icon3.png",
-            shadowUrl: "images/shadow3.png",
-            iconSize: [ 64, 73 ],
-            shadowSize: [ 64, 73 ],
-            iconAnchor: [ 35, 45 ],
-            shadowAnchor: [ 25, 45 ],
-            popupAnchor: [ -6, -35 ]
-        });
+        var landlord0 = new L.LayerGroup();
+        var landlord1 = new L.LayerGroup();
+        var landlord2 = new L.LayerGroup();
+        var landlord3 = new L.LayerGroup();
+        var landlord4 = new L.LayerGroup();
+        var landlord5 = new L.LayerGroup();
+        var landlord6 = new L.LayerGroup();
+        var landlord7 = new L.LayerGroup();
+        var landlord8 = new L.LayerGroup();
+        var landlord9 = new L.LayerGroup();
         markers = [];
         for (var num = 0; num < worstLandlords.properties.length; num++) {
             var latitude = worstLandlords.properties[num].lat;
@@ -46,105 +39,200 @@ var worstLandlords = {
             var address = worstLandlords.properties[num].address;
             var landlord_id = worstLandlords.properties[num].landlord_num;
             var prop_id = worstLandlords.properties[num].id;
-            markers[prop_id] = L.marker([ latitude, longitude ], {
-                icon: houseIcon
-            }).addTo(map);
-            markers[prop_id].bindPopup("<div id=" + prop_id + " class='popup_box_header'><div style='color:black;'>" + address + "</div></div>");
-            markers[prop_id]._icon.id = prop_id;
-        }
-        $(".leaflet-marker-icon").on("click", function(e) {
-            var el = $(e.srcElement || e.target), id = el.attr("id");
-            if (id < 16) {
-                $(".list--properties--0").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--0").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 31) {
-                $(".list--properties--1").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--1").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 46) {
-                $(".list--properties--2").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--2").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 61) {
-                $(".list--properties--3").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--3").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 76) {
-                $(".list--properties--4").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--4").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 91) {
-                $(".list--properties--5").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--5").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 106) {
-                $(".list--properties--6").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--6").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 121) {
-                $(".list--properties--7").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--7").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else if (id < 136) {
-                $(".list--properties--8").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--8").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
-            } else {
-                $(".list--properties--9").scrollTop(0);
-                $(".list--properties").removeClass("center");
-                $(".list--properties--9").addClass("center");
-                $(".property").removeClass("list__item-selected");
-                $("#" + id).addClass("list__item-selected");
-                $(".list").animate({
-                    scrollTop: $("#" + id).offset().top - 50
-                }, 1e3);
+            if (landlord_id == 0) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord0);
             }
+            if (landlord_id == 1) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord1);
+            }
+            if (landlord_id == 2) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord2);
+            }
+            if (landlord_id == 3) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord3);
+            }
+            if (landlord_id == 4) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord4);
+            }
+            if (landlord_id == 5) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord5);
+            }
+            if (landlord_id == 6) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord6);
+            }
+            if (landlord_id == 7) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord7);
+            }
+            if (landlord_id == 8) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord8);
+            }
+            if (landlord_id == 9) {
+                markers[prop_id] = L.marker([ latitude, longitude ]).addTo(landlord9);
+            }
+            markers[prop_id].bindPopup("<div id=" + prop_id + " class='popup_box_header'><div style='color:black;'>" + address + "</div></div>");
+            markers[prop_id].id = prop_id;
+        }
+        var tileUrl = "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png";
+        tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', 
+        layer = new L.TileLayer(tileUrl, {
+            maxZoom: 18,
+            attribution: tileAttribution
+        });
+        map = new L.Map("map", {
+            layers: [ landlord0, landlord1, landlord2, landlord3, landlord4, landlord5, landlord6, landlord7, landlord8, landlord9 ]
+        }).setView([ 39.282004, -76.6075 ], 12);
+        map.addLayer(layer);
+        var overlayMaps = {
+            "Name 0": landlord0,
+            "Name 1": landlord1,
+            "Name 2": landlord2,
+            "Name 3": landlord3,
+            "Name 4": landlord4,
+            "Name 5": landlord5,
+            "Name 6": landlord6,
+            "Name 7": landlord7,
+            "Name 8": landlord8,
+            "Name 9": landlord9
+        };
+        L.control.layers(overlayMaps).addTo(map);
+        $("#landlord0").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord0);
+        });
+        $("#landlord1").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord1);
+        });
+        $("#landlord2").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord2);
+        });
+        $("#landlord3").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord3);
+        });
+        $("#landlord4").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord4);
+        });
+        $("#landlord5").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord5);
+        });
+        $("#landlord6").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord6);
+        });
+        $("#landlord7").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord7);
+        });
+        $("#landlord8").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord8);
+        });
+        $("#landlord9").click(function(event) {
+            event.preventDefault();
+            map.removeLayer(landlord0);
+            map.removeLayer(landlord1);
+            map.removeLayer(landlord2);
+            map.removeLayer(landlord3);
+            map.removeLayer(landlord4);
+            map.removeLayer(landlord5);
+            map.removeLayer(landlord6);
+            map.removeLayer(landlord7);
+            map.removeLayer(landlord8);
+            map.removeLayer(landlord9);
+            map.addLayer(landlord9);
         });
     },
     landlords: [ {

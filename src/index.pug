@@ -26,8 +26,8 @@ html(class="no-js", lang="en")
 		meta(name="author", content="The Baltimore Sun") 
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=PT+Serif|Lato")
-		link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css")
-		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
+		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css")
+		link(rel="stylesheet", type="text/css", href=datalink + "dist/css/style.css")
 
 		//Facebook Stuff
 		meta(property="og:title", content="")
@@ -66,7 +66,7 @@ html(class="no-js", lang="en")
 			.listWrapper
 				ul.list.list--landlords
 					each landlord, index in landlords
-						li.list__item(data-landlord=index, class="list__item--" + index)
+						li.list__item(data-landlord=index, id="landlord"+index, class="list__item--" + index)
 							.landlordName
 								h3 #{landlord.name}
 								i.icon-right-big
@@ -113,7 +113,7 @@ html(class="no-js", lang="en")
 			var map;
 			var markers;
 		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
-		script(src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js")
-		script(src=datalink + "js/app.js")
+		script(src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js")
+		script(src=datalink + "dist/js/app.js")
 		//- script(src=datalink + "js/app.min.js")
 		
