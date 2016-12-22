@@ -1,0 +1,986 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"fo",
+				"fontello.css"
+			],
+			[
+				"cr",
+				"cursor"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"bootsrap",
+				"bootstrap.css"
+			],
+			[
+				"orig",
+				"originalData"
+			],
+			[
+				"race",
+				"racetype"
+			],
+			[
+				"ug",
+				"uglify-js"
+			],
+			[
+				"svg",
+				"svg-sprite-generator"
+			],
+			[
+				"cm",
+				"compileSass"
+			],
+			[
+				"compil",
+				"compileJade"
+			],
+			[
+				"comp",
+				"compileSass"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/index.pug",
+			"settings":
+			{
+				"buffer_size": 4344,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nMaterial Theme\n--------------\n\n  #### Material Theme for Sublime Text 3\n  \n  ## Version 4.0.3\n  \n  📣 **BUGFIXES**:\n    * Fix accent-teal missing assets ([d959813](https://github.com/equinusocio/material-theme/commit/d959813))\n    * Improve Theme Info dialog.\n  \n  \n  ** Check the official changelog ( https://github.com/equinusocio/material-theme/blob/master/CHANGELOG.md  ) **\n",
+			"settings":
+			{
+				"buffer_size": 429,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/includes/data.pug",
+			"settings":
+			{
+				"buffer_size": 16260,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dist/index.html",
+			"settings":
+			{
+				"buffer_size": 66296,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1828,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 81,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/javascript.js",
+			"settings":
+			{
+				"buffer_size": 1774,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/style.scss",
+			"settings":
+			{
+				"buffer_size": 4212,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 442,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/fontello.css",
+			"settings":
+			{
+				"buffer_size": 2543,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/_mixins.scss",
+			"settings":
+			{
+				"buffer_size": 897,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 107.0,
+		"last_filter": "git show",
+		"selected_items":
+		[
+			[
+				"git show",
+				"Git: Show Current File"
+			],
+			[
+				"git ignore",
+				"Git: Update Project Ignored Files"
+			],
+			[
+				"pug",
+				"Build With: Pug"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package control ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Enable Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords"
+	],
+	"file_history":
+	[
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/worst-landlords.sublime-project",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/scss/css/fontello.css",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/includes/data",
+		"/Applications/MAMP/bin/phpMyAdmin/config.inc.php",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/voter-guide-2016-live/results/baltimore-results.html",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-2/results-w-winner.js",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-2/national-results.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/voter-guide-2016-live/scripts/results.js",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/voter-guide-2016-live/scripts/results-w-winner-pres.js",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/voter-guide-2016-live/scripts/results-w-winner.js",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/scss/style-ie.scss",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/images/phone.svg",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/includes/load-doc.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/includes/doc-test.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/dist/index.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/scss/bootstrap/bootstrap.css",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/dist/css/style.css",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/scss/css/bootstrap.css",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/scss/fontello/css/fontello.css",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/korryn-gaines/src/scss/_fonts.scss",
+		"/Users/jikim/Documents/bsun/online/org/2016/<04/oldMac/tased/index.jade",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-2/index 2.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/all-tests/src/includes/ad-for-body.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/middle/src/includes/tophat.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/high/dist/index.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/high/index.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/mid/index.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/elem/index.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/js/javascript.js",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/includes/data.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/includes/dataHigh.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/includes/dataMid.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/src/includes/dataElem.pug",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/dist/index.html",
+		"/Users/jikim/Documents/bsun/online/org/2016/10/parcc-2016-ranks/.gitignore",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-2/index.html",
+		"/Users/jikim/elex/elexNatl.sh",
+		"/Users/jikim/.bash_profile",
+		"/Users/jikim/generalResults.json",
+		"/Users/jikim/results.json",
+		"/Users/jikim/elex/cron.txt",
+		"/Users/jikim/elex/emergency.py",
+		"/Users/jikim/elex/elex.pyc",
+		"/Users/jikim/1461599581results.json",
+		"/Users/jikim/elex/elex-national.py",
+		"/Users/jikim/elex/elex-national.sh",
+		"/Users/jikim/1461599401results.json",
+		"/Users/jikim/1461264181toParse.json",
+		"/Users/jikim/elex/results.json",
+		"/Users/jikim/jsonPrecincts.json",
+		"/Users/jikim/elex/jsonPrecincts.json",
+		"/Users/jikim/1461002701toParse.json",
+		"/Users/jikim/elex/1460748924toParse.json",
+		"/Users/jikim/Documents/bsun/online/org/2016/04/races.json",
+		"/Users/jikim/elex/national.json",
+		"/Users/jikim/elex/toParse.json",
+		"/Users/jikim/elex/races.json",
+		"/Users/jikim/elex/reporting-units.json",
+		"/Users/jikim/elex/jsonM.json",
+		"/Users/jikim/elex/state.json",
+		"/Users/jikim/elex/jsonS.json",
+		"/Users/jikim/elex/jsonP.json",
+		"/Users/jikim/elex/jsonN.json",
+		"/Users/jikim/elex/jsonL.json",
+		"/Users/jikim/elex/jsonH.json",
+		"/Users/jikim/elex/elex.py",
+		"/Users/jikim/elex/json0.json",
+		"/Users/jikim/Desktop/output.json",
+		"/Users/jikim/elex/elections.json",
+		"/Users/jikim/elex/ballot-issues.json",
+		"/Users/jikim/elex/output.json",
+		"/Users/jikim/.ssh/id_rsa",
+		"/Users/jikim/Documents/bsun/online/org/PASS-FOR-JIN-TEMP.html",
+		"/Users/jikim/elex/results.csv",
+		"/Users/jikim/elex/elex.sh",
+		"/Users/jikim/elex.sh",
+		"/Users/jikim/elex/cron",
+		"/Users/jikim/elex.py",
+		"/Users/jikim/sample.json",
+		"/Users/jikim/bin/cron",
+		"/Users/jikim/bin/test",
+		"/Users/jikim/Desktop/get-ap-election-data/AP-Election-Data-Instructions",
+		"/Users/jikim/Desktop/elex.py",
+		"/usr/local/bin/elex",
+		"/Users/jikim/bin/results.json",
+		"/Users/jikim/bin/elex.py",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/results.json",
+		"/Users/jikim/elex.pyc",
+		"/bin/bash",
+		"/Users/jikim/Documents/bsun/online/elections2016/elex.py",
+		"/Users/jikim/Documents/bsun/online/elex.py",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/ElectionTables.sql",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/Utils.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/ftp_class.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/Database.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/config.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/getResults.php",
+		"/Users/jikim/Documents/bsun/online/elections2016/AP-Election-Data-Instructions",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/AP-Election-Data-Instructions",
+		"/Users/jikim/Documents/bsun/online/elections2016/config/config.php",
+		"/Users/jikim/Documents/bsun/online/elections2016/classes/ftp_class.php",
+		"/Users/jikim/Documents/bsun/online/elections2016/classes/Database.php",
+		"/Users/jikim/Documents/bsun/online/elections2016/package.json",
+		"/Users/jikim/Desktop/get-ap-election-data/getResults.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/sharecode.txt",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/ethel_legacy.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/class.controller.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/default 2.css",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/default.css",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/basic-slider-config-fields 2.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/configdb 2.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/index 2.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/config 2.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/class.model.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/class.view.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/configdb.php",
+		"/private/var/folders/by/2wnsp1w10wg42rhs8k_sjmk5grbkq6/T/fz3temp-1/basic-slider-config-fields.php",
+		"/Users/jikim/Documents/bsun/online/template/src/index.jade",
+		"/Users/jikim/Documents/bsun/online/template/src/js/javascript.js",
+		"/Users/jikim/Documents/bsun/online/template/package.json",
+		"/Users/jikim/Documents/bsun/online/template/src/sass/style.sass",
+		"/Users/jikim/Documents/bsun/online/template/src/sass/_fonts.scss",
+		"/Users/jikim/Documents/bsun/online/final-test/src/index.jade",
+		"/Users/jikim/Documents/bsun/online/final-test/package.json",
+		"/Users/jikim/Documents/bsun/online/final-test/dist/css/style.css",
+		"/Users/jikim/Documents/bsun/online/final-test/src/sass/style.sass",
+		"/Users/jikim/Documents/bsun/online/final-test/src/sass/_fonts.scss",
+		"/Users/jikim/Documents/bsun/online/--web-project-jade/src/index.jade"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"teal",
+			"lightteal",
+			"button.button",
+			"button",
+			"../font",
+			"lato",
+			"px",
+			"em",
+			"lato",
+			"montserrat",
+			"gray",
+			"grat",
+			"gray-",
+			"../font/",
+			"30vh",
+			"dataproject",
+			"9999",
+			"USERNAME",
+			"n++",
+			"var n",
+			"landlordsList",
+			"| ",
+			"PROJ-NAME-HERE",
+			"#mayor-dem",
+			"The 6-hour Police Standoff of Korryn Gaines",
+			"‘",
+			"’",
+			"”",
+			"“",
+			"slidepos",
+			"buttonsWrapper",
+			"media-ipad",
+			"@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) ",
+			"h3",
+			"\n\t\t\t",
+			"h3",
+			".png",
+			"hour Standoff",
+			"currMedia",
+			"stopvid",
+			"$(this)",
+			"\t\t",
+			"\t\t\t\t\t",
+			"stopVids()",
+			"GRAPHIC CONTENT",
+			"mediaList",
+			"mediaButton--main.active",
+			"Duration",
+			"glyphicon-picture",
+			"mediaButton--main",
+			"iframe",
+			"“",
+			"”",
+			" — ",
+			"Duration: ",
+			"duration",
+			"police standoff and ",
+			"share",
+			"face",
+			"mediaOverlay--5",
+			"https://placeholdit.imgix.net/~text?txtsize=144&bg=82baf3&txt=1920%C3%971080&w=1920&h=1080",
+			" 11:11 p.m.: Video of police entering the apartment for the first time",
+			" - ",
+			" – ",
+			".avWrap\n",
+			".media__item.media__item--av.media__item--4.media__item--4--1\n\t\t\t\t\t\t\t\t.avWrap\n",
+			"heighT: 5",
+			"5em",
+			"mediaButton--lightbox",
+			".video",
+			".chatter",
+			"data-toslide",
+			".button.button--",
+			"mediaOverlay",
+			"mediaSwapper",
+			"i.glyphicon.glyphicon-folder-open",
+			"mediaButton--main(data-slide='1' data-media='3')\n\t\t\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\t\t\tp Relevant documents",
+			"mediaButton",
+			"currItem",
+			"currSlide",
+			"media__item.media__item",
+			"data-media",
+			"media__item.media__item--av.",
+			"overflow:",
+			"overflow",
+			"slide.slide--",
+			"mediaWrapper",
+			"media__item.media__item--image.media__item",
+			"img(src=\"https://placeholdit.imgix.net/~text?txtsize=144&bg=82baf3&txt=1920%C3%971080&w=1920&h=1080\")\n\t\t\t\t\t\t\tp.caption",
+			"media.media__ite",
+			".media\n\t\t\t\t\t\t\timg",
+			"\n\t\t\t\t\t\t\timg(src=\"https://placeholdit.imgix.net/~text?txtsize=144&bg=82baf3&txt=1920%C3%971080&w=1920&h=1080\")\n\t\t\t\t\t\t\tp.caption",
+			"img(src=\"https://placeholdit.imgix.net/~text?txtsize=144&bg=82baf3&txt=1920%C3%971080&w=1920&h=1080\")\n\t\t\t\t\t\t\tp.caption 1 Lorem ipsum dolor sit amet",
+			"paddi",
+			".slide.slide--content",
+			"h3 ",
+			"h4 Multimedia\n\t\t\t\t\tul\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\tp 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\tp Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\tp Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\tp Relevant documents",
+			"ul\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\tp 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\tp Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\tp Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\tp Relevant documents",
+			"h4 Multimedia\n\t\t\t\t\tul\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\tp 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\tp Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\tp Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\tp Relevant documents",
+			".button.button--u",
+			"container {\n// \tposition: absolute;\n// \ttop: 0;\n// \tleft: 0;\n// \twidth: 100%;\n// \theight: 100%;\n// \toverflow: hidden;\n// }",
+			"\n\theight: 100%;\n\twidth: 100%;\n\toverflow: hidden;\n",
+			"\n\theight: 100%;\n\twidth: 100%;\n\toverflow: hidden;",
+			"li\n\t\t\t\t\t\t.iconWrapper",
+			"slide--content",
+			"%;\n",
+			"glyphiconWrapper",
+			"li\n\t\t\t\t\t\ti.glyphicon.",
+			"p\n\t\t\t\t\t\t\t|",
+			"p\n\t\t\t\t\t\t\ti.glyphicon",
+			"li \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\t| 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\t| Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\t| Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\t| Relevant documents",
+			"li \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\t|",
+			"\n\t\t\t\t\ta(href=\"\")",
+			"a(href=\"\")",
+			"\t\ta(href=\"\")",
+			"a(href=\"\")\n\t\t\t\t\t\tli",
+			"a(href=\"\")\n\t\t\t\t\t\tli ",
+			"a(href=\"\")",
+			"a(href=\"\")\n\t\t\t\t\t\tli ",
+			"a(href=\"\")",
+			"ul\n\t\t\t\t\tli Media item",
+			"li Media item",
+			"img(src=\"\")",
+			"| consectetur adipiscing elit. Cras",
+			"P.M.",
+			"px",
+			"---",
+			"slide--content."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"precinctsReporting"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/index.pug",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4049,
+								4049
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pug/Syntaxes/Pug.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 904.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								429,
+								429
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/includes/data.pug",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Pug/Syntaxes/Pug.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "dist/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9727.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 81,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "src/js/javascript.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1774,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/scss/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3267.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/scss/_variables.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 442,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/scss/fontello.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 88.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/scss/_mixins.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 897,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "worst-landlords.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 271.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

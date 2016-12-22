@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"src/.DS_Store",
+				".DS_Store",
+				"src/scss/.DS_Store",
+				".gitignore"
+			],
+			"folder_exclude_patterns":
+			[
+				"mocks"
+			],
+			"path": "."
+		}
+	]
+}

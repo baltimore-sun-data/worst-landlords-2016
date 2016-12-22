@@ -21,16 +21,18 @@ var worstLandlords = {
 		});
 	},
 	mapInit: function(){
-		var landlord0 = new L.LayerGroup();
-		var landlord1 = new L.LayerGroup();
-		var landlord2 = new L.LayerGroup();
-		var landlord3 = new L.LayerGroup();
-		var landlord4 = new L.LayerGroup();
-		var landlord5 = new L.LayerGroup();
-		var landlord6 = new L.LayerGroup();
-		var landlord7 = new L.LayerGroup();
-		var landlord8 = new L.LayerGroup();
-		var landlord9 = new L.LayerGroup();
+		var landlords = [
+			landlord0 = new L.LayerGroup(),
+			landlord1 = new L.LayerGroup(),
+			landlord2 = new L.LayerGroup(),
+			landlord3 = new L.LayerGroup(),
+			landlord4 = new L.LayerGroup(),
+			landlord5 = new L.LayerGroup(),
+			landlord6 = new L.LayerGroup(),
+			landlord7 = new L.LayerGroup(),
+			landlord8 = new L.LayerGroup(),
+			landlord9 = new L.LayerGroup(),
+		];
 
 		markers = [];
 		
@@ -42,37 +44,8 @@ var worstLandlords = {
 			var prop_id = worstLandlords.properties[num].id;
 
 		    // Add marker & give it an id
-
-			if (landlord_id == 0) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord0);
-			}
-			if (landlord_id == 1) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord1);
-			}
-			if (landlord_id == 2) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord2);
-			}
-			if (landlord_id == 3) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord3);
-			}
-			if (landlord_id == 4) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord4);
-			}
-			if (landlord_id == 5) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord5);
-			}
-			if (landlord_id == 6) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord6);
-			}
-			if (landlord_id == 7) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord7);
-			}
-			if (landlord_id == 8) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord8);
-			}
-			if (landlord_id == 9) {
-				markers[prop_id] = L.marker([latitude, longitude]).addTo(landlord9);
-			}
+			markers[prop_id] = L.marker([latitude, longitude]).addTo(landlords[landlord_id]);
+			
 			markers[prop_id].bindPopup("<div id="+prop_id+" class='popup_box_header'><div style='color:black;'>"+address+"</div></div>");
 			//markers[prop_id].marker_id = landlord0.getLayerId(markers[prop_id]);
 			markers[prop_id].id = prop_id;
@@ -82,7 +55,7 @@ var worstLandlords = {
 		tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 		layer = new L.TileLayer(tileUrl, {maxZoom: 18, attribution: tileAttribution});
 	          
-		map = new L.Map('map', {layers: [landlord0, landlord1, landlord2, landlord3, landlord4, landlord5, landlord6, landlord7, landlord8, landlord9]}).setView([39.282004, -76.607500], 12);
+		map = new L.Map('map', {layers: landlords}).setView([39.282004, -76.607500], 12);
 		map.addLayer(layer);
 
 		var overlayMaps = {
@@ -100,144 +73,19 @@ var worstLandlords = {
 
 		L.control.layers(overlayMaps).addTo(map);
 
-		$("#landlord0").click(function(event) {
-		    event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord0);        
+		$('.landlord').on('click', function() {
+			for(var i = 0;i<landlords.length;i++) {
+				map.removeLayer(landlords[i]);
+				map.addLayer(landlords[$(this).data('landlord')]);
+			}
 		});
-		$("#landlord1").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord1);        
-		});
-		$("#landlord2").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord2);        
-		});
-		$("#landlord3").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord3);        
-		});
-		$("#landlord4").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord4);        
-		});
-		$("#landlord5").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord5);        
-		});
-		$("#landlord6").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord6);        
-		});
-		$("#landlord7").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord7);        
-		});
-		$("#landlord8").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord8);        
-		});
-		$("#landlord9").click(function(event) {
-			event.preventDefault();
-			map.removeLayer(landlord0);
-			map.removeLayer(landlord1);
-			map.removeLayer(landlord2);
-			map.removeLayer(landlord3);
-			map.removeLayer(landlord4);
-			map.removeLayer(landlord5);
-			map.removeLayer(landlord6);
-			map.removeLayer(landlord7);
-			map.removeLayer(landlord8);
-			map.removeLayer(landlord9);
-			map.addLayer(landlord9);        
+
+		$('.property').on('click', function() {
+			var propID = $(this).data('id');
+			map.panTo(new L.LatLng(worstLandlords.properties[propID].lat,worstLandlords.properties[propID].lon));
+			markers[propID + 1].openPopup();
+			$('.property').removeClass('list__item-selected');
+			$(this).addClass('list__item-selected');
 		});
 	},
 
@@ -404,7 +252,7 @@ var worstLandlords = {
 		{"address":"2700 THE ALAMEDA","landlord_num":9,"ecb":4,"pros":2,"lpv":0,"total":6,"lat":39.32156,"lon":-76.59128,"id":148},
 		{"address":"400 W SARATOGA ST","landlord_num":9,"ecb":8,"pros":0,"lpv":1,"total":9,"lat":39.29285,"lon":-76.62124,"id":149},
 		{"address":"4700 HADDON AV","landlord_num":9,"ecb":10,"pros":0,"lpv":0,"total":10,"lat":39.33317,"lon":-76.69504,"id":150}
-		],
+	],
 	onClick: function(){
 		$('.buttonIcon--splash').on('click', function() {
 			$('.splashWrapper').css('top','-100%');
