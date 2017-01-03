@@ -577,15 +577,16 @@ a {
   @media (max-width: 768px) {
     .listWrapper {
       width: 100%;
-      bottom: 50px; } }
+      bottom: 0; } }
 
 .list {
   position: absolute;
   width: 320px;
   height: calc(100vh - 50px);
   margin: 0;
-  padding: 0;
+  padding: .5em 0 0 0;
   border-top: 2px solid white;
+  background-color: #e9e9e9;
   overflow-y: scroll;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -604,28 +605,33 @@ a {
   .list.center {
     left: 0; }
   .list__item {
-    width: 100%;
+    width: 97%;
+    margin: 1em 0;
     padding: 1em .5em;
-    background-color: #a8a8a8;
     list-style: none;
+    background-color: #a8a8a8;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    -webkit-transition: background-color 0.5s ease;
-    -moz-transition: background-color 0.5s ease;
-    transition: background-color 0.5s ease; }
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
     .list__item:nth-child(odd) {
       background-color: #8f8f8f; }
     .list__item.active {
-      background-color: #27a3a3; }
+      background-color: #27a3a3;
+      box-shadow: 6px 6px rgba(0, 0, 0, 0.5); }
     .list__item:hover {
-      background-color: #27a3a3; }
+      background-color: #27a3a3;
+      box-shadow: 6px 6px rgba(0, 0, 0, 0.5); }
   .list--landlords {
     left: 0;
     border-right: 1px solid right; }
     .list--landlords .subhead {
-      text-transform: uppercase;
+      width: 97%;
       padding: .5em;
+      text-transform: uppercase;
       background-color: #27a3a3;
-      border-bottom: 2px solid white; }
+      box-shadow: 6px 6px rgba(0, 0, 0, 0.5); }
       .list--landlords .subhead h2 {
         font-size: 2em;
         margin: 0; }
@@ -639,13 +645,16 @@ a {
   .list--properties {
     width: 320px;
     left: 100%;
-    background-color: #27a3a3; }
+    background-color: #e9e9e9; }
+    .list--properties .landlordNameWrap {
+      width: 97%;
+      box-shadow: 6px 6px rgba(0, 0, 0, 0.5); }
     .list--properties .landlordName {
       width: 100%;
       height: 50px;
       padding: 1em .5em;
       color: white;
-      background-color: #155757; }
+      background-color: #27a3a3; }
       .list--properties .landlordName h3 {
         float: left;
         margin-left: 2.5em; }
@@ -655,14 +664,12 @@ a {
         float: left;
         cursor: pointer; }
     .list--properties .violationTotals {
-      text-align: center; }
+      text-align: center;
+      background-color: #27a3a3; }
       .list--properties .violationTotals .stat {
         display: block;
         font-size: 1.2em;
         margin: 0 0 .2em 0; }
-        .list--properties .violationTotals .stat:last-child {
-          margin: 0;
-          border-bottom: 2px solid white; }
         .list--properties .violationTotals .stat p {
           display: inline-block; }
         .list--properties .violationTotals .stat i {
@@ -671,17 +678,27 @@ a {
     .list--properties p {
       font-weight: 700; }
     .list--properties .list__item {
-      background-color: #1f8080; }
+      width: 97%;
+      margin: 1em 0;
+      text-align: right;
+      background-color: #1f8080;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      transition: all 0.5s ease; }
       .list--properties .list__item:nth-child(even) {
         background-color: #29a9a9; }
-      .list--properties .list__item--selected {
-        background-color: #8f8f8f; }
-        .list--properties .list__item--selected:nth-child(even) {
+      .list--properties .list__item:hover, .list--properties .list__item--selected {
+        background-color: #8f8f8f;
+        box-shadow: 6px 6px rgba(0, 0, 0, 0.5); }
+        .list--properties .list__item:hover:nth-child(even), .list--properties .list__item--selected:nth-child(even) {
           background-color: #8f8f8f; }
+      .list--properties .list__item .address {
+        text-align: left; }
   @media (max-width: 768px) {
     .list {
       width: 100%;
-      height: 40vh;
+      height: 70vh;
       bottom: 0; } }
 
 .stat {
@@ -694,12 +711,6 @@ a {
   .stat--violations {
     background: rgba(0, 0, 0, 0.5);
     color: white; }
-  .stat--lhs {
-    float: right;
-    margin: 0;
-    padding: .1em;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5); }
 
 .mapWrapper {
   position: relative;
@@ -718,13 +729,13 @@ a {
   z-index: 2; }
   @media (max-width: 768px) {
     #map {
-      height: 60vh; } }
+      height: 30vh; } }
 
 .socialButtons {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1.6em;
+  font-size: 1.4em;
   padding: .4em;
   border-radius: 0 0 0 1em;
   background: rgba(39, 163, 163, 0.7);
@@ -735,7 +746,7 @@ a {
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .socialButtons:hover {
-    font-size: 2em; }
+    font-size: 1.6em; }
   .socialButtons i {
     cursor: pointer; }
     .socialButtons i:hover {

@@ -103,7 +103,7 @@ a {
 	z-index: 2;
 	@media(max-width: 768px) {
 		width: 100%;
-		bottom: 50px;
+		bottom: 0;
 	}
 }
 .list {
@@ -111,8 +111,9 @@ a {
 	width: 320px;
 	height: calc(100vh - 50px);
 	margin: 0;
-	padding: 0;
+	padding: .5em 0 0 0;
 	border-top: 2px solid white;
+	background-color: $lightgray;
 	overflow-y: scroll;
 	@include transition(all .5s ease);
 	h3 {
@@ -137,30 +138,37 @@ a {
 		left: 0;
 	}
 	&__item {
-		width: 100%;
+		width: 97%;
+		margin: 1em 0;
 		padding: 1em .5em;
-		background-color: $gray;
 		list-style: none;
+		background-color: $gray;
+		box-shadow: 3px 3px rgba(black, .5);
 		cursor: pointer;
-		@include transition(background-color .5s ease);
+		@include transition(all .5s ease);
 		&:nth-child(odd) {
 			background-color: darken($gray, 10);
 		}
 		&.active {	
 			background-color: $lightteal;
+			box-shadow: 6px 6px rgba(black, .5);
 		}
 		&:hover {
 			background-color: $lightteal;
-		}	
+			box-shadow: 6px 6px rgba(black, .5);
+		}
 	}
 	&--landlords {
 		left: 0;
 		border-right: 1px solid right;
 		.subhead {
-			text-transform: uppercase;
+			width: 97%;
 			padding: .5em;
+			text-transform: uppercase;
 			background-color: $lightteal;
-			border-bottom: 2px solid white;
+			box-shadow: 6px 6px rgba(black, .5);
+			// border-radius: 0 0 100px 0;
+			// border-bottom: 2px solid white;
 			h2 {
 				font-size: 2em;
 				margin: 0;
@@ -179,14 +187,18 @@ a {
 	&--properties {
 		width: 320px;
 		left: 100%;
-		background-color: $lightteal;
+		background-color: $lightgray;
+		.landlordNameWrap {
+			width: 97%;
+			box-shadow: 6px 6px rgba(black, .5);
+		}
 		.landlordName {
 			width: 100%;
 			height: 50px;
 			padding: 1em .5em;
 			// border-bottom: 2px solid white;
 			color: white;
-			background-color: $teal;
+			background-color: $lightteal;
 			h3 {
 				float: left;
 				margin-left: 2.5em;
@@ -200,14 +212,11 @@ a {
 		}
 		.violationTotals {
 			text-align: center;
+			background-color: $lightteal;
 			.stat {
 				display: block;
 				font-size: 1.2em;
 				margin: 0 0 .2em 0;
-				&:last-child {
-					margin: 0;
-					border-bottom: 2px solid white;
-				}
 				p {
 					display: inline-block;
 				}
@@ -224,21 +233,30 @@ a {
 			font-weight: 700;
 		}
 		.list__item {
+			width: 97%;
+			margin: 1em 0;
+			text-align: right;
 			background-color: lighten($teal, 10);
+			box-shadow: 3px 3px rgba(black, .5);
+			@include transition(all .5s ease);
 			&:nth-child(even) {
 				background-color: lighten($teal, 20);
 			}
-			&--selected {
+			&:hover, &--selected {
 				background-color: darken($gray, 10);
+				box-shadow: 6px 6px rgba(black, .5);
 				&:nth-child(even) {
 					background-color: darken($gray, 10);
 				}
+			}
+			.address {
+				text-align: left
 			}
 		}
 	}
 	@media(max-width: 768px) {
 		width: 100%;
-		height: 40vh;
+		height: 70vh;
 		bottom: 0;
 	}
 }
@@ -259,13 +277,6 @@ a {
 		background: rgba(black, .5);
 		color: white;
 	}
-	&--lhs {
-		float: right;
-		margin: 0;
-		padding: .1em;
-		font-weight: bold;
-		background: rgba(black, .5);
-	}
 }
 .mapWrapper {
 	position: relative;
@@ -283,14 +294,14 @@ a {
 	width: auto;
 	z-index: 2;
 	@media(max-width: 768px) {
-		height: 60vh;
+		height: 30vh;
 	}
 }
 .socialButtons {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	padding: .4em;
 	border-radius: 0 0 0 1em;
 	background: rgba($lightteal, .7);
@@ -299,7 +310,7 @@ a {
 	z-index: 3;
 	@include transition(all .5s ease);
 	&:hover {
-		font-size: 2em;
+		font-size: 1.6em;
 		// opacity: .8;
 	}
 	i {

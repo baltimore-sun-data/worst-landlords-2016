@@ -59,7 +59,7 @@ html(class="no-js", lang="en")
 				.content
 					h1 Baltimore's worst landlords
 					p The Baltimore Sun analysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions. 
-						span Read more about our methodology.
+						span.methodologyOut Read more about our methodology.
 					.buttonDiv.buttonDiv--splash
 						p About this project
 					.buttonIcon.buttonIcon--social
@@ -90,27 +90,28 @@ html(class="no-js", lang="en")
 									span #{landlord.numViolations}
 				each landlord, lIndex in landlords
 					ul.list.list--properties(class="list--properties--" + lIndex)
-						.landlordName
-							.backButton(data-landlord=lIndex)
-								i.icon-left-big
-							h3 #{landlord.name} Properties
-						.violationTotals
-							.stat.stat--ecbTotal 
-								p ECB: #{landlord.numViolations}
-								i.icon-info-circled
-							.stat.stat--habcTotal 
-								p HABC: #{landlord.numViolations}
-								i.icon-info-circled
-							.stat.stat--leadTotal 
-								p Lead: #{landlord.numViolations}
-								i.icon-info-circled
-							.stat.stat--lhsTotal 
-								p LHS: #{landlord.numViolations}
-								i.icon-info-circled
+						.landlordNameWrap
+							.landlordName
+								.backButton(data-landlord=lIndex)
+									i.icon-left-big
+								h3 #{landlord.name} Properties
+							.violationTotals
+								.stat.stat--ecbTotal 
+									p ECB: #{landlord.numViolations}
+									i.icon-info-circled
+								.stat.stat--habcTotal 
+									p HABC: #{landlord.numViolations}
+									i.icon-info-circled
+								.stat.stat--leadTotal 
+									p Lead: #{landlord.numViolations}
+									i.icon-info-circled
+								.stat.stat--lhsTotal 
+									p LHS: #{landlord.numViolations}
+									i.icon-info-circled
 						each property, index in properties
 							if property.landlord_num === lIndex
 								li.list__item.property(data-id=index)
-									p #{property.address}
+									p.address #{property.address}
 									.stat.stat--violations ECB
 										p #{property.ecb}
 									.stat.stat--violations HABC
@@ -139,7 +140,7 @@ html(class="no-js", lang="en")
 						span Lead: 
 						| Lead paint violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
 					p.methodologyOut
-						span Read more about our methodology.
+						span Read about our methodology.
 			.overlay.overlay--methodology
 				.content
 					i.icon-cancel-1
