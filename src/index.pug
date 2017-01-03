@@ -25,7 +25,8 @@ html(class="no-js", lang="en")
 		meta(name="description", content="")
 		meta(name="author", content="The Baltimore Sun") 
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=PT+Serif|Lato")
+		link(rel="stylesheet", type="text/css", 
+			href="http://fonts.googleapis.com/css?family=PT+Serif|Lato")
 		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css")
 		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
 
@@ -60,11 +61,16 @@ html(class="no-js", lang="en")
 					p The Baltimore Sun analysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions. 
 						span Read more about our methodology.
 					.buttonDiv.buttonDiv--splash
-						a(href="#" target="_blank") About this project
+						p About this project
+					.buttonIcon.buttonIcon--social
+						i.icon-twitter
+						i.icon-facebook
 					.buttonIcon.buttonIcon--splash
 						i.icon-down-open
 			.listWrapper
 				ul.list.list--landlords
+					.subhead
+						h2 Baltimore's worst landlords
 					each landlord, index in landlords
 						li.list__item.landlord(data-landlord=index, class="list__item--" + index)
 							.landlordName
@@ -88,6 +94,19 @@ html(class="no-js", lang="en")
 							.backButton(data-landlord=lIndex)
 								i.icon-left-big
 							h3 #{landlord.name} Properties
+						.violationTotals
+							.stat.stat--ecbTotal 
+								p ECB: #{landlord.numViolations}
+								i.icon-info-circled
+							.stat.stat--habcTotal 
+								p HABC: #{landlord.numViolations}
+								i.icon-info-circled
+							.stat.stat--leadTotal 
+								p Lead: #{landlord.numViolations}
+								i.icon-info-circled
+							.stat.stat--lhsTotal 
+								p LHS: #{landlord.numViolations}
+								i.icon-info-circled
 						each property, index in properties
 							if property.landlord_num === lIndex
 								li.list__item.property(data-id=index)
@@ -100,7 +119,36 @@ html(class="no-js", lang="en")
 										p #{property.lpv}
 			.mapWrapper
 				#map
-		
+				.socialButtons
+					i.icon-twitter
+					i.icon-facebook
+			.overlay.overlay--violations
+				.content
+					i.icon-cancel-1
+					h3 Violation definitions
+					p
+						span LHS: 
+						| Life, health and safety violations lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+					p
+						span ECB: 
+						| Environmental control board violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+					p
+						span HABC: 
+						| Housing Authority of Baltimore City violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+					p
+						span Lead: 
+						| Lead paint violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+					p.methodologyOut
+						span Read more about our methodology.
+			.overlay.overlay--methodology
+				.content
+					i.icon-cancel-1
+					h3 Methodology
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu blandit orci, a pulvinar nisi.
+					p Integer pulvinar magna et ante dapibus auctor id sit amet nunc. Aenean in dui scelerisque, convallis tortor condimentum, facilisis massa.
+					p Sed pellentesque ut turpis at blandit. Nunc dui risus, ultrices eu justo ac, tincidunt fringilla justo. Etiam dictum sit amet tortor sit amet vestibulum.
+					p Aenean maximus nisl eget nulla lobortis, sed pellentesque felis mollis. Sed efficitur pharetra lacinia.
+					p Vestibulum a lacus egestas, pretium nulla eget, rutrum dolor. Duis erat est, semper nec dui a, faucibus lobortis elit. 
 
 		//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-header above.
 		//- #leaderboard			
@@ -112,8 +160,9 @@ html(class="no-js", lang="en")
 			try{Typekit.load({ async: true });}catch(e){}
 			var map;
 			var markers;
-		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous")
 		script(src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js")
 		script(src=datalink + "js/app.js")
 		//- script(src=datalink + "js/app.min.js")
-		

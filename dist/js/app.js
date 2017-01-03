@@ -2,6 +2,7 @@ var worstLandlords = {
     init: function() {
         worstLandlords.mapInit();
         worstLandlords.onClick();
+        worstLandlords.share();
     },
     share: function() {
         $(".icon-twitter").on("click", function() {
@@ -23,7 +24,7 @@ var worstLandlords = {
     },
     mapInit: function() {
         var landlords = [ landlord0 = new L.LayerGroup(), landlord1 = new L.LayerGroup(), landlord2 = new L.LayerGroup(), landlord3 = new L.LayerGroup(), landlord4 = new L.LayerGroup(), landlord5 = new L.LayerGroup(), landlord6 = new L.LayerGroup(), landlord7 = new L.LayerGroup(), landlord8 = new L.LayerGroup(), landlord9 = new L.LayerGroup() ];
-        markers = [];
+        var markers = [];
         for (var num = 0; num < worstLandlords.properties.length; num++) {
             var latitude = worstLandlords.properties[num].lat;
             var longitude = worstLandlords.properties[num].lon;
@@ -35,14 +36,14 @@ var worstLandlords = {
             markers[prop_id].id = prop_id;
         }
         var tileUrl = "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png";
-        tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>', 
+        tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
         layer = new L.TileLayer(tileUrl, {
             maxZoom: 18,
             attribution: tileAttribution
         });
         map = new L.Map("map", {
             layers: landlords
-        }).setView([ 39.282004, -76.6075 ], 12);
+        }).setView([ 39.2904, -76.6122 ], 12);
         map.addLayer(layer);
         var overlayMaps = {
             "Name 0": landlord0,
@@ -56,19 +57,47 @@ var worstLandlords = {
             "Name 8": landlord8,
             "Name 9": landlord9
         };
-        L.control.layers(overlayMaps).addTo(map);
         $(".landlord").on("click", function() {
+            var landlord = $(this).data("landlord");
+            $(".active").removeClass("active");
+            $(this).addClass("active");
+            $(".list--properties--" + landlord).scrollTop(0);
+            $(".list--properties--" + landlord).toggleClass("center");
             for (var i = 0; i < landlords.length; i++) {
                 map.removeLayer(landlords[i]);
-                map.addLayer(landlords[$(this).data("landlord")]);
+                map.addLayer(landlords[landlord]);
             }
+            map.panTo(new L.LatLng(39.2904, -76.6122));
         });
         $(".property").on("click", function() {
             var propID = $(this).data("id");
             map.panTo(new L.LatLng(worstLandlords.properties[propID].lat, worstLandlords.properties[propID].lon));
             markers[propID + 1].openPopup();
-            $(".property").removeClass("list__item-selected");
-            $(this).addClass("list__item-selected");
+            $(".property").removeClass("list__item--selected");
+            $(this).addClass("list__item--selected");
+        });
+    },
+    onClick: function() {
+        $(".buttonDiv--splash, .methodologyOut").on("click", function() {
+            $(".overlay").fadeOut();
+            $(".overlay--methodology").fadeIn();
+        });
+        $(".buttonIcon--splash").on("click", function() {
+            $(".splashWrapper").addClass("top");
+        });
+        $(".backButton").on("click", function() {
+            var landlord = $(this).data("landlord");
+            $(".list--properties--" + landlord).toggleClass("center");
+        });
+        $(".icon-info-circled").on("click", function() {
+            $(".overlay").fadeOut();
+            $(".overlay--violations").fadeIn();
+        });
+        $(".overlay, .content .icon-cancel-1").on("click", function() {
+            $(".overlay").fadeOut();
+        });
+        $(".overlay .content").click(function(e) {
+            e.stopPropagation();
         });
     },
     landlords: [ {
@@ -1622,24 +1651,7 @@ var worstLandlords = {
         lat: 39.33317,
         lon: -76.69504,
         id: 150
-    } ],
-    onClick: function() {
-        $(".buttonIcon--splash").on("click", function() {
-            $(".splashWrapper").css("top", "-100%");
-        });
-        $(".list--landlords li").on("click", function() {
-            $(".active").removeClass("active");
-            $(this).addClass("active");
-            var landlord = $(this).data("landlord");
-            $(".list--properties--" + landlord).scrollTop(0);
-            $(".list--properties--" + landlord).toggleClass("center");
-        });
-        $(".backButton").on("click", function() {
-            var landlord = $(this).data("landlord");
-            $(".list--properties--" + landlord).toggleClass("center");
-        });
-    },
-    working: function() {}
+    } ]
 };
 
 $(document).ready(function() {

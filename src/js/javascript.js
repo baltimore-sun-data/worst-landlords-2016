@@ -2,22 +2,28 @@ var worstLandlords = {
 	init: function(){
 		worstLandlords.mapInit();
 		worstLandlords.onClick();
-		//worstLandlords.share();
+		worstLandlords.share();
 	},
 	share: function(){
 		$(".icon-twitter").on("click", function(){
 			var tweet = ""; //Tweet text
 			var url = ""; //Interactive URL
-			var twitter_url = "https://twitter.com/intent/tweet?text="+tweet+"&url="+url+"&tw_p=tweetbutton";
-			window.open(twitter_url, 'mywin','left=200,top=200,width=500,height=300,toolbar=1,resizable=0'); return false;
+			var twitter_url = "https://twitter.com/intent/tweet?text="+tweet+
+				"&url="+url+"&tw_p=tweetbutton";
+			window.open(twitter_url, 'mywin',
+				'left=200,top=200,width=500,height=300,toolbar=1,resizable=0'); return false;
 		});
 		$(".icon-facebook").on("click", function(){
 			var picture = ""; //Picture URL
 			var title = ""; //Post title
 			var description = ""; //Post description
 			var url = ""; //Interactive URL
-	    	var facebook_url = "https://www.facebook.com/dialog/feed?display=popup&app_id=310302989040998&link="+url+"&picture="+picture+"&name="+title+"&description="+description+"&redirect_uri=http://www.facebook.com";    		
-			window.open(facebook_url, 'mywin','left=200,top=200,width=500,height=300,toolbar=1,resizable=0'); return false;
+	    	var facebook_url = 
+	    		"https://www.facebook.com/dialog/feed?display=popup&app_id=310302989040998&link="+
+	    		url+"&picture="+picture+"&name="+title+"&description="+description+
+	    		"&redirect_uri=http://www.facebook.com";    		
+			window.open(facebook_url, 'mywin',
+				'left=200,top=200,width=500,height=300,toolbar=1,resizable=0'); return false;
 		});
 	},
 	mapInit: function(){
@@ -31,10 +37,10 @@ var worstLandlords = {
 			landlord6 = new L.LayerGroup(),
 			landlord7 = new L.LayerGroup(),
 			landlord8 = new L.LayerGroup(),
-			landlord9 = new L.LayerGroup(),
+			landlord9 = new L.LayerGroup()
 		];
 
-		markers = [];
+		var markers = [];
 		
 		for (var num = 0; num < worstLandlords.properties.length; num ++) {
 			var latitude = worstLandlords.properties[num].lat;
@@ -46,16 +52,17 @@ var worstLandlords = {
 		    // Add marker & give it an id
 			markers[prop_id] = L.marker([latitude, longitude]).addTo(landlords[landlord_id]);
 			
-			markers[prop_id].bindPopup("<div id="+prop_id+" class='popup_box_header'><div style='color:black;'>"+address+"</div></div>");
+			markers[prop_id].bindPopup("<div id="+prop_id+
+				" class='popup_box_header'><div style='color:black;'>"+address+"</div></div>");
 			//markers[prop_id].marker_id = landlord0.getLayerId(markers[prop_id]);
 			markers[prop_id].id = prop_id;
-		};
+		}
 
-		var tileUrl = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
-		tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+		var tileUrl = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+		tileAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
 		layer = new L.TileLayer(tileUrl, {maxZoom: 18, attribution: tileAttribution});
 	          
-		map = new L.Map('map', {layers: landlords}).setView([39.282004, -76.607500], 12);
+		map = new L.Map('map', {layers: landlords}).setView([39.2904, -76.6122], 12);
 		map.addLayer(layer);
 
 		var overlayMaps = {
@@ -68,27 +75,57 @@ var worstLandlords = {
 			"Name 6": landlord6,
 			"Name 7": landlord7,
 			"Name 8": landlord8,
-			"Name 9": landlord9,
+			"Name 9": landlord9
 		};
 
-		L.control.layers(overlayMaps).addTo(map);
+		// L.control.layers(overlayMaps).addTo(map);
 
 		$('.landlord').on('click', function() {
+			var landlord = $(this).data('landlord');
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+			$('.list--properties--' + landlord).scrollTop(0);
+			$('.list--properties--' + landlord).toggleClass('center');
 			for(var i = 0;i<landlords.length;i++) {
 				map.removeLayer(landlords[i]);
-				map.addLayer(landlords[$(this).data('landlord')]);
+				map.addLayer(landlords[landlord]);
 			}
+			map.panTo(new L.LatLng(39.2904, -76.6122));
 		});
 
 		$('.property').on('click', function() {
 			var propID = $(this).data('id');
-			map.panTo(new L.LatLng(worstLandlords.properties[propID].lat,worstLandlords.properties[propID].lon));
+			map.panTo(new L.LatLng(worstLandlords.properties[propID].lat,
+				worstLandlords.properties[propID].lon));
 			markers[propID + 1].openPopup();
-			$('.property').removeClass('list__item-selected');
-			$(this).addClass('list__item-selected');
+			$('.property').removeClass('list__item--selected');
+			$(this).addClass('list__item--selected');
 		});
 	},
-
+	onClick: function(){
+		$('.buttonDiv--splash, .methodologyOut').on('click', function() {
+			$('.overlay').fadeOut();
+			$('.overlay--methodology').fadeIn();
+		});
+		$('.buttonIcon--splash').on('click', function() {
+			$('.splashWrapper').addClass('top');
+		});
+		$('.backButton').on('click', function() {
+			var landlord = $(this).data('landlord');
+			// $('.list--landlords').toggleClass('left');
+			$('.list--properties--' + landlord).toggleClass('center');
+		});
+		$('.icon-info-circled').on('click', function(){
+			$('.overlay').fadeOut();
+			$('.overlay--violations').fadeIn();
+		});
+		$('.overlay, .content .icon-cancel-1').on('click', function(){
+			$('.overlay').fadeOut();
+		});
+		$('.overlay .content').click(function(e) {
+			e.stopPropagation();
+		});
+	},
 	landlords: [
 		{"name":"Name 0","numProperties":11,"numUnits":11,"numViolations":1},
 		{"name":"Name 1","numProperties":12,"numUnits":22,"numViolations":11},
@@ -252,29 +289,8 @@ var worstLandlords = {
 		{"address":"2700 THE ALAMEDA","landlord_num":9,"ecb":4,"pros":2,"lpv":0,"total":6,"lat":39.32156,"lon":-76.59128,"id":148},
 		{"address":"400 W SARATOGA ST","landlord_num":9,"ecb":8,"pros":0,"lpv":1,"total":9,"lat":39.29285,"lon":-76.62124,"id":149},
 		{"address":"4700 HADDON AV","landlord_num":9,"ecb":10,"pros":0,"lpv":0,"total":10,"lat":39.33317,"lon":-76.69504,"id":150}
-	],
-	onClick: function(){
-		$('.buttonIcon--splash').on('click', function() {
-			$('.splashWrapper').css('top','-100%');
-		});
-		$('.list--landlords li').on('click', function() {
-			$('.active').removeClass('active');
-			$(this).addClass('active');
-			var landlord = $(this).data('landlord');
-			// $('.list--landlords').toggleClass('left');
-			$('.list--properties--' + landlord).scrollTop(0);
-			$('.list--properties--' + landlord).toggleClass('center');
-		});
-		$('.backButton').on('click', function() {
-			var landlord = $(this).data('landlord');
-			// $('.list--landlords').toggleClass('left');
-			$('.list--properties--' + landlord).toggleClass('center');
-		});
-	},
-	working: function(){
-
-	}
-}
+	]
+};
 $(document).ready(function(){
 	worstLandlords.init();
 	console.log("connected");

@@ -29,17 +29,26 @@ a {
 .container {
 	position: relative;
 	width: 100%;
-	margin-top: 50px; // Pushes below topnav
+	// height: 100vh;
+	padding-top: 50px; // Pushes below topnav
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: darken($gray, 10);
 }
 .splashWrapper {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: auto;
+	min-height: 100%;
+	z-index: 9;
 	background-color: $offblack;
-	z-index: 2;
+	padding-bottom: 50px; // Pushes below topnav
 	@include transition(all 1s ease)
+	&.top {
+		top: -200%;
+	}
 	.content {
 		max-width: 900px;
 		margin: 0 auto;
@@ -49,11 +58,15 @@ a {
 		font-size: 6.5em;
 		line-height: 1em;
 		color: white;
+		margin-top: 1em;
 		margin-bottom: .2em;
 		text-align: left;
+		@media(max-width: 768px) {
+			font-size: 4.5em;
+		}
 	}
 	p {
-		width: 100%;
+		width: auto;
 		margin: 0 2em;
 		font-size: 1.3em;
 		border-top: 1px solid $lightteal;
@@ -82,31 +95,15 @@ a {
 		}
 	}
 }
-.mapWrapper {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	margin-left: 320px;
-	background-color: $darkgray;
-	z-index: 1;
-	@media(max-width: 768px) {
-		margin: 0;
-		z-index: -1;
-	}
-}
-
-#map {
-	height: 100vh;
-	width: 100%;
-}
 .listWrapper {
 	position: absolute;
 	width: 320px;
 	margin: 0;
 	padding: 0;
+	z-index: 2;
 	@media(max-width: 768px) {
 		width: 100%;
-		bottom: 0;
+		bottom: 50px;
 	}
 }
 .list {
@@ -115,7 +112,7 @@ a {
 	height: calc(100vh - 50px);
 	margin: 0;
 	padding: 0;
-	border-top: 1px solid white;
+	border-top: 2px solid white;
 	overflow-y: scroll;
 	@include transition(all .5s ease);
 	h3 {
@@ -158,6 +155,17 @@ a {
 	}
 	&--landlords {
 		left: 0;
+		border-right: 1px solid right;
+		.subhead {
+			text-transform: uppercase;
+			padding: .5em;
+			background-color: $lightteal;
+			border-bottom: 2px solid white;
+			h2 {
+				font-size: 2em;
+				margin: 0;
+			}
+		}
 		h3 {
 			display: inline-block;
 			width: 80%;
@@ -173,16 +181,43 @@ a {
 		left: 100%;
 		background-color: $lightteal;
 		.landlordName {
-			background-color: $teal;
-			color: white;
+			width: 100%;
+			height: 50px;
 			padding: 1em .5em;
+			// border-bottom: 2px solid white;
+			color: white;
+			background-color: $teal;
 			h3 {
+				float: left;
 				margin-left: 2.5em;
 			}
 			i {
 				font-size: 1.4em;
 				line-height: 0;
 				float: left;
+				cursor: pointer;
+			}
+		}
+		.violationTotals {
+			text-align: center;
+			.stat {
+				display: block;
+				font-size: 1.2em;
+				margin: 0 0 .2em 0;
+				&:last-child {
+					margin: 0;
+					border-bottom: 2px solid white;
+				}
+				p {
+					display: inline-block;
+				}
+				i {
+					float: right;
+					cursor: pointer;
+					&:hover {
+
+					}
+				}
 			}
 		}
 		p {
@@ -193,14 +228,17 @@ a {
 			&:nth-child(even) {
 				background-color: lighten($teal, 20);
 			}
-			&-selected {
-				background-color: $gray !important;
+			&--selected {
+				background-color: darken($gray, 10);
+				&:nth-child(even) {
+					background-color: darken($gray, 10);
+				}
 			}
 		}
 	}
 	@media(max-width: 768px) {
 		width: 100%;
-		height: 30vh;
+		height: 40vh;
 		bottom: 0;
 	}
 }
@@ -221,36 +259,143 @@ a {
 		background: rgba(black, .5);
 		color: white;
 	}
+	&--lhs {
+		float: right;
+		margin: 0;
+		padding: .1em;
+		font-weight: bold;
+		background: rgba(black, .5);
+	}
+}
+.mapWrapper {
+	position: relative;
+	height: 100vh;
+	margin-left: 320px;
+	background-color: $darkgray;
+	z-index: 2;
+	@media(max-width: 768px) {
+		z-index: 1;
+		margin: 0;
+	}
+}
+#map {
+	height: 100vh;
+	width: auto;
+	z-index: 2;
+	@media(max-width: 768px) {
+		height: 60vh;
+	}
+}
+.socialButtons {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.6em;
+	padding: .4em;
+	border-radius: 0 0 0 1em;
+	background: rgba($lightteal, .7);
+	font-weight: bold;
+	text-transform: uppercase;
+	z-index: 3;
+	@include transition(all .5s ease);
+	&:hover {
+		font-size: 2em;
+		// opacity: .8;
+	}
+	i {
+		cursor: pointer;
+		&:hover {
+			color: $teal;
+		}
+	}
+}
+.overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	// text-align: center; 
+	background: rgba(black, .5);
+	z-index: 10;
+	.content {
+		width: 95%;
+		max-width: 400px;
+		height: auto;
+		margin: 30% auto 0 auto;
+		padding: 1em;
+		background-color: black;
+	}
+	i {
+		float: right;
+		font-size: 1.5em;
+		cursor: pointer;
+	}
+	h3 {
+		margin-top: 0;
+		font-size: 2em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	span {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&--violations {
+
+	}
+	&--methodology {
+
+	}
 }
 .buttonDiv {
 	display: inline-block;
 	border-radius: 10px;
 	background-color: $lightteal;
 	text-transform: uppercase;
-	text-align: center;
+	color: white;
+	cursor: pointer;
+	@include transition(all .5s ease);
 	p,a {
-		color: white;
+		margin: 0 auto;
 		font-size: 1.7em;
+		font-weight: bold;
 		white-space: nowrap;
+		text-align: center;
+		border: none;
 	}
 	&--splash {
 		width: 18em;
 		margin: 4em auto 2em auto;
 		padding: .7em 0;
-		a:link, a:visited {
-			// margin-left: 25px;
-			// color: $lightteal;
-			// font-size: 1.5em;
-		}
-		a:hover {
-			// color: lighten($lightteal, 10);
+		&:hover {
+			width: 20em;
+			opacity: .6;
 		}
 	}
 }
 .buttonIcon {
 	color: $lightteal;
+	i {
+		cursor: pointer;
+		@include transition(all .5s ease);
+	}
+	&--social {
+		i {
+			font-size: 2em;
+			&:hover {
+				opacity: .6;
+			}
+		}
+	}
 	&--splash {
-		font-size: 8em;
+		i {
+			font-size: 8em;
+			&:hover {
+				opacity: .6;
+			}
+		}
 	}
 }
 
