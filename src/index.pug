@@ -5,7 +5,7 @@
 //- There are two datalink variables so I don't have to rewrite the link every time. 
 //- The second datalink variable declaration overwrites the first one. 
 //- When I want to switch to the server assets, I comment out the second declaration.
-- var datalink = "http://data.baltimoresun.com/PROJECTLINK/"
+- var datalink = "http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/"
 - var datalink = ""
 
 include includes/data.pug
@@ -22,7 +22,7 @@ html(class="no-js", lang="en")
 		//Basic page needs
 		meta(charset="utf-8")
 		title Baltimore's worst landlords
-		meta(name="description", content="")
+		meta(name="description", content="See which landlords in Baltimore have the worst track records based on compiled data.")
 		meta(name="author", content="The Baltimore Sun") 
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet", type="text/css", 
@@ -31,18 +31,18 @@ html(class="no-js", lang="en")
 		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
 
 		//Facebook Stuff
-		meta(property="og:title", content="")
-		meta(property="og:url", content="")
+		meta(property="og:title", content="Baltimore's worst landlords")
+		meta(property="og:url", content="http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/")
 		meta(property="og:image", content="")
 		meta(property="og:site_name", content="The Baltimore Sun")
-		meta(property="og:description", content="")
+		meta(property="og:description", content="See which landlords in Baltimore have the worst track records based on compiled data.")
 		meta(property="fb:app_id", content="310302989040998")
 		//Twitter Stuff
 		meta(name="twitter:card", content="summary")
 		meta(name="twitter:site", content="@baltimoresun")
 		meta(name="twitter:creator", content="")
-		meta(name="twitter:title", content="")
-		meta(name="twitter:description", content="")
+		meta(name="twitter:title", content="Baltimore's worst landlords")
+		meta(name="twitter:description", content="See which landlords in Baltimore have the worst track records based on compiled data.")
 		meta(name="twitter:image", content="")
 		meta(name="twitter:domain", content="baltimoresun.com")
 
@@ -69,7 +69,7 @@ html(class="no-js", lang="en")
 						i.icon-down-open
 			.listWrapper
 				ul.list.list--landlords
-					.subhead
+					.list__item.subhead
 						h2 Baltimore's worst landlords
 					each landlord, index in landlords
 						li.list__item.landlord(data-landlord=index, class="list__item--" + index)
@@ -90,7 +90,7 @@ html(class="no-js", lang="en")
 									span #{landlord.numViolations}
 				each landlord, lIndex in landlords
 					ul.list.list--properties(class="list--properties--" + lIndex)
-						.landlordNameWrap
+						.list__item.landlordNameWrap
 							.landlordName
 								.backButton(data-landlord=lIndex)
 									i.icon-left-big
@@ -110,7 +110,7 @@ html(class="no-js", lang="en")
 									i.icon-info-circled
 						each property, index in properties
 							if property.landlord_num === lIndex
-								li.list__item.property(data-id=index)
+								li.list__item.property(class='property--'+index data-id=index)
 									p.address #{property.address}
 									.stat.stat--violations ECB
 										p #{property.ecb}
@@ -118,6 +118,8 @@ html(class="no-js", lang="en")
 										p #{property.pros}
 									.stat.stat--violations Lead
 										p #{property.lpv}
+						.backButton
+							i.icon-left-big
 			.mapWrapper
 				#map
 				.socialButtons

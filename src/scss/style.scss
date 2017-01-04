@@ -1,12 +1,10 @@
 @import "mixins";
 @import "variables";
-// Sass mixins libraries
+// Sass mixin libraries
 @import "bourbon/bourbon";
 @import "neat/neat";
-// Base styles -- normalizes styles across browsers. 
-// Alter border-sizing styles to prevent issues in P2P HTML stories
+// Base styles -- normalizes styles across browsers.
 @import "normalize";
-// @import "fonts";
 @import "fontello";
 
 html, body {
@@ -29,7 +27,6 @@ a {
 .container {
 	position: relative;
 	width: 100%;
-	// height: 100vh;
 	padding-top: 50px; // Pushes below topnav
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -44,7 +41,7 @@ a {
 	min-height: 100%;
 	z-index: 9;
 	background-color: $offblack;
-	padding-bottom: 50px; // Pushes below topnav
+	padding: 0 .5em 100px .5em;
 	@include transition(all 1s ease)
 	&.top {
 		top: -200%;
@@ -61,7 +58,7 @@ a {
 		margin-top: 1em;
 		margin-bottom: .2em;
 		text-align: left;
-		@media(max-width: 768px) {
+		@media(max-width: $tablet) {
 			font-size: 4.5em;
 		}
 	}
@@ -78,30 +75,13 @@ a {
 		font-weight: bold;
 	}
 }
-.titlebox {
-	width:100%;
-	background-color: $teal;
-	border-top: 1px solid #fff;
-	padding-bottom: 5px;
-	h1 {
-		font-family: $franklin;
-		font-size: 3em;
-		color: #fff;
-		margin-bottom: 0;
-		margin-top: 2px;
-		margin-left: 25px;
-		@media(max-width: 650px) {
-			font-size: 2em;
-		}
-	}
-}
 .listWrapper {
 	position: absolute;
 	width: 320px;
 	margin: 0;
 	padding: 0;
 	z-index: 2;
-	@media(max-width: 768px) {
+	@media(max-width: $tablet) {
 		width: 100%;
 		bottom: 0;
 	}
@@ -111,8 +91,7 @@ a {
 	width: 320px;
 	height: calc(100vh - 50px);
 	margin: 0;
-	padding: .5em 0 0 0;
-	border-top: 2px solid white;
+	padding: 0 1em 1em 0;
 	background-color: $lightgray;
 	overflow-y: scroll;
 	@include transition(all .5s ease);
@@ -128,9 +107,6 @@ a {
 			font-weight: 700;
 		}
 	}
-	&.left {
-		// left: -100%;
-	}
 	&.right {
 		left: 100%;
 	}
@@ -138,41 +114,40 @@ a {
 		left: 0;
 	}
 	&__item {
-		width: 97%;
-		margin: 1em 0;
+		position: relative;
+		width: 100%;
+		margin: 1em auto;
 		padding: 1em .5em;
 		list-style: none;
 		background-color: $gray;
 		box-shadow: 3px 3px rgba(black, .5);
 		cursor: pointer;
 		@include transition(all .5s ease);
-		&:nth-child(odd) {
-			background-color: darken($gray, 10);
-		}
-		&.active {	
+		// &:nth-child(odd) {
+		// 	background-color: darken($gray, 10);
+		// }
+		&.active {
 			background-color: $lightteal;
-			box-shadow: 6px 6px rgba(black, .5);
+			box-shadow: 5px 5px rgba(black, .2);
 		}
 		&:hover {
 			background-color: $lightteal;
-			box-shadow: 6px 6px rgba(black, .5);
+			box-shadow: 5px 5px rgba(black, .2);
 		}
 	}
 	&--landlords {
 		left: 0;
-		border-right: 1px solid right;
+		border-right: 1px solid white;
 		.subhead {
-			width: 97%;
 			padding: .5em;
 			text-transform: uppercase;
 			background-color: $lightteal;
-			box-shadow: 6px 6px rgba(black, .5);
-			// border-radius: 0 0 100px 0;
-			// border-bottom: 2px solid white;
+			box-shadow: 5px 5px rgba(black, .2);
+			cursor: default;
 			h2 {
 				font-size: 2em;
 				margin: 0;
-			}
+			}			
 		}
 		h3 {
 			display: inline-block;
@@ -189,25 +164,20 @@ a {
 		left: 100%;
 		background-color: $lightgray;
 		.landlordNameWrap {
-			width: 97%;
-			box-shadow: 6px 6px rgba(black, .5);
+			padding: .5em;
+			background-color: $lightteal;
+			box-shadow: 5px 5px rgba(black, .2);
+			cursor: default;
 		}
 		.landlordName {
 			width: 100%;
 			height: 50px;
 			padding: 1em .5em;
-			// border-bottom: 2px solid white;
 			color: white;
 			background-color: $lightteal;
 			h3 {
 				float: left;
-				margin-left: 2.5em;
-			}
-			i {
-				font-size: 1.4em;
-				line-height: 0;
-				float: left;
-				cursor: pointer;
+				margin-left: 1.5em;
 			}
 		}
 		.violationTotals {
@@ -233,31 +203,17 @@ a {
 			font-weight: 700;
 		}
 		.list__item {
-			width: 97%;
-			margin: 1em 0;
-			text-align: right;
-			background-color: lighten($teal, 10);
-			box-shadow: 3px 3px rgba(black, .5);
-			@include transition(all .5s ease);
-			&:nth-child(even) {
-				background-color: lighten($teal, 20);
-			}
-			&:hover, &--selected {
-				background-color: darken($gray, 10);
-				box-shadow: 6px 6px rgba(black, .5);
-				&:nth-child(even) {
-					background-color: darken($gray, 10);
-				}
-			}
 			.address {
 				text-align: left
 			}
 		}
 	}
-	@media(max-width: 768px) {
+	@media(max-width: $tablet) {
 		width: 100%;
-		height: 70vh;
-		bottom: 0;
+		height: 60vh;
+		padding: 0 1em 1em 1em;
+		bottom: 50px;
+		border-top: 2px solid $lightteal;
 	}
 }
 .stat {
@@ -284,7 +240,7 @@ a {
 	margin-left: 320px;
 	background-color: $darkgray;
 	z-index: 2;
-	@media(max-width: 768px) {
+	@media(max-width: $tablet) {
 		z-index: 1;
 		margin: 0;
 	}
@@ -293,8 +249,23 @@ a {
 	height: 100vh;
 	width: auto;
 	z-index: 2;
-	@media(max-width: 768px) {
-		height: 30vh;
+	@media(max-width: $tablet) {
+		height: calc(40vh - 50px);
+	}
+}
+.backButton {
+	width: 2em;
+	height: 2em;
+	border-radius: 100%;
+	box-shadow: 2px 2px rgba(black, .2);
+	background-color: $teal;
+	float: left;
+	cursor: pointer;
+	&:hover {
+	}
+	i {
+		font-size: 1.4em;
+		line-height: 1.4em;
 	}
 }
 .socialButtons {
@@ -311,7 +282,6 @@ a {
 	@include transition(all .5s ease);
 	&:hover {
 		font-size: 1.6em;
-		// opacity: .8;
 	}
 	i {
 		cursor: pointer;
@@ -324,17 +294,17 @@ a {
 	display: none;
 	width: 100%;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	// text-align: center; 
+	text-align: center;
 	background: rgba(black, .5);
 	z-index: 10;
 	.content {
 		width: 95%;
 		max-width: 400px;
 		height: auto;
-		margin: 30% auto 0 auto;
+		margin: 60px auto 0 auto;
 		padding: 1em;
 		background-color: black;
 	}
@@ -349,9 +319,13 @@ a {
 		text-align: center;
 		text-transform: uppercase;
 	}
+	p {
+		text-align: left;	
+	}
 	span {
 		font-weight: bold;
 		text-transform: uppercase;
+		cursor: pointer;
 	}
 	&--violations {
 
