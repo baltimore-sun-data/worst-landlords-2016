@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"text-align"
+			],
+			[
 				"border",
 				"border-bottom"
 			],
@@ -22,10 +26,6 @@
 			[
 				"cr",
 				"cursor"
-			],
-			[
-				"text",
-				"text-transform"
 			],
 			[
 				"marg",
@@ -87,8 +87,16 @@
 			"file": "index.pug",
 			"settings":
 			{
-				"buffer_size": 4608,
+				"buffer_size": 7261,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/dist/js/app.min.js",
+			"settings":
+			{
+				"buffer_size": 20027,
 				"line_ending": "Unix"
 			}
 		},
@@ -104,7 +112,7 @@
 			"file": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/dist/index.html",
 			"settings":
 			{
-				"buffer_size": 70063,
+				"buffer_size": 84328,
 				"line_ending": "Unix"
 			}
 		},
@@ -121,7 +129,7 @@
 			"file": "js/javascript.js",
 			"settings":
 			{
-				"buffer_size": 23673,
+				"buffer_size": 24662,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -130,7 +138,7 @@
 			"file": "scss/style.scss",
 			"settings":
 			{
-				"buffer_size": 4990,
+				"buffer_size": 6331,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -139,7 +147,7 @@
 			"file": "scss/_variables.scss",
 			"settings":
 			{
-				"buffer_size": 442,
+				"buffer_size": 459,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -153,12 +161,11 @@
 			}
 		},
 		{
-			"contents": "Splash not responsive (breaks mobile)\n\nNeed to include definitions of the violations\n\nAdd in LHS info for the landlord\n\nPersistent social buttons\n\nLink back to story\n\nMethodology (consider mockup, would be happy to help)",
+			"contents": "\nLink back to story",
 			"settings":
 			{
-				"buffer_size": 220,
-				"line_ending": "Unix",
-				"name": "Splash not responsive (breaks mobile)"
+				"buffer_size": 19,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -260,6 +267,7 @@
 	],
 	"file_history":
 	[
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/scss/fontello.css",
 		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/scss/style.scss",
 		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/index.html",
 		"/opt/X11/include/GL/glext.h",
@@ -386,8 +394,7 @@
 		"/Users/jikim/Documents/bsun/online/template/src/sass/style.sass",
 		"/Users/jikim/Documents/bsun/online/template/src/sass/_fonts.scss",
 		"/Users/jikim/Documents/bsun/online/final-test/src/index.jade",
-		"/Users/jikim/Documents/bsun/online/final-test/package.json",
-		"/Users/jikim/Documents/bsun/online/final-test/dist/css/style.css"
+		"/Users/jikim/Documents/bsun/online/final-test/package.json"
 	],
 	"find":
 	{
@@ -405,6 +412,32 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"description\", content",
+			"name=\"description\", content=\"",
+			"button",
+			"5px 5px rgba(black, .4",
+			"5px rgba(black, .4",
+			"6px 6px rgba",
+			"-shadow: 6px 6px rgba(black, .3",
+			"box-s",
+			"97",
+			"max-width: 768px",
+			"768px",
+			"title",
+			"@media",
+			"max",
+			"--selec",
+			"border-top",
+			"shadow: 6px 6px rgba",
+			"background-color: $lightgray",
+			"white",
+			"black, .6",
+			"6px 6px rgba(black, .",
+			"3px rgba(black, .3",
+			"3px 3px rgba(black, .3",
+			"height",
+			"opacity: .3;",
+			"trans",
 			"border-t",
 			"border-",
 			"gray",
@@ -506,33 +539,7 @@
 			"img(src=\"https://placeholdit.imgix.net/~text?txtsize=144&bg=82baf3&txt=1920%C3%971080&w=1920&h=1080\")\n\t\t\t\t\t\t\tp.caption 1 Lorem ipsum dolor sit amet",
 			"paddi",
 			".slide.slide--content",
-			"h3 ",
-			"h4 Multimedia\n\t\t\t\t\tul\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\tp 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\tp Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\tp Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\tp Relevant documents",
-			"ul\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\tp 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\tp Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\tp Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\tp Relevant documents",
-			"h4 Multimedia\n\t\t\t\t\tul\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\tp 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\tp Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\tp Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\t.mediaWrapper\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\tp Relevant documents",
-			".button.button--u",
-			"container {\n// \tposition: absolute;\n// \ttop: 0;\n// \tleft: 0;\n// \twidth: 100%;\n// \theight: 100%;\n// \toverflow: hidden;\n// }",
-			"\n\theight: 100%;\n\twidth: 100%;\n\toverflow: hidden;\n",
-			"\n\theight: 100%;\n\twidth: 100%;\n\toverflow: hidden;",
-			"li\n\t\t\t\t\t\t.iconWrapper",
-			"slide--content",
-			"%;\n",
-			"glyphiconWrapper",
-			"li\n\t\t\t\t\t\ti.glyphicon.",
-			"p\n\t\t\t\t\t\t\t|",
-			"p\n\t\t\t\t\t\t\ti.glyphicon",
-			"li \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\t| 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\t| Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\t| Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\t| Relevant documents",
-			"li \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\t|",
-			"\n\t\t\t\t\ta(href=\"\")",
-			"a(href=\"\")",
-			"\t\ta(href=\"\")",
-			"a(href=\"\")\n\t\t\t\t\t\tli",
-			"a(href=\"\")\n\t\t\t\t\t\tli ",
-			"a(href=\"\")",
-			"a(href=\"\")\n\t\t\t\t\t\tli ",
-			"a(href=\"\")",
-			"ul\n\t\t\t\t\tli Media item",
-			"li Media item"
+			"h3 "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -560,15 +567,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4608,
+						"buffer_size": 7261,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2705,
-								2705
+								4963,
+								4963
 							]
 						],
 						"settings":
@@ -578,14 +585,42 @@
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 938.0,
+						"translation.y": 1731.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/dist/js/app.min.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "includes/data.pug",
 					"semi_transient": false,
 					"settings":
@@ -597,8 +632,8 @@
 						"selection":
 						[
 							[
-								719,
-								719
+								8,
+								8
 							]
 						],
 						"settings":
@@ -609,16 +644,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/dist/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 70063,
+						"buffer_size": 84328,
 						"regions":
 						{
 						},
@@ -639,11 +674,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/package.json",
 					"semi_transient": false,
 					"settings":
@@ -655,8 +690,8 @@
 						"selection":
 						[
 							[
-								186,
-								186
+								949,
+								949
 							]
 						],
 						"settings":
@@ -669,30 +704,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "js/javascript.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23673,
+						"buffer_size": 24662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2310,
-								2310
+								5797,
+								5797
 							]
 						],
 						"settings":
@@ -701,27 +736,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1544.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "scss/style.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4990,
+						"buffer_size": 6331,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4165,
-								4165
+								5969,
+								5969
 							]
 						],
 						"settings":
@@ -730,27 +765,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3964.0,
+						"translation.y": 5613.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "scss/_variables.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 442,
+						"buffer_size": 459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								326,
-								326
+								459,
+								459
 							]
 						],
 						"settings":
@@ -761,11 +796,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "scss/_mixins.scss",
 					"semi_transient": false,
 					"settings":
@@ -777,8 +812,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								436,
+								436
 							]
 						],
 						"settings":
@@ -794,24 +829,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 220,
+						"buffer_size": 19,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								37,
-								37
+								19,
+								19
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Splash not responsive (breaks mobile)",
+							"auto_name": "",
 							"default_dir": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
@@ -819,7 +854,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -905,7 +940,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

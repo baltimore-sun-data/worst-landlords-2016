@@ -1,8 +1,9 @@
 var worstLandlords = {
 	init: function(){
-		worstLandlords.share();
-		worstLandlords.mapInit();
 		worstLandlords.onClick();
+		worstLandlords.mapInit();
+		worstLandlords.share();
+		worstLandlords.readHash();
 	},
 	share: function(){
 		$(".icon-twitter").on("click", function(){
@@ -33,7 +34,7 @@ var worstLandlords = {
 			landlord8 = new L.LayerGroup(),
 			landlord9 = new L.LayerGroup()
 		];
-		var markers = [];		
+		var markers = [];
 		for (var num = 0; num < worstLandlords.properties.length; num ++) {
 			var latitude = worstLandlords.properties[num].lat;
 			var longitude = worstLandlords.properties[num].lon;
@@ -43,7 +44,7 @@ var worstLandlords = {
 		    // Add marker & give it an id
 			markers[prop_id] = L.marker([latitude, longitude])
 				.addTo(landlords[landlord_id])
-				.on('click', markerClick);			
+				.on('click', markerClick);
 			markers[prop_id].bindPopup("<div id="+prop_id+
 				" class='popup_box_header'><div style='color:black;'>"+address+"</div></div>");
 			//markers[prop_id].marker_id = landlord0.getLayerId(markers[prop_id]);
@@ -77,6 +78,7 @@ var worstLandlords = {
 				map.addLayer(landlords[landlord]);
 			}
 			map.panTo(new L.LatLng(39.2904, -76.6122));
+			window.location.hash = landlord;
 		});
 		$('.property').on('click', function() {
 			var propID = $(this).data('id');
@@ -100,6 +102,21 @@ var worstLandlords = {
 				return false;
 			};
 		};
+		worstLandlords.readHash(landlords);
+	},
+	readHash: function(landlords){
+		var landlord = Number(window.location.hash.substring(1));
+		if (landlord) {
+			$('.splashWrapper').addClass('top');
+		};
+		$('.list__item--' + landlord).addClass('active');
+		$('.list--properties--' + landlord).scrollTop(0);
+		$('.list--properties--' + landlord).addClass('center');
+		for(var i = 0;i<landlords.length;i++) {
+			map.removeLayer(landlords[i]);
+			map.addLayer(landlords[landlord]);
+		}
+		map.panTo(new L.LatLng(39.2904, -76.6122));
 	},
 	onClick: function(){
 		$('.buttonIcon--splash').on('click', function() {
@@ -107,6 +124,7 @@ var worstLandlords = {
 		});
 		$('.backButton').on('click', function() {
 			$('.list--properties.center').toggleClass('center');
+			window.location.hash = '';
 		});
 		$('.buttonDiv--splash, .methodologyOut').on('click', function() {
 			$('.overlay').fadeOut();
