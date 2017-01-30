@@ -78,7 +78,7 @@ var worstLandlords = {
 				map.addLayer(landlords[landlord]);
 			}
 			map.panTo(new L.LatLng(39.2904, -76.6122));
-			window.location.hash = landlord;
+			window.location.hash = (landlord+1);
 		});
 		$('.property').on('click', function() {
 			var propID = $(this).data('id');
@@ -104,20 +104,21 @@ var worstLandlords = {
 		};
 		worstLandlords.readHash(landlords);
 	},
-	readHash: function(landlords){
-		var landlord = Number(window.location.hash.substring(1));
-		if (landlord) {
-			$('.splashWrapper').addClass('top');
-		};
-		$('.list__item--' + landlord).addClass('active');
-		$('.list--properties--' + landlord).scrollTop(0);
-		$('.list--properties--' + landlord).addClass('center');
-		for(var i = 0;i<landlords.length;i++) {
-			map.removeLayer(landlords[i]);
-			map.addLayer(landlords[landlord]);
-		}
-		map.panTo(new L.LatLng(39.2904, -76.6122));
-	},
+    readHash: function(landlords) {
+        var landlord = Number(window.location.hash.substring(1)) - 1;
+        console.log(landlord);
+        if (landlord >= 0) {
+            $(".splashWrapper").addClass("top");
+            $(".list__item--" + landlord).addClass("active");
+            $(".list--properties--" + landlord).scrollTop(0);
+            $(".list--properties--" + landlord).addClass("center");
+            for (var i = 0; i < landlords.length; i++) {
+                map.removeLayer(landlords[i]);
+                map.addLayer(landlords[landlord]);
+            }
+            map.panTo(new L.LatLng(39.2904, -76.6122));
+        }
+    },
 	onClick: function(){
 		$('.buttonIcon--splash').on('click', function() {
 			$('.splashWrapper').addClass('top');
