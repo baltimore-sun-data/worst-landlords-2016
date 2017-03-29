@@ -66,7 +66,7 @@ html(class="no-js", lang="en")
 						i.icon-twitter
 						i.icon-facebook
 					.buttonIcon.buttonIcon--splash
-						i.icon-down-open
+						i.icon-power
 			.listWrapper
 				ul.list.list--landlords
 					.list__item.subhead
@@ -92,34 +92,32 @@ html(class="no-js", lang="en")
 					ul.list.list--properties(class="list--properties--" + lIndex)
 						.list__item.landlordNameWrap
 							.landlordName
-								.backButton(data-landlord=lIndex)
-									i.icon-left-big
-								h3 #{landlord.name} Properties
+								//- .backButton(data-landlord=lIndex)
+								//- 	i.icon-left-big
+								h3 #{landlord.name}
 							.violationTotals
+								.stat.stat--lhsTotal
+									p LHS: #{landlord.lhsSum}
+									i.icon-info-circled
 								.stat.stat--ecbTotal
-									p ECB: #{landlord.numViolations}
+									p ECB: #{landlord.ecbSum}
 									i.icon-info-circled
 								.stat.stat--habcTotal
-									p HABC: #{landlord.numViolations}
-									i.icon-info-circled
-								.stat.stat--leadTotal
-									p Lead: #{landlord.numViolations}
-									i.icon-info-circled
-								.stat.stat--lhsTotal
-									p LHS: #{landlord.numViolations}
+									p HABC: #{landlord.habcSum}
 									i.icon-info-circled
 						each property, index in properties
 							if property.landlord_num === lIndex
 								li.list__item.property(class='property--'+index data-id=index)
 									p.address #{property.address}
-									.stat.stat--violations ECB
-										p #{property.ecb}
-									.stat.stat--violations HABC
-										p #{property.pros}
-									.stat.stat--violations Lead
-										p #{property.lpv}
-						.backButton
-							i.icon-left-big
+									if (property.ecb != 0)
+										.stat.stat--violations ECB
+											p #{property.ecb}
+									if (property.pros != 0)
+										.stat.stat--violations HABC
+											p #{property.pros}
+						.buttonWrap
+							.backButton
+								i.icon-left-big
 			.mapWrapper
 				#map
 				.socialButtons
@@ -167,5 +165,5 @@ html(class="no-js", lang="en")
 			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 			crossorigin="anonymous")
 		script(src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js")
-		//- script(src=datalink + "js/app.js")
-		script(src=datalink + "js/app.min.js")
+		script(src=datalink + "js/app.js")
+		//- script(src=datalink + "js/app.min.js")

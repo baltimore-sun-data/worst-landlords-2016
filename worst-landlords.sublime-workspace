@@ -80,11 +80,13 @@
 	"buffers":
 	[
 		{
+			"contents": "//- I use this datalink variable to quickly switch between local and uploaded assets. \n//- For example, say I am uploading files to http://data.baltimoresun.com/example-link\n//- If I wanted to switch quickly to my local files, instead of changing all of my links, \n//- I can just modify this single variable.\n//- There are two datalink variables so I don't have to rewrite the link every time. \n//- The second datalink variable declaration overwrites the first one. \n//- When I want to switch to the server assets, I comment out the second declaration.\n- var datalink = \"http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/\"\n- var datalink = \"\"\n\ninclude includes/data.pug\n\ndoctype html\n//if lt IE 7\n\t<html class=\"no-js lt-ie9 lt-ie8 lt-ie7\">\n//if IE 7\n\t<html class=\"no-js lt-ie9 lt-ie8\">\n//if IE 8\n\t<html class=\"no-js lt-ie9\">\nhtml(class=\"no-js\", lang=\"en\")\n\thead\n\t\t//Basic page needs\n\t\tmeta(charset=\"utf-8\")\n\t\ttitle Baltimore's worst landlords\n\t\tmeta(name=\"description\", content=\"See which landlords in Baltimore have the worst track records based on compiled data.\")\n\t\tmeta(name=\"author\", content=\"The Baltimore Sun\") \n\t\tmeta(name=\"viewport\", content=\"width=device-width, initial-scale=1, maximum-scale=1\")\n\t\tlink(rel=\"stylesheet\", type=\"text/css\", \n\t\t\thref=\"http://fonts.googleapis.com/css?family=PT+Serif|Lato\")\n\t\tlink(rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.0.2/dist/leaflet.css\")\n\t\tlink(rel=\"stylesheet\", type=\"text/css\", href=datalink + \"css/style.css\")\n\n\t\t//Facebook Stuff\n\t\tmeta(property=\"og:title\", content=\"Baltimore's worst landlords\")\n\t\tmeta(property=\"og:url\", content=\"http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/\")\n\t\tmeta(property=\"og:image\", content=\"\")\n\t\tmeta(property=\"og:site_name\", content=\"The Baltimore Sun\")\n\t\tmeta(property=\"og:description\", content=\"See which landlords in Baltimore have the worst track records based on compiled data.\")\n\t\tmeta(property=\"fb:app_id\", content=\"310302989040998\")\n\t\t//Twitter Stuff\n\t\tmeta(name=\"twitter:card\", content=\"summary\")\n\t\tmeta(name=\"twitter:site\", content=\"@baltimoresun\")\n\t\tmeta(name=\"twitter:creator\", content=\"\")\n\t\tmeta(name=\"twitter:title\", content=\"Baltimore's worst landlords\")\n\t\tmeta(name=\"twitter:description\", content=\"See which landlords in Baltimore have the worst track records based on compiled data.\")\n\t\tmeta(name=\"twitter:image\", content=\"\")\n\t\tmeta(name=\"twitter:domain\", content=\"baltimoresun.com\")\n\n\t\t//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-body below.\n\t\t//- include includes/ad-for-header.html\n\t\t\n\tbody\n\t\t//- This omniture file will also add a topnav. \n\t\t//- Remember to update the omniture tags\n\t\tinclude includes/omniture.html\n\t\t\n\t\t.container\n\t\t\t.splashWrapper\n\t\t\t\t.content\n\t\t\t\t\th1 Baltimore's worst landlords\n\t\t\t\t\tp The Baltimore Sun analysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions. \n\t\t\t\t\t\tspan.methodologyOut Read more about our methodology.\n\t\t\t\t\t.buttonDiv.buttonDiv--splash\n\t\t\t\t\t\tp About this project\n\t\t\t\t\t.buttonIcon.buttonIcon--social\n\t\t\t\t\t\ti.icon-twitter\n\t\t\t\t\t\ti.icon-facebook\n\t\t\t\t\t.buttonIcon.buttonIcon--splash\n\t\t\t\t\t\ti.icon-down-open\n\t\t\t.listWrapper\n\t\t\t\tul.list.list--landlords\n\t\t\t\t\t.list__item.subhead\n\t\t\t\t\t\th2 Baltimore's worst landlords\n\t\t\t\t\teach landlord, index in landlords\n\t\t\t\t\t\tli.list__item.landlord(data-landlord=index, class=\"list__item--\" + index)\n\t\t\t\t\t\t\t.landlordName\n\t\t\t\t\t\t\t\th3 #{landlord.name}\n\t\t\t\t\t\t\t\ti.icon-right-big\n\t\t\t\t\t\t\t.stat.stat--properties\n\t\t\t\t\t\t\t\tp Properties\n\t\t\t\t\t\t\t\t\tbr\n\t\t\t\t\t\t\t\t\tspan #{landlord.numProperties}\n\t\t\t\t\t\t\t.stat.stat--units\n\t\t\t\t\t\t\t\tp Units\n\t\t\t\t\t\t\t\t\tbr\n\t\t\t\t\t\t\t\t\tspan #{landlord.numUnits}\n\t\t\t\t\t\t\t.stat.stat--violations\n\t\t\t\t\t\t\t\tp Violations\n\t\t\t\t\t\t\t\t\tbr\n\t\t\t\t\t\t\t\t\tspan #{landlord.numViolations}\n\t\t\t\teach landlord, lIndex in landlords\n\t\t\t\t\tul.list.list--properties(class=\"list--properties--\" + lIndex)\n\t\t\t\t\t\t.list__item.landlordNameWrap\n\t\t\t\t\t\t\t.landlordName\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t.backButton(data-landlord=lIndex)\n\t\t\t\t\t\t\t\t\ti.icon-left-big\n\t\t\t\t\t\t\t\th3 #{landlord.name} Properties\n\t\t\t\t\t\t\t.violationTotals\n\t\t\t\t\t\t\t\t.stat.stat--ecbTotal\n\t\t\t\t\t\t\t\t\tp ECB: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\t\t\t.stat.stat--habcTotal\n\t\t\t\t\t\t\t\t\tp HABC: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\t\t\t.stat.stat--leadTotal\n\t\t\t\t\t\t\t\t\tp Lead: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\t\t\t.stat.stat--lhsTotal\n\t\t\t\t\t\t\t\t\tp LHS: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\teach property, index in properties\n\t\t\t\t\t\t\tif property.landlord_num === lIndex\n\t\t\t\t\t\t\t\tli.list__item.property(class='property--'+index data-id=index)\n\t\t\t\t\t\t\t\t\tp.address #{property.address}\n\t\t\t\t\t\t\t\t\t.stat.stat--violations ECB\n\t\t\t\t\t\t\t\t\t\tp #{property.ecb}\n\t\t\t\t\t\t\t\t\t.stat.stat--violations HABC\n\t\t\t\t\t\t\t\t\t\tp #{property.pros}\n\t\t\t\t\t\t\t\t\t.stat.stat--violations Lead\n\t\t\t\t\t\t\t\t\t\tp #{property.lpv}\n\t\t\t\t\t\t.backButton\n\t\t\t\t\t\t\ti.icon-left-big\n\t\t\t.mapWrapper\n\t\t\t\t#map\n\t\t\t\t.socialButtons\n\t\t\t\t\ti.icon-twitter \n\t\t\t\t\ti.icon-facebook\n\t\t\t.overlay.overlay--violations\n\t\t\t\t.content\n\t\t\t\t\ti.icon-cancel-1\n\t\t\t\t\th3 Violation definitions\n\t\t\t\t\tp\n\t\t\t\t\t\tspan LHS: \n\t\t\t\t\t\t| Life, health and safety violations lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp\n\t\t\t\t\t\tspan ECB: \n\t\t\t\t\t\t| Environmental control board violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp\n\t\t\t\t\t\tspan HABC: \n\t\t\t\t\t\t| Housing Authority of Baltimore City violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp\n\t\t\t\t\t\tspan Lead: \n\t\t\t\t\t\t| Lead paint violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp.methodologyOut\n\t\t\t\t\t\tspan Read about our methodology.\n\t\t\t.overlay.overlay--methodology\n\t\t\t\t.content\n\t\t\t\t\ti.icon-cancel-1\n\t\t\t\t\th3 Methodology\n\t\t\t\t\tp Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu blandit orci, a pulvinar nisi.\n\t\t\t\t\tp Integer pulvinar magna et ante dapibus auctor id sit amet nunc. Aenean in dui scelerisque, convallis tortor condimentum, facilisis massa.\n\t\t\t\t\tp Sed pellentesque ut turpis at blandit. Nunc dui risus, ultrices eu justo ac, tincidunt fringilla justo. Etiam dictum sit amet tortor sit amet vestibulum.\n\t\t\t\t\tp Aenean maximus nisl eget nulla lobortis, sed pellentesque felis mollis. Sed efficitur pharetra lacinia.\n\t\t\t\t\tp Vestibulum a lacus egestas, pretium nulla eget, rutrum dolor. Duis erat est, semper nec dui a, faucibus lobortis elit. \n\n\t\t//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-header above.\n\t\t//- #leaderboard\t\t\t\n\t\t\tinclude includes/ad-for-body.html\n\t\t\n\t\t//Javascript\n\t\tscript(src=\"https://use.typekit.net/nta3eyd.js\")\n\t\tscript.\n\t\t\ttry{Typekit.load({ async: true });}catch(e){}\n\t\t\tvar map;\n\t\t\tvar markers;\n\t\tscript(src=\"https://code.jquery.com/jquery-3.1.1.min.js\"\n\t\t\tintegrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"\n\t\t\tcrossorigin=\"anonymous\")\n\t\tscript(src=\"https://unpkg.com/leaflet@1.0.2/dist/leaflet.js\")\n\t\t//- script(src=datalink + \"js/app.js\")\n\t\tscript(src=datalink + \"js/app.min.js\")",
 			"file": "src/index.pug",
+			"file_size": 7261,
+			"file_write_time": 131347647190000000,
 			"settings":
 			{
-				"buffer_size": 4344,
-				"encoding": "UTF-8",
+				"buffer_size": 7270,
 				"line_ending": "Unix"
 			}
 		},
@@ -103,7 +105,7 @@
 			"file": "src/includes/data.pug",
 			"settings":
 			{
-				"buffer_size": 16260,
+				"buffer_size": 19049,
 				"line_ending": "Unix"
 			}
 		},
@@ -111,7 +113,7 @@
 			"file": "dist/index.html",
 			"settings":
 			{
-				"buffer_size": 66296,
+				"buffer_size": 84332,
 				"line_ending": "Unix"
 			}
 		},
@@ -119,7 +121,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 1828,
+				"buffer_size": 1913,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,7 +129,7 @@
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 81,
+				"buffer_size": 482,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,7 +138,7 @@
 			"file": "src/js/javascript.js",
 			"settings":
 			{
-				"buffer_size": 1774,
+				"buffer_size": 25448,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -145,7 +147,7 @@
 			"file": "src/scss/style.scss",
 			"settings":
 			{
-				"buffer_size": 4212,
+				"buffer_size": 6331,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -154,7 +156,7 @@
 			"file": "src/scss/_variables.scss",
 			"settings":
 			{
-				"buffer_size": 442,
+				"buffer_size": 459,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -163,7 +165,7 @@
 			"file": "src/scss/fontello.css",
 			"settings":
 			{
-				"buffer_size": 2543,
+				"buffer_size": 2716,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -557,7 +559,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -566,7 +568,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4344,
+						"buffer_size": 7270,
 						"regions":
 						{
 						},
@@ -583,10 +585,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 904.0,
+						"translation.y": 676.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -617,7 +619,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -626,15 +628,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16260,
+						"buffer_size": 19049,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								114,
-								114
+								0,
+								0
 							]
 						],
 						"settings":
@@ -654,7 +656,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 66296,
+						"buffer_size": 84332,
 						"regions":
 						{
 						},
@@ -669,7 +671,7 @@
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 9727.0,
@@ -684,7 +686,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1828,
+						"buffer_size": 1913,
 						"regions":
 						{
 						},
@@ -714,7 +716,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 81,
+						"buffer_size": 482,
 						"regions":
 						{
 						},
@@ -733,7 +735,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -748,15 +750,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1774,
+						"buffer_size": 25448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4488,
+								5137
 							]
 						],
 						"settings":
@@ -765,10 +767,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1309.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -777,15 +779,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4212,
+						"buffer_size": 6331,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5817,
+								5817
 							]
 						],
 						"settings":
@@ -794,10 +796,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3267.0,
+						"translation.y": 5986.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -806,15 +808,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 442,
+						"buffer_size": 459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								216,
+								216
 							]
 						],
 						"settings":
@@ -825,7 +827,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -834,15 +836,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2543,
+						"buffer_size": 2716,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52,
-								52
+								0,
+								0
 							]
 						],
 						"settings":
@@ -970,7 +972,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
