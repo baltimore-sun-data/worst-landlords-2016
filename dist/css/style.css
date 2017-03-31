@@ -497,6 +497,9 @@ html, body {
 body {
   color: white;
   font-size: 14px; }
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "franklin-gothic-urw", sans-serif; }
@@ -595,7 +598,7 @@ a {
     position: relative;
     width: 100%;
     margin: 1em auto;
-    padding: 1em .5em;
+    padding: 1em .5em .5em;
     list-style: none;
     background-color: #a8a8a8;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
@@ -603,24 +606,43 @@ a {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease; }
+    .list__item .address {
+      text-align: left; }
+    .list__item .property {
+      width: 80%;
+      background: rgba(0, 0, 0, 0.2); }
+      .list__item .property.active {
+        background-color: #27a3a3;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
+      .list__item .property:hover {
+        background-color: #27a3a3;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
     .list__item.active {
       background-color: #27a3a3;
       box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
     .list__item:hover {
       background-color: #27a3a3;
       box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
+    .list__item.landlord {
+      text-align: left; }
+      .list__item.landlord h3 {
+        text-align: left; }
   .list--landlords {
     left: 0;
     border-right: 1px solid white; }
     .list--landlords .subhead {
       padding: .5em;
-      text-transform: uppercase;
       background-color: #27a3a3;
       box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
       cursor: default; }
       .list--landlords .subhead h2 {
+        margin: 0;
         font-size: 2em;
-        margin: 0; }
+        text-align: center;
+        text-transform: uppercase; }
+      .list--landlords .subhead p {
+        text-transform: none;
+        margin: 1em 0; }
     .list--landlords h3 {
       display: inline-block;
       width: 80%; }
@@ -632,23 +654,37 @@ a {
     width: 320px;
     height: calc(100vh - 50px - 3em);
     left: 100%;
+    padding: 0;
     background-color: #e9e9e9; }
     .list--properties .landlordNameWrap {
       padding: .5em;
       background-color: #27a3a3;
       box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: none;
+      margin: 0;
       cursor: default; }
+      .list--properties .landlordNameWrap--geo {
+        background-color: #a8a8a8; }
+      .list--properties .landlordNameWrap--other {
+        background-color: #a8a8a8; }
+      .list--properties .landlordNameWrap .explainer {
+        text-transform: none;
+        font-weight: normal;
+        margin: 1em 0; }
     .list--properties .landlordName {
       width: 100%;
       padding: 1em .5em;
       color: white;
-      background-color: #27a3a3; }
-      .list--properties .landlordName h3 {
+      background-color: inherit; }
+      .list--properties .landlordName h2, .list--properties .landlordName h3 {
         width: 100%;
         text-align: center; }
+      .list--properties .landlordName h2 {
+        margin: 0;
+        font-size: 2em; }
     .list--properties .violationTotals {
       text-align: center;
-      background-color: #27a3a3; }
+      background: rgba(0, 0, 0, 0.5); }
       .list--properties .violationTotals .stat {
         display: block;
         font-size: 1.2em;
@@ -658,12 +694,8 @@ a {
         .list--properties .violationTotals .stat i {
           float: right;
           cursor: pointer; }
-        .list--properties .violationTotals .stat--lhsTotal {
-          background: rgba(0, 0, 0, 0.5); }
     .list--properties p {
       font-weight: 700; }
-    .list--properties .list__item .address {
-      text-align: left; }
   @media (max-width: 768px) {
     .list {
       width: 100%;
@@ -673,18 +705,20 @@ a {
       border-top: 2px solid #27a3a3; }
       .list--properties {
         height: calc(60vh - 3em);
-        bottom: calc(50px + 3em); } }
+        bottom: calc(50px + 3em);
+        padding: 0; } }
 
 .stat {
   display: inline-block;
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.1);
   padding: .5em;
-  margin: 1em .25em 0 .25em; }
+  margin: .25em auto;
+  background: rgba(0, 0, 0, 0.1); }
   .stat--violations {
-    background: rgba(0, 0, 0, 0.5);
-    color: white; }
+    color: white;
+    margin: .3em auto 0; }
 
 .mapWrapper {
   position: relative;
@@ -803,11 +837,10 @@ a {
     text-align: center;
     border: none; }
   .buttonDiv--splash {
-    width: 20em;
-    margin: 4em auto 2em auto;
+    width: 15em;
     padding: .7em 0; }
     .buttonDiv--splash:hover {
-      width: 22em;
+      width: 17em;
       opacity: .6; }
 
 .buttonIcon {
@@ -817,15 +850,15 @@ a {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease; }
-  .buttonIcon--social i {
-    font-size: 2em; }
-    .buttonIcon--social i:hover {
-      opacity: .6; }
-  .buttonIcon--splash {
+  .buttonIcon--social {
     margin: 2em auto; }
-    .buttonIcon--splash i {
-      font-size: 6em; }
-      .buttonIcon--splash i:hover {
+    .buttonIcon--social i {
+      font-size: 2em; }
+      .buttonIcon--social i:hover {
         opacity: .6; }
+  .buttonIcon--splash i {
+    font-size: 6em; }
+    .buttonIcon--splash i:hover {
+      opacity: .6; }
 
 /* Leaderboard */

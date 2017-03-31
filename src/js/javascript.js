@@ -86,7 +86,7 @@ var worstLandlords = {
 		$('.landlord').on('click', function() {
 			var landlord = $(this).data('landlord');
 			$('.active').removeClass('active');
-			$(this).addClass('active');
+			// $(this).addClass('active');
 			$('.list--properties--' + landlord).scrollTop(0);
 			$('.list--properties--' + landlord).toggleClass('center');
 			$('.buttonWrap').addClass('active');
@@ -117,11 +117,14 @@ var worstLandlords = {
 			try {
 				var divID = e.target.id - 1;
 				var propDiv = $('.list--properties.center');
+				var property = $('.property[data-id="'+divID+'"]');
 				$('.property.active').removeClass('active');
-				$('.property--' + divID).addClass('active');
+				property.addClass('active');
+				// console.log(property);
+				// $('.property--' + divID).addClass('active');
 				propDiv.animate({
 					scrollTop: propDiv.scrollTop() - propDiv.offset().top +
-						$('.property--' + divID).offset().top - 100
+						property.offset().top - 100
 				});
 			} catch (e) {
 				return false;
@@ -145,7 +148,7 @@ var worstLandlords = {
         }
     },
 	onClick: function(){
-		$('.buttonIcon--splash').on('click', function() {
+		$('.buttonDiv--splash').on('click', function() {
 			$('.splashWrapper').addClass('top');
 		});
 		// $('.backButton').on('click', function() {
@@ -153,7 +156,7 @@ var worstLandlords = {
 		// 	$('.list--properties.center').toggleClass('center');
 		// 	window.location.hash = '';
 		// });
-		$('.buttonDiv--splash, .methodologyOut').on('click', function() {
+		$('.methodologyOut').on('click', function() {
 			$('.overlay').fadeOut();
 			$('.overlay--methodology').fadeIn();
 		});

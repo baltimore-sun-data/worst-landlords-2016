@@ -28,7 +28,7 @@ html(class="no-js", lang="en")
 		link(rel="stylesheet", type="text/css", 
 			href="http://fonts.googleapis.com/css?family=PT+Serif|Lato")
 		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css")
-		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
+		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css?329")
 
 		//Facebook Stuff
 		meta(property="og:title", content="Baltimore's worst landlords")
@@ -60,22 +60,27 @@ html(class="no-js", lang="en")
 					h1 Baltimore's worst landlords
 					p The Baltimore Sun analysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions. 
 						span.methodologyOut Read more about our methodology.
-					.buttonDiv.buttonDiv--splash
-						p About this project
 					.buttonIcon.buttonIcon--social
 						i.icon-twitter
 						i.icon-facebook
-					.buttonIcon.buttonIcon--splash
-						i.icon-power
+					.buttonDiv.buttonDiv--splash
+						p START
+					//- .buttonIcon.buttonIcon--splash
+					//- 	i.icon-power
 			.listWrapper
 				ul.list.list--landlords
 					.list__item.subhead
 						h2 Baltimore's worst landlords
+						p The landlords listed below had the largest number of life, health and safety violations revealed in court cases between tenants and landlords.
 					each landlord, index in landlords
-						li.list__item.landlord(data-landlord=index, class="list__item--" + index)
+						li.list__item.landlord(data-landlord=landlord.id, class="list__item--" + landlord.id)
 							.landlordName
 								h3 #{landlord.name}
 								i.icon-right-big
+							.stat.stat--violations
+								p Life, health & safety
+									br
+									span #{landlord.lhsSum} violations
 							.stat.stat--properties
 								p Properties
 									br
@@ -84,37 +89,55 @@ html(class="no-js", lang="en")
 								p Units
 									br
 									span #{landlord.numUnits}
-							.stat.stat--violations
-								p Violations
-									br
-									span #{landlord.numViolations}
 				each landlord, lIndex in landlords
-					ul.list.list--properties(class="list--properties--" + lIndex)
-						.list__item.landlordNameWrap
+					ul.list.list--properties(class="list--properties--" + landlord.id)
+						.list__item.landlordNameWrap.landlordNameWrap--main
 							.landlordName
 								//- .backButton(data-landlord=lIndex)
 								//- 	i.icon-left-big
-								h3 #{landlord.name}
-							.violationTotals
+								h2 #{landlord.name}
+							.violationTotals.violationTotals
 								.stat.stat--lhsTotal
-									p LHS: #{landlord.lhsSum}
+									p Life, health & safety
+										br
+										span #{landlord.lhsSum} violations
 									i.icon-info-circled
-								.stat.stat--ecbTotal
-									p ECB: #{landlord.ecbSum}
-									i.icon-info-circled
-								.stat.stat--habcTotal
-									p HABC: #{landlord.habcSum}
-									i.icon-info-circled
-						each property, index in properties
-							if property.landlord_num === lIndex
-								li.list__item.property(class='property--'+index data-id=index)
-									p.address #{property.address}
-									if (property.ecb != 0)
-										.stat.stat--violations ECB
-											p #{property.ecb}
-									if (property.pros != 0)
-										.stat.stat--violations HABC
-											p #{property.pros}
+							p.explainer The map above plots every property traced back to this landlord. Life, health and safety violations are omitted from the map because they could not be reliably plotted. 
+						.list__item.landlordNameWrap.landlordNameWrap--geo
+							.landlordName
+								//- .backButton(data-landlord=lIndex)
+								//- 	i.icon-left-big
+								h3 Other violations
+							.violationTotals.violationTotals
+								if (landlord.ecbSum != 0)
+									.stat.stat--ecbTotal
+										p ECB: #{landlord.ecbSum}
+										i.icon-info-circled
+								if (landlord.habcSum != 0)
+									.stat.stat--habcTotal
+										p HABC: #{landlord.habcSum}
+										i.icon-info-circled
+							p.explainer These are additional violations linked to this landlord. Because they are often lesser violations, only life, health and safety violations were used to choose the worst-offending landlords.
+							each property in properties
+								if property.landlord_num === landlord.id
+									if (property.ecb != 0 || property.pros != 0)
+										li.list__item.property(data-id=(property.id-1))
+											p.address #{property.address}
+											if (property.pros != 0)
+												.stat.stat--violations HABC: #{property.pros}	
+											if (property.ecb != 0)
+												.stat.stat--violations ECB: #{property.ecb}
+						.list__item.landlordNameWrap.landlordNameWrap--other
+							.landlordName
+								//- .backButton(data-landlord=lIndex)
+								//- 	i.icon-left-big
+								h3 Other properties
+							each property in properties
+								if property.landlord_num === landlord.id
+									if (property.ecb == 0 && property.pros == 0)
+										li.list__item.property(data-id=(property.id-1))
+											p.address #{property.address}
+
 						.buttonWrap
 							.backButton
 								i.icon-left-big
@@ -165,5 +188,5 @@ html(class="no-js", lang="en")
 			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 			crossorigin="anonymous")
 		script(src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js")
-		script(src=datalink + "js/app.js")
+		script(src=datalink + "js/app.js?329")
 		//- script(src=datalink + "js/app.min.js")
