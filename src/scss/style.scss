@@ -13,9 +13,9 @@ html, body {
 body {
 	color: white;
 	font-size: 14px; // body-level font size for "em"-scaled designs
-	@media(max-width: $mobile) {
-		font-size: 12px;
-	}
+	// @media(max-width: $mobile) {
+	// 	font-size: 12px;
+	// }
 }
 h1,h2,h3,h4,h5,h6 {
 	font-family: $franklin;
@@ -24,7 +24,7 @@ p,a {
 	font-family: $franklin;
 }
 a {
-	color: $teal;
+	color: $lightteal;
 	text-decoration: none;
 }
 .container {
@@ -69,13 +69,17 @@ a {
 		width: auto;
 		margin: 0 2em;
 		font-size: 1.3em;
-		border-top: 1px solid $lightteal;
-		border-bottom: 1px solid $lightteal;
 		padding: .5em 0;
 		text-align: left;
 	}
 	span {
+		color: $lightteal;
+		cursor: pointer;
 		font-weight: bold;
+	}
+	.introText {
+		border-top: 1px solid $lightteal;
+		border-bottom: 1px solid $lightteal;		
 	}
 }
 .listWrapper {
@@ -177,6 +181,9 @@ a {
 				text-transform: none;
 				margin: 1em 0;
 			}
+			span {
+				cursor: pointer;
+			}
 		}
 		h3 {
 			display: inline-block;
@@ -193,7 +200,7 @@ a {
 		height: calc(100vh - 50px - 3em);
 		left: 100%;
 		padding: 0;
-		background-color: $lightgray;
+		background-color: $lightteal;
 		.landlordNameWrap {
 			padding: .5em;
 			background-color: $lightteal;
@@ -202,13 +209,11 @@ a {
 			margin: 0;
 			cursor: default;
 			&--geo, &--other {
+				background-color: $gray;
 			}
 			&--geo {
-				background-color: $gray;
-				// background-color: $lightgray;
 			}
 			&--other {				
-				background-color: $gray;
 			}
 			.explainer {
 				text-transform: none;
@@ -222,7 +227,7 @@ a {
 			padding: 1em .5em;
 			color: white;
 			background-color: inherit;
-			h2, h3 {
+			p, h2, h3 {
 				width: 100%;
 				text-align: center;
 			}
@@ -277,7 +282,7 @@ a {
 	background: rgba(black, .1);
 	&--violations {
 		color: white;
-		margin: .3em auto 0;
+		margin: .3em auto;
 	}
 	&--properties {
 

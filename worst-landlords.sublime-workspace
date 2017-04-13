@@ -4,12 +4,28 @@
 		"selected_items":
 		[
 			[
-				"bacl",
+				"text-",
+				"text-align"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"back",
 				"background-color"
 			],
 			[
-				"text-",
-				"text-transform"
+				"div",
+				"divID"
+			],
+			[
+				"landlord_",
+				"landlord_id"
+			],
+			[
+				"bacl",
+				"background-color"
 			],
 			[
 				"fo",
@@ -18,10 +34,6 @@
 			[
 				"cr",
 				"cursor"
-			],
-			[
-				"text",
-				"text-transform"
 			],
 			[
 				"marg",
@@ -80,32 +92,20 @@
 	"buffers":
 	[
 		{
-			"contents": "//- I use this datalink variable to quickly switch between local and uploaded assets. \n//- For example, say I am uploading files to http://data.baltimoresun.com/example-link\n//- If I wanted to switch quickly to my local files, instead of changing all of my links, \n//- I can just modify this single variable.\n//- There are two datalink variables so I don't have to rewrite the link every time. \n//- The second datalink variable declaration overwrites the first one. \n//- When I want to switch to the server assets, I comment out the second declaration.\n- var datalink = \"http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/\"\n- var datalink = \"\"\n\ninclude includes/data.pug\n\ndoctype html\n//if lt IE 7\n\t<html class=\"no-js lt-ie9 lt-ie8 lt-ie7\">\n//if IE 7\n\t<html class=\"no-js lt-ie9 lt-ie8\">\n//if IE 8\n\t<html class=\"no-js lt-ie9\">\nhtml(class=\"no-js\", lang=\"en\")\n\thead\n\t\t//Basic page needs\n\t\tmeta(charset=\"utf-8\")\n\t\ttitle Baltimore's worst landlords\n\t\tmeta(name=\"description\", content=\"See which landlords in Baltimore have the worst track records based on compiled data.\")\n\t\tmeta(name=\"author\", content=\"The Baltimore Sun\") \n\t\tmeta(name=\"viewport\", content=\"width=device-width, initial-scale=1, maximum-scale=1\")\n\t\tlink(rel=\"stylesheet\", type=\"text/css\", \n\t\t\thref=\"http://fonts.googleapis.com/css?family=PT+Serif|Lato\")\n\t\tlink(rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.0.2/dist/leaflet.css\")\n\t\tlink(rel=\"stylesheet\", type=\"text/css\", href=datalink + \"css/style.css\")\n\n\t\t//Facebook Stuff\n\t\tmeta(property=\"og:title\", content=\"Baltimore's worst landlords\")\n\t\tmeta(property=\"og:url\", content=\"http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/\")\n\t\tmeta(property=\"og:image\", content=\"\")\n\t\tmeta(property=\"og:site_name\", content=\"The Baltimore Sun\")\n\t\tmeta(property=\"og:description\", content=\"See which landlords in Baltimore have the worst track records based on compiled data.\")\n\t\tmeta(property=\"fb:app_id\", content=\"310302989040998\")\n\t\t//Twitter Stuff\n\t\tmeta(name=\"twitter:card\", content=\"summary\")\n\t\tmeta(name=\"twitter:site\", content=\"@baltimoresun\")\n\t\tmeta(name=\"twitter:creator\", content=\"\")\n\t\tmeta(name=\"twitter:title\", content=\"Baltimore's worst landlords\")\n\t\tmeta(name=\"twitter:description\", content=\"See which landlords in Baltimore have the worst track records based on compiled data.\")\n\t\tmeta(name=\"twitter:image\", content=\"\")\n\t\tmeta(name=\"twitter:domain\", content=\"baltimoresun.com\")\n\n\t\t//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-body below.\n\t\t//- include includes/ad-for-header.html\n\t\t\n\tbody\n\t\t//- This omniture file will also add a topnav. \n\t\t//- Remember to update the omniture tags\n\t\tinclude includes/omniture.html\n\t\t\n\t\t.container\n\t\t\t.splashWrapper\n\t\t\t\t.content\n\t\t\t\t\th1 Baltimore's worst landlords\n\t\t\t\t\tp The Baltimore Sun analysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions. \n\t\t\t\t\t\tspan.methodologyOut Read more about our methodology.\n\t\t\t\t\t.buttonDiv.buttonDiv--splash\n\t\t\t\t\t\tp About this project\n\t\t\t\t\t.buttonIcon.buttonIcon--social\n\t\t\t\t\t\ti.icon-twitter\n\t\t\t\t\t\ti.icon-facebook\n\t\t\t\t\t.buttonIcon.buttonIcon--splash\n\t\t\t\t\t\ti.icon-down-open\n\t\t\t.listWrapper\n\t\t\t\tul.list.list--landlords\n\t\t\t\t\t.list__item.subhead\n\t\t\t\t\t\th2 Baltimore's worst landlords\n\t\t\t\t\teach landlord, index in landlords\n\t\t\t\t\t\tli.list__item.landlord(data-landlord=index, class=\"list__item--\" + index)\n\t\t\t\t\t\t\t.landlordName\n\t\t\t\t\t\t\t\th3 #{landlord.name}\n\t\t\t\t\t\t\t\ti.icon-right-big\n\t\t\t\t\t\t\t.stat.stat--properties\n\t\t\t\t\t\t\t\tp Properties\n\t\t\t\t\t\t\t\t\tbr\n\t\t\t\t\t\t\t\t\tspan #{landlord.numProperties}\n\t\t\t\t\t\t\t.stat.stat--units\n\t\t\t\t\t\t\t\tp Units\n\t\t\t\t\t\t\t\t\tbr\n\t\t\t\t\t\t\t\t\tspan #{landlord.numUnits}\n\t\t\t\t\t\t\t.stat.stat--violations\n\t\t\t\t\t\t\t\tp Violations\n\t\t\t\t\t\t\t\t\tbr\n\t\t\t\t\t\t\t\t\tspan #{landlord.numViolations}\n\t\t\t\teach landlord, lIndex in landlords\n\t\t\t\t\tul.list.list--properties(class=\"list--properties--\" + lIndex)\n\t\t\t\t\t\t.list__item.landlordNameWrap\n\t\t\t\t\t\t\t.landlordName\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t.backButton(data-landlord=lIndex)\n\t\t\t\t\t\t\t\t\ti.icon-left-big\n\t\t\t\t\t\t\t\th3 #{landlord.name} Properties\n\t\t\t\t\t\t\t.violationTotals\n\t\t\t\t\t\t\t\t.stat.stat--ecbTotal\n\t\t\t\t\t\t\t\t\tp ECB: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\t\t\t.stat.stat--habcTotal\n\t\t\t\t\t\t\t\t\tp HABC: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\t\t\t.stat.stat--leadTotal\n\t\t\t\t\t\t\t\t\tp Lead: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\t\t\t.stat.stat--lhsTotal\n\t\t\t\t\t\t\t\t\tp LHS: #{landlord.numViolations}\n\t\t\t\t\t\t\t\t\ti.icon-info-circled\n\t\t\t\t\t\teach property, index in properties\n\t\t\t\t\t\t\tif property.landlord_num === lIndex\n\t\t\t\t\t\t\t\tli.list__item.property(class='property--'+index data-id=index)\n\t\t\t\t\t\t\t\t\tp.address #{property.address}\n\t\t\t\t\t\t\t\t\t.stat.stat--violations ECB\n\t\t\t\t\t\t\t\t\t\tp #{property.ecb}\n\t\t\t\t\t\t\t\t\t.stat.stat--violations HABC\n\t\t\t\t\t\t\t\t\t\tp #{property.pros}\n\t\t\t\t\t\t\t\t\t.stat.stat--violations Lead\n\t\t\t\t\t\t\t\t\t\tp #{property.lpv}\n\t\t\t\t\t\t.backButton\n\t\t\t\t\t\t\ti.icon-left-big\n\t\t\t.mapWrapper\n\t\t\t\t#map\n\t\t\t\t.socialButtons\n\t\t\t\t\ti.icon-twitter \n\t\t\t\t\ti.icon-facebook\n\t\t\t.overlay.overlay--violations\n\t\t\t\t.content\n\t\t\t\t\ti.icon-cancel-1\n\t\t\t\t\th3 Violation definitions\n\t\t\t\t\tp\n\t\t\t\t\t\tspan LHS: \n\t\t\t\t\t\t| Life, health and safety violations lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp\n\t\t\t\t\t\tspan ECB: \n\t\t\t\t\t\t| Environmental control board violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp\n\t\t\t\t\t\tspan HABC: \n\t\t\t\t\t\t| Housing Authority of Baltimore City violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp\n\t\t\t\t\t\tspan Lead: \n\t\t\t\t\t\t| Lead paint violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.\n\t\t\t\t\tp.methodologyOut\n\t\t\t\t\t\tspan Read about our methodology.\n\t\t\t.overlay.overlay--methodology\n\t\t\t\t.content\n\t\t\t\t\ti.icon-cancel-1\n\t\t\t\t\th3 Methodology\n\t\t\t\t\tp Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu blandit orci, a pulvinar nisi.\n\t\t\t\t\tp Integer pulvinar magna et ante dapibus auctor id sit amet nunc. Aenean in dui scelerisque, convallis tortor condimentum, facilisis massa.\n\t\t\t\t\tp Sed pellentesque ut turpis at blandit. Nunc dui risus, ultrices eu justo ac, tincidunt fringilla justo. Etiam dictum sit amet tortor sit amet vestibulum.\n\t\t\t\t\tp Aenean maximus nisl eget nulla lobortis, sed pellentesque felis mollis. Sed efficitur pharetra lacinia.\n\t\t\t\t\tp Vestibulum a lacus egestas, pretium nulla eget, rutrum dolor. Duis erat est, semper nec dui a, faucibus lobortis elit. \n\n\t\t//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-header above.\n\t\t//- #leaderboard\t\t\t\n\t\t\tinclude includes/ad-for-body.html\n\t\t\n\t\t//Javascript\n\t\tscript(src=\"https://use.typekit.net/nta3eyd.js\")\n\t\tscript.\n\t\t\ttry{Typekit.load({ async: true });}catch(e){}\n\t\t\tvar map;\n\t\t\tvar markers;\n\t\tscript(src=\"https://code.jquery.com/jquery-3.1.1.min.js\"\n\t\t\tintegrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"\n\t\t\tcrossorigin=\"anonymous\")\n\t\tscript(src=\"https://unpkg.com/leaflet@1.0.2/dist/leaflet.js\")\n\t\t//- script(src=datalink + \"js/app.js\")\n\t\tscript(src=datalink + \"js/app.min.js\")",
 			"file": "src/index.pug",
-			"file_size": 7261,
-			"file_write_time": 131347647190000000,
 			"settings":
 			{
-				"buffer_size": 7270,
+				"buffer_size": 8741,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nMaterial Theme\n--------------\n\n  #### Material Theme for Sublime Text 3\n  \n  ## Version 4.0.3\n  \n  📣 **BUGFIXES**:\n    * Fix accent-teal missing assets ([d959813](https://github.com/equinusocio/material-theme/commit/d959813))\n    * Improve Theme Info dialog.\n  \n  \n  ** Check the official changelog ( https://github.com/equinusocio/material-theme/blob/master/CHANGELOG.md  ) **\n",
-			"settings":
-			{
-				"buffer_size": 429,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
 			}
 		},
 		{
 			"file": "src/includes/data.pug",
 			"settings":
 			{
-				"buffer_size": 19049,
+				"buffer_size": 144147,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -113,7 +113,7 @@
 			"file": "dist/index.html",
 			"settings":
 			{
-				"buffer_size": 84332,
+				"buffer_size": 211935,
 				"line_ending": "Unix"
 			}
 		},
@@ -138,7 +138,7 @@
 			"file": "src/js/javascript.js",
 			"settings":
 			{
-				"buffer_size": 25448,
+				"buffer_size": 150703,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -147,7 +147,7 @@
 			"file": "src/scss/style.scss",
 			"settings":
 			{
-				"buffer_size": 6331,
+				"buffer_size": 7574,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -156,7 +156,7 @@
 			"file": "src/scss/_variables.scss",
 			"settings":
 			{
-				"buffer_size": 459,
+				"buffer_size": 475,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -165,7 +165,7 @@
 			"file": "src/scss/fontello.css",
 			"settings":
 			{
-				"buffer_size": 2716,
+				"buffer_size": 2764,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -264,10 +264,13 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords"
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src",
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/js"
 	],
 	"file_history":
 	[
+		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/js/javascript.js",
 		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/worst-landlords.sublime-project",
 		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/scss/css/fontello.css",
 		"/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords/src/includes/data",
@@ -394,12 +397,11 @@
 		"/Users/jikim/Documents/bsun/online/final-test/package.json",
 		"/Users/jikim/Documents/bsun/online/final-test/dist/css/style.css",
 		"/Users/jikim/Documents/bsun/online/final-test/src/sass/style.sass",
-		"/Users/jikim/Documents/bsun/online/final-test/src/sass/_fonts.scss",
-		"/Users/jikim/Documents/bsun/online/--web-project-jade/src/index.jade"
+		"/Users/jikim/Documents/bsun/online/final-test/src/sass/_fonts.scss"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -413,6 +415,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"method",
+			"329",
+			"p Life, health and safety",
+			"health and safety",
+			"active",
+			"property",
+			"916",
+			"font-fam",
+			"font-st",
+			"overla",
+			"active",
+			"./font",
+			";\n",
+			"lat",
+			"-1",
 			"teal",
 			"lightteal",
 			"button.button",
@@ -525,22 +542,7 @@
 			"p\n\t\t\t\t\t\t\ti.glyphicon",
 			"li \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\t| 11:11 p.m.: Video of police entering the apartment for the first time\n\t\t\t\t\t\tli \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-headphones\n\t\t\t\t\t\t\t\t| Audio of 911 dispatch\n\t\t\t\t\t\tli\n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-picture\n\t\t\t\t\t\t\t\t| Photos taken from Gaines' cell phone\n\t\t\t\t\t\tli \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-folder-open\n\t\t\t\t\t\t\t\t| Relevant documents",
 			"li \n\t\t\t\t\t\t\tp\n\t\t\t\t\t\t\t\ti.glyphicon.glyphicon-play-circle\n\t\t\t\t\t\t\t\t|",
-			"\n\t\t\t\t\ta(href=\"\")",
-			"a(href=\"\")",
-			"\t\ta(href=\"\")",
-			"a(href=\"\")\n\t\t\t\t\t\tli",
-			"a(href=\"\")\n\t\t\t\t\t\tli ",
-			"a(href=\"\")",
-			"a(href=\"\")\n\t\t\t\t\t\tli ",
-			"a(href=\"\")",
-			"ul\n\t\t\t\t\tli Media item",
-			"li Media item",
-			"img(src=\"\")",
-			"| consectetur adipiscing elit. Cras",
-			"P.M.",
-			"px",
-			"---",
-			"slide--content."
+			"\n\t\t\t\t\ta(href=\"\")"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -568,15 +570,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7270,
+						"buffer_size": 8741,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4049,
-								4049
+								3212,
+								3212
 							]
 						],
 						"settings":
@@ -585,58 +587,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 676.0,
+						"translation.y": 1089.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 429,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								429,
-								429
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"default_dir": "/Users/jikim/Documents/bsun/online/org/2016/11/worst-landlords",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/includes/data.pug",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19049,
+						"buffer_size": 144147,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1298,
+								1298
 							]
 						],
 						"settings":
@@ -647,16 +618,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "dist/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 84332,
+						"buffer_size": 211935,
 						"regions":
 						{
 						},
@@ -671,17 +642,17 @@
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 9727.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
@@ -693,8 +664,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								1913,
+								1913
 							]
 						],
 						"settings":
@@ -711,7 +682,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": ".gitignore",
 					"semi_transient": false,
 					"settings":
@@ -735,7 +706,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -745,20 +716,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "src/js/javascript.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 25448,
+						"buffer_size": 150703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4488,
-								5137
+								3951,
+								3951
 							]
 						],
 						"settings":
@@ -767,27 +738,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1309.0,
+						"translation.y": 947.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "src/scss/style.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6331,
+						"buffer_size": 7574,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5817,
-								5817
+								3677,
+								3677
 							]
 						],
 						"settings":
@@ -796,27 +767,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5986.0,
+						"translation.y": 3006.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "src/scss/_variables.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 459,
+						"buffer_size": 475,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								216,
-								216
+								472,
+								472
 							]
 						],
 						"settings":
@@ -831,20 +802,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "src/scss/fontello.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2716,
+						"buffer_size": 2764,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								642,
+								642
 							]
 						],
 						"settings":
@@ -854,14 +825,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 88.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "src/scss/_mixins.scss",
 					"semi_transient": false,
 					"settings":
@@ -886,7 +857,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -972,7 +943,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -980,7 +951,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 271.0,
+	"side_bar_width": 229.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

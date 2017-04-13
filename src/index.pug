@@ -5,7 +5,7 @@
 //- There are two datalink variables so I don't have to rewrite the link every time. 
 //- The second datalink variable declaration overwrites the first one. 
 //- When I want to switch to the server assets, I comment out the second declaration.
-- var datalink = "http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/"
+- var datalink = "http://data.baltimoresun.com/news/dismissed/landlords"
 - var datalink = ""
 
 include includes/data.pug
@@ -21,18 +21,18 @@ html(class="no-js", lang="en")
 	head
 		//Basic page needs
 		meta(charset="utf-8")
-		title Baltimore's worst landlords
+		title Baltimore's most cited landlords
 		meta(name="description", content="See which landlords in Baltimore have the worst track records based on compiled data.")
-		meta(name="author", content="The Baltimore Sun") 
+		meta(name="author", content="The Baltimore Sun")
 		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet", type="text/css", 
 			href="http://fonts.googleapis.com/css?family=PT+Serif|Lato")
 		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css")
-		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css?329")
+		link(rel="stylesheet", type="text/css", href=datalink + "css/style.css")
 
 		//Facebook Stuff
-		meta(property="og:title", content="Baltimore's worst landlords")
-		meta(property="og:url", content="http://data.baltimoresun.com/news/rent-court/worst-landlords-2016/")
+		meta(property="og:title", content="Baltimore's most cited landlords")
+		meta(property="og:url", content="http://data.baltimoresun.com/news/dismissed/landlords")
 		meta(property="og:image", content="")
 		meta(property="og:site_name", content="The Baltimore Sun")
 		meta(property="og:description", content="See which landlords in Baltimore have the worst track records based on compiled data.")
@@ -41,7 +41,7 @@ html(class="no-js", lang="en")
 		meta(name="twitter:card", content="summary")
 		meta(name="twitter:site", content="@baltimoresun")
 		meta(name="twitter:creator", content="")
-		meta(name="twitter:title", content="Baltimore's worst landlords")
+		meta(name="twitter:title", content="Baltimore's most cited landlords")
 		meta(name="twitter:description", content="See which landlords in Baltimore have the worst track records based on compiled data.")
 		meta(name="twitter:image", content="")
 		meta(name="twitter:domain", content="baltimoresun.com")
@@ -57,9 +57,12 @@ html(class="no-js", lang="en")
 		.container
 			.splashWrapper
 				.content
-					h1 Baltimore's worst landlords
-					p The Baltimore Sun analysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions. 
-						span.methodologyOut Read more about our methodology.
+					h1 Baltimore's most cited landlords
+					.introText
+						p The Baltimore Sun analyzedysed data from Maryland Case Search, Baltimore rental registrations, Open Baltimore and other sources to identify landlords and properties that were consistently fined for life, health and safety violations and other infractions.
+						p These are the landlords with the most citations and their properties.
+						p
+							span.methodologyOut Read more about our methodology.
 					.buttonIcon.buttonIcon--social
 						i.icon-twitter
 						i.icon-facebook
@@ -70,8 +73,11 @@ html(class="no-js", lang="en")
 			.listWrapper
 				ul.list.list--landlords
 					.list__item.subhead
-						h2 Baltimore's worst landlords
-						p The landlords listed below had the largest number of life, health and safety violations revealed in court cases between tenants and landlords.
+						h2 Baltimore's most cited landlords
+						p This list was determined using the number of life, health and safety violations revealed in court cases between tenants and landlords.
+						p The properties on the map are not necessarily those that had violations. 
+						p
+							span.methodologyOut Read more about our methodology.
 					each landlord, index in landlords
 						li.list__item.landlord(data-landlord=landlord.id, class="list__item--" + landlord.id)
 							.landlordName
@@ -95,6 +101,7 @@ html(class="no-js", lang="en")
 							.landlordName
 								//- .backButton(data-landlord=lIndex)
 								//- 	i.icon-left-big
+								p Properties of
 								h2 #{landlord.name}
 							.violationTotals.violationTotals
 								.stat.stat--lhsTotal
@@ -102,41 +109,44 @@ html(class="no-js", lang="en")
 										br
 										span #{landlord.lhsSum} violations
 									i.icon-info-circled
-							p.explainer The map above plots every property traced back to this landlord. Life, health and safety violations are omitted from the map because they could not be reliably plotted. 
-						.list__item.landlordNameWrap.landlordNameWrap--geo
-							.landlordName
-								//- .backButton(data-landlord=lIndex)
-								//- 	i.icon-left-big
-								h3 Other violations
-							.violationTotals.violationTotals
-								if (landlord.ecbSum != 0)
-									.stat.stat--ecbTotal
-										p ECB: #{landlord.ecbSum}
-										i.icon-info-circled
-								if (landlord.habcSum != 0)
-									.stat.stat--habcTotal
-										p HABC: #{landlord.habcSum}
-										i.icon-info-circled
-							p.explainer These are additional violations linked to this landlord. Because they are often lesser violations, only life, health and safety violations were used to choose the worst-offending landlords.
-							each property in properties
-								if property.landlord_num === landlord.id
-									if (property.ecb != 0 || property.pros != 0)
-										li.list__item.property(data-id=(property.id-1))
-											p.address #{property.address}
-											if (property.pros != 0)
-												.stat.stat--violations HABC: #{property.pros}	
-											if (property.ecb != 0)
-												.stat.stat--violations ECB: #{property.ecb}
-						.list__item.landlordNameWrap.landlordNameWrap--other
-							.landlordName
-								//- .backButton(data-landlord=lIndex)
-								//- 	i.icon-left-big
-								h3 Other properties
-							each property in properties
-								if property.landlord_num === landlord.id
-									if (property.ecb == 0 && property.pros == 0)
-										li.list__item.property(data-id=(property.id-1))
-											p.address #{property.address}
+							p.explainer Each point is a property traced back to this landlord. However, the locations of life, health and safety violations are omitted from the map because they could not be reliably plotted.
+						if (landlord.ecbSum != 0 || landlord.habcSum != 0)
+							.list__item.landlordNameWrap.landlordNameWrap--geo
+								.landlordName
+									//- .backButton(data-landlord=lIndex)
+									//- 	i.icon-left-big
+									h3 Other violations
+								p.explainer Although life, health and safety violations could not be plotted on the map, other violations were also associated with these addresses.
+								.violationTotals.violationTotals
+									if (landlord.ecbSum != 0)
+										.stat.stat--ecbTotal
+											p ECB: #{landlord.ecbSum} violations
+											i.icon-info-circled
+									if (landlord.habcSum != 0)
+										.stat.stat--habcTotal
+											p HABC: #{landlord.habcSum} violations
+											i.icon-info-circled
+								p.explainer Because the severity of these violations vary, only life, health and safety violations were used to choose the worst-offending landlords.
+								each property in properties
+									if property.landlord_num === landlord.id
+										if (property.ecb != 0 || property.pros != 0)
+											li.list__item.property(data-id=(property.id-1))
+												p.address #{property.address}
+												if (property.pros != 0)
+													.stat.stat--violations HABC: #{property.pros}	
+												if (property.ecb != 0)
+													.stat.stat--violations ECB: #{property.ecb}
+						if (landlord.numProperties != 0)
+							.list__item.landlordNameWrap.landlordNameWrap--other
+								.landlordName
+									//- .backButton(data-landlord=lIndex)
+									//- 	i.icon-left-big
+									h3 Properties
+								each property in properties
+									if property.landlord_num === landlord.id
+										if (property.ecb == 0 && property.pros == 0)
+											li.list__item.property(data-id=(property.id-1))
+												p.address #{property.address}
 
 						.buttonWrap
 							.backButton
@@ -144,7 +154,7 @@ html(class="no-js", lang="en")
 			.mapWrapper
 				#map
 				.socialButtons
-					i.icon-twitter 
+					i.icon-twitter
 					i.icon-facebook
 			.overlay.overlay--violations
 				.content
@@ -152,27 +162,24 @@ html(class="no-js", lang="en")
 					h3 Violation definitions
 					p
 						span LHS: 
-						| Life, health and safety violations lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+						| Life, health and safety violations include violations from the Maryland Judiciary Case Search analyzed by attorneys at the Maryland Volunteer Lawyer Service. These violations revealed in rent court show substandard housing conditions for tenants.
 					p
 						span ECB: 
-						| Environmental control board violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+						| Environmental control board violations are provided by the Baltimore City Environmental Control Board. These less severe violations range from untidy lawns to pest control.
 					p
 						span HABC: 
-						| Housing Authority of Baltimore City violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
-					p
-						span Lead: 
-						| Lead paint violations orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus lorem at elit auctor finibus.
+						| The Housing Authority of Baltimore City prosecutes landlords for properties that violate Baltimore's housing code. 
 					p.methodologyOut
 						span Read about our methodology.
 			.overlay.overlay--methodology
 				.content
 					i.icon-cancel-1
 					h3 Methodology
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu blandit orci, a pulvinar nisi.
-					p Integer pulvinar magna et ante dapibus auctor id sit amet nunc. Aenean in dui scelerisque, convallis tortor condimentum, facilisis massa.
-					p Sed pellentesque ut turpis at blandit. Nunc dui risus, ultrices eu justo ac, tincidunt fringilla justo. Etiam dictum sit amet tortor sit amet vestibulum.
-					p Aenean maximus nisl eget nulla lobortis, sed pellentesque felis mollis. Sed efficitur pharetra lacinia.
-					p Vestibulum a lacus egestas, pretium nulla eget, rutrum dolor. Duis erat est, semper nec dui a, faucibus lobortis elit. 
+					p This interactive is based on case data from the 
+						a(herf="http://casesearch.courts.state.md.us/casesearch/" target="_blank") Maryland Judiciary Case Search. 
+						| The landlords and life, health and safety violations were scraped and analyzed for The Sun by attorneys at the Maryland Volunteer Lawyer Service. 
+					p Additional addresses affiliated with these landlords were pulled from a database provided by the Housing Authority of Baltimore City.
+					p Additional violations information was provided by the Baltimore City Environmental Control Board. 
 
 		//- Ad tag, uncomment to put in ad. Be sure to uncomment the ad-for-header above.
 		//- #leaderboard			
@@ -188,5 +195,5 @@ html(class="no-js", lang="en")
 			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 			crossorigin="anonymous")
 		script(src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js")
-		script(src=datalink + "js/app.js?329")
+		script(src=datalink + "js/app.js")
 		//- script(src=datalink + "js/app.min.js")
