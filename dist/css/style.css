@@ -606,6 +606,12 @@ a {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease; }
+    .list__item.landlord {
+      text-align: left; }
+      .list__item.landlord h3 {
+        text-align: left; }
+      .list__item.landlord .stat--violations {
+        background: rgba(0, 0, 0, 0.5); }
     .list__item .address {
       text-align: left; }
     .list__item .property {
@@ -623,10 +629,6 @@ a {
     .list__item:hover {
       background-color: #27a3a3;
       box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
-    .list__item.landlord {
-      text-align: left; }
-      .list__item.landlord h3 {
-        text-align: left; }
   .list--landlords {
     left: 0;
     border-right: 1px solid white; }
@@ -717,7 +719,6 @@ a {
   margin: .25em auto;
   background: rgba(0, 0, 0, 0.1); }
   .stat--violations {
-    color: white;
     margin: .3em auto; }
 
 .mapWrapper {
