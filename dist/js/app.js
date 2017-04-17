@@ -39,7 +39,7 @@ var worstLandlords = {
         var address;
         var landlord_id;
         var prop_id;
-        var landlordsList = [ "HABC", "M.A.R.M.", "DUNN WRIGHT", "MARYLAND PROPERTY MANAGEMENT, LLC", "SAGE MANAGEMENT", "PROGRESSIVE PROPERTY INC", "C BROWN POPERTIES", "BLUE STAR", "BLUE OCEAN", "ATLANTIC REALTY MANAGEMENT INC.", "WAZ INVESTMENT" ];
+        var landlordsList = [ "HABC", "M.A.R.M.", "DUNN WRIGHT", "MARYLAND PROPERTY MANAGEMENT, LLC", "SAGE MANAGEMENT", "PROGRESSIVE PROPERTY INC", "C BROWN PROPERTIES", "BLUE STAR", "BLUE OCEAN", "ATLANTIC REALTY MANAGEMENT INC.", "WAZ INVESTMENT" ];
         for (var num = 0; num < worstLandlords.properties.length; num++) {
             latitude = worstLandlords.properties[num].lat;
             longitude = worstLandlords.properties[num].lon;
@@ -198,7 +198,7 @@ var worstLandlords = {
         habcSum: 0
     }, {
         id: 6,
-        name: "C BROWN POPERTIES",
+        name: "C BROWN PROPERTIES",
         numProperties: 21,
         numUnits: 25,
         numViolations: 32,
