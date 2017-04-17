@@ -17,7 +17,7 @@ var worstLandlords = {
 			var title = "Baltimore's worst landlords"; //Post title
 			var description = "See which landlords in Baltimore have the worst track records based on compiled data."; //Post description
 			var url = "http://data.baltimoresun.com/news/dismissed/landlords/"; //Interactive URL
-	    	var facebook_url = "https://www.facebook.com/dialog/feed?display=popup&app_id=310302989040998&link="+url+"&picture="+picture+"&name="+title+"&description="+description+"&redirect_uri=http://www.facebook.com";    		
+			var facebook_url = "https://www.facebook.com/dialog/feed?display=popup&app_id=310302989040998&link="+url+"&picture="+picture+"&name="+title+"&description="+description+"&redirect_uri=http://www.facebook.com";    		
 			window.open(facebook_url, 'mywin', 'left=200,top=200,width=500,height=300,toolbar=1,resizable=0'); return false;
 		});
 	},
